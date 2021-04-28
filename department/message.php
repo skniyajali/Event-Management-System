@@ -3,7 +3,7 @@
 require_once 'core/init.php';
 require_once 'core/DB.php';
 require_once '../includes/function.php';
-
+require_once '../header.php';
 $user = new Department();
 if ($user->isLoggedIn()) {
     $data = $user->data();
@@ -17,8 +17,8 @@ if ($user->isLoggedIn()) {
         <title><?php echo $data->dept_name ?> | EMS@DEPARTMENT</title>
         <!-- SEO Meta Tags-->
         <meta name="description" content="EMS KIOT" />
-        <meta name="keywords" content="ems,kiot" />
-        <meta name="author" content="EMS Team" />
+        <meta name="keywords" content="skniyajali, niyajali,skniyaj, skali" />
+        <meta name="author" content="SK NIYAJ ALI" />
         <!-- Viewport-->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Vendor Styles-->

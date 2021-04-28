@@ -3,7 +3,7 @@
 require_once 'core/init.php';
 require_once 'core/DB.php';
 require_once '../includes/function.php';
-
+require_once '../header.php';
 $user = new Department();
 if ($user->isLoggedIn()) {
     $data = $user->data();

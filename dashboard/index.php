@@ -7,7 +7,35 @@ $db = DB::getInstance();
 ?>
 
 <!DOCTYPE html>
+<!--
+Page Name: Enhanced Teaching
+Author: Sk Niyaj Ali
+Website: http://www.skniyajali.co.in/
+Contact: niyaj320@gmail.com
+Facebook : https://www.facebook.com/skniyajali7/
+Instagram : https://www.instagram.com/_niyajali/
+Twitter : https://twitter.com/skniyajali1
+Behance.net : https://www.behance.net/skniyajali/
+Codepen.io : https://codepen.io/skniyajali/
+Creativemarket : https://creativemarket.com/users/skniyajali
+Medium : https://medium.com/@skniyajali
+Portfolio : https://skniyajali.myportfolio.com/
+Vimeo : https://vimeo.com/skniyajali/
+Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+Pinterest : https://in.pinterest.com/skniyajali/
+Thumblr : https://skniyajali2.tumblr.com/
+Github : https://github.com/niyaj320/
+Dribbble : https://dribbble.com/skniyajali/
+Flickr : https://www.flickr.com/people/skniyajali/
+Figma : https://www.figma.com/@skniyajali
+LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+Society6 : https://society6.com/skniyajali
+Website : https://skniyaj.blogspot.com/?m=1
+Hackaday.io : https://hackaday.io/niyaj320
 
+License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+-->
 <html lang="en">
 <!--begin::Head-->
 
@@ -17,26 +45,11 @@ $db = DB::getInstance();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="canonical" href="https://enhancedteaching.co.in" />
-	<meta name="keywords" content="Enhanced Teaching, Best Mathematics Courses,  Best Website For Learning Mathematics, Vedic Math, Math learning website, Enhanced Teaching Courses, Best Education Website, Best Website for Online Education, Best Website For Learn Mathematics, JEE Preparation, JEE MAIN Preparation, JEE Advanced Preparation, Last Year JEE MAIN Math Solved Question Paper, Guide For JEE MAIN Exam, Best Courses For GATE Exam, GATE Exam Preparation, Mathematics For GATE Exam, Algebra, Trigonometry, Geometry, Arithmetic" />
-	<meta name="description" content="Become a certified teacher! create good content that might be helpful for everyone and earn money." />
+	<link rel="canonical" href="https://niyaj.enhancedteaching.co.in" />
+	<meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+	<meta name="description" content="EMS Dashboard" />
 	<meta name="robots" content="index, follow" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:description" content="Become a certified teacher and create good content that might be helpful for everyone and earn money." />
-	<meta name="twitter:title" content="Enhanced Teaching | Enhance Your Skills" />
-	<meta name="twitter:url" content="https://enhancedteaching.co.in" />
-
-	<meta property="og:locale" content="en" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Become a teacher | earn some money" />
-	<meta property="og:description" content="Become a certified teacher and create good content that might be helpful for everyone and earn money." />
-	<meta property="og:url" content="https://enhancedteaching.co.in" />
-	<meta property="og:site_name" content="Enhanced Teaching" />
-
-	<meta property="twitter:image" content="" />
-	<meta property="og:image" content="" />
-
-
+	<meta name="author" content="SK NIYAJ ALI" />
 	<!--begin::Fonts-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 	<!--end::Fonts-->
