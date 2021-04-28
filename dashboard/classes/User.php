@@ -52,26 +52,78 @@ class User
     public function find($user = null)
     {
         if ($user) {
-            $field = 'username';
-            $data = $this->_db->get('admin', array($field, '=', $user));
-            $datas = $this->_db->get('admin', array('email', '=', $user));
 
+            $data = $this->_db->get('admin', array('email', '=', $user));
             if ($data->count()) {
                 $this->_data = $data->first();
                 return true;
-            }elseif($datas->count()){
-                
-                $this->_data = $datas->first();
-                return true;                
-            }else{
-                $datas = $this->_db->get('admin', array('passkey', '=', $user));
+            } else {
+                $datas = $this->_db->get('admin', array('username', '=', $user));
                 if ($datas->count()) {
                     $this->_data = $datas->first();
                     return true;
+                } else {
+                    $datap = $this->_db->get('admin', array('passkey', '=', $user));
+                    if ($datap->count()) {
+                        $this->_data = $datap->first();
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             }
         }
         return false;
+    }
+
+    public function department_count()
+    {
+        $data = $this->_db->get('em_department', array('dept_status', '=', 'Active'));
+        if ($data->count()) {
+            return $data->count();
+        } else {
+            return '0';
+        }
+    }
+
+    public function faculty_count()
+    {
+        $data = $this->_db->get('em_faculty', array('fac_status', '=', 'Active'));
+        if ($data->count()) {
+            return $data->count();
+        } else {
+            return '0';
+        }
+    }
+
+    public function student_count()
+    {
+        $data = $this->_db->get('em_students', array('fac_status', '=', 'Active'));
+        if ($data->count()) {
+            return $data->count();
+        } else {
+            return '0';
+        }
+    }
+
+    public function dept_faculty_count($user = null)
+    {
+        $data = $this->_db->get('em_faculty', array('fac_dept_hash', '=', $user));
+        if ($data->count()) {
+            return $data->count();
+        } else {
+            return '0';
+        }
+    }
+    
+    public function dept_student_count($user = null)
+    {
+        $data = $this->_db->get('em_students', array('fac_dept_hash', '=', $user));
+        if ($data->count()) {
+            return $data->count();
+        } else {
+            return '0';
+        }
     }
 
     public function login($ad_username = null, $ad_password = null, $remember = false)

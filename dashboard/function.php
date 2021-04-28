@@ -30,48 +30,85 @@ function convert_string($action, $string)
     return $output;
 }
 
-class Databases
+function time_difference($created_time)
 {
-    public $con;
-    public $error;
+	date_default_timezone_set('Asia/Calcutta'); //Change as per your default time
+	$str = strtotime($created_time);
+	$today = strtotime(date('Y-m-d H:i:s'));
 
-    public function __construct()
-    {
-        $this->con = mysqli_connect("localhost", "root", "", "ats");
+	// It returns the time difference in Seconds...
+	$time_differnce = $today - $str;
 
-        if (!$this->con) {
-            echo 'Databases Connection Error' . mysqli_connect_error($this);
-        }
-    }
+	// To Calculate the time difference in Years...
+	$years = 60 * 60 * 24 * 365;
 
-    public function required_validation($field)
-    {
-        $count = 0;
-        foreach ($field as $key => $value) {
-            if (empty($value)) {
-                $count++;
-                $this->error = "<p>" . $key . "is required</p>";
-            }
-        }
-        if ($count == 0) {
-            return true;
-        }
-    }
+	// To Calculate the time difference in Months...
+	$months = 60 * 60 * 24 * 30;
 
-    public function can_login($table_name, $where_condition)
-    {
-        $condition = '';
-        foreach ($where_condition as $key => $value) {
-            $condition .= $key . " = '" . $value . "' AND ";
-        }
-        $condition = substr($condition, 0, -5);
+	// To Calculate the time difference in Days...
+	$days = 60 * 60 * 24;
 
-        $query = "SELECT * FROM " . $table_name . "  WHERE " . $condition . " ";
-        $result = mysqli_query($this->con, $query);
-        if (mysqli_num_rows($result)) {
-            return true;
-        } else {
-            $this->error = "Wrong Data";
-        }
-    }
+	// To Calculate the time difference in Hours...
+	$hours = 60 * 60;
+
+	// To Calculate the time difference in Minutes...
+	$minutes = 60;
+
+	if (intval($time_differnce / $years) > 1) {
+		return intval($time_differnce / $years) . " years ago";
+	} else if (intval($time_differnce / $years) > 0) {
+		return intval($time_differnce / $years) . " year ago";
+	} else if (intval($time_differnce / $months) > 1) {
+		return intval($time_differnce / $months) . " months ago";
+	} else if (intval(($time_differnce / $months)) > 0) {
+		return intval(($time_differnce / $months)) . " month ago";
+	} else if (intval(($time_differnce / $days)) > 1) {
+		return intval(($time_differnce / $days)) . " days ago";
+	} else if (intval(($time_differnce / $days)) > 0) {
+		return intval(($time_differnce / $days)) . " day ago";
+	} else if (intval(($time_differnce / $hours)) > 1) {
+		return intval(($time_differnce / $hours)) . " hours ago";
+	} else if (intval(($time_differnce / $hours)) > 0) {
+		return intval(($time_differnce / $hours)) . " hour ago";
+	} else if (intval(($time_differnce / $minutes)) > 1) {
+		return intval(($time_differnce / $minutes)) . " minutes ago";
+	} else if (intval(($time_differnce / $minutes)) > 0) {
+		return intval(($time_differnce / $minutes)) . " minute ago";
+	} else if (intval(($time_differnce)) > 1) {
+		return intval(($time_differnce)) . " seconds ago";
+	} else {
+		return "few seconds ago";
+	}
 }
+
+function randomColor()
+{
+	$rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+	$color = '#' . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)];
+	return $color;
+}
+
+function convertYoutube($string)
+{
+	return preg_replace(
+		"/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
+		"<iframe class=\"embed-responsive-item rounded\" src=\"https://www.youtube.com/embed/$2?autoplay=0&showinfo=0&controls=0&rel=0\" allowfullscreen></iframe>",
+		$string
+	);
+}
+
+function description_l($text, $length)
+{
+	$length = abs((int)$length);
+	if (strlen($text) > $length) {
+		$text = preg_replace("/^(.{1,$length})(\s.*|$)/s", '\\1...', $text);
+	}
+	return ($text);
+}
+
+function description($string) {	
+    $expr = '/(?<=\s|^)[A-Z]/';
+    preg_match_all($expr, $string, $matches);    
+    $result = implode('', $matches[0]);
+    return $result;
+ }

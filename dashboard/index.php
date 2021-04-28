@@ -10,7 +10,7 @@ $db = DB::getInstance();
 <!--
 Page Name: Enhanced Teaching
 Author: Sk Niyaj Ali
-Website: http://www.skniyajali.co.in/
+Website: https://www.niyaj.enhancedteaching.co.in/
 Contact: niyaj320@gmail.com
 Facebook : https://www.facebook.com/skniyajali7/
 Instagram : https://www.instagram.com/_niyajali/
@@ -216,9 +216,157 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 				<!--begin::Entry-->
 				<div class="d-flex flex-column-fluid">
 					<!--begin::Container-->
-					<div class="container-fluid">
+					<div class="container">
 						<!--begin::Dashboard-->
-						<!--begin::Dashboard-->
+						<div class="row mt-4 pt-10">
+							<div class="col-xl-4">
+								<div class="card card-custom card-stretch bg-light-danger gutter-b">
+									<!--begin::Header-->
+									<div class="card-header border-0 pt-5">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label font-weight-bolder text-dark">Recently Added Departments</span>
+											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->department_count() ?> Department</span>
+										</h3>										
+									</div>
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body pt-8">
+										<?php 
+											$query = "SELECT * FROM em_department WHERE dept_status = :_status ORDER BY dept_id DESC LIMIT 4";
+											$statement = $connect->prepare($query);
+											$statement->execute(array(
+												':_status' => 'Active'
+											));
+											if($statement->rowCount()){
+												foreach($statement->fetchAll() as $row){
+										?>
+											<!--begin::Item-->
+											<div class="d-flex align-items-center mb-10">
+												<!--begin::Symbol-->
+												<div class="symbol symbol-60 symbol-light-primary mr-5">
+													<?php if($row["dept_image"]){ ?>														
+															<img src="data:image/png;base64,<?php echo base64_encode($row["dept_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["dept_name"] ?>">
+													<?php	}else{ ?>
+																<span class="symbol-label"><?php echo $row["dept_sname"] ?></span>
+													<?php	} ?>
+													
+												</div>
+												<!--end::Symbol-->
+												<!--begin::Text-->
+												<div class="d-flex flex-column font-weight-bold">
+													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["dept_name"] ?></a>
+													<span class="text-muted"><?php echo $row["dept_created_at"] ?></span>
+												</div>
+												<!--end::Text-->
+											</div>
+											<!--end::Item-->
+										<?php
+												}
+											}
+										?>
+									</div>
+									<!--end::Body-->
+								</div>
+							</div>
+							<div class="col-xl-4">
+								<div class="card card-custom card-stretch bg-light-warning gutter-b">
+									<!--begin::Header-->
+									<div class="card-header border-0 pt-5">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label font-weight-bolder text-dark">Recently Added Faculty's</span>
+											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->faculty_count() ?> Faculty's</span>
+										</h3>										
+									</div>
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body pt-8">
+										<?php 
+											$query = "SELECT * FROM em_faculty WHERE fac_status = :_status ORDER BY fac_id DESC LIMIT 4";
+											$statement = $connect->prepare($query);
+											$statement->execute(array(
+												':_status' => 'Active'
+											));
+											if($statement->rowCount()){
+												foreach($statement->fetchAll() as $row){
+										?>
+											<!--begin::Item-->
+											<div class="d-flex align-items-center mb-10">
+												<!--begin::Symbol-->
+												<div class="symbol symbol-60 symbol-light-primary mr-5">
+													<?php if($row["fac_image"]){ ?>														
+															<img src="data:image/png;base64,<?php echo base64_encode($row["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["fac_name"] ?>">
+													<?php	}else{ ?>
+																<span class="symbol-label"><?php echo $row["fac_name"] ?></span>
+													<?php	} ?>
+													
+												</div>
+												<!--end::Symbol-->
+												<!--begin::Text-->
+												<div class="d-flex flex-column font-weight-bold">
+													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["fac_name"] ?></a>
+													<span class="text-muted"><?php echo $row["fac_created_at"] ?></span>
+												</div>
+												<!--end::Text-->
+											</div>
+											<!--end::Item-->
+										<?php
+												}
+											}
+										?>
+									</div>
+									<!--end::Body-->
+								</div>
+							</div>
+							<div class="col-xl-4">
+								<div class="card card-custom card-stretch bg-light-primary gutter-b">
+									<!--begin::Header-->
+									<div class="card-header border-0 pt-5">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label font-weight-bolder text-dark">Recently Added Student's</span>
+											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->student_count() ?> Student</span>
+										</h3>										
+									</div>
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body pt-8">
+										<?php 
+											$query = "SELECT * FROM em_students WHERE fac_status = :_status ORDER BY fac_id DESC LIMIT 4";
+											$statement = $connect->prepare($query);
+											$statement->execute(array(
+												':_status' => 'Active'
+											));
+											if($statement->rowCount()){
+												foreach($statement->fetchAll() as $row){
+										?>
+											<!--begin::Item-->
+											<div class="d-flex align-items-center mb-10">
+												<!--begin::Symbol-->
+												<div class="symbol symbol-60 symbol-light-primary mr-5">
+													<?php if($row["fac_image"]){ ?>														
+															<img src="data:image/png;base64,<?php echo base64_encode($row["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["dept_name"] ?>">
+													<?php	}else{ ?>
+																<span class="symbol-label"><?php echo $row["fac_name"] ?></span>
+													<?php	} ?>
+													
+												</div>
+												<!--end::Symbol-->
+												<!--begin::Text-->
+												<div class="d-flex flex-column font-weight-bold">
+													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["fac_name"] ?></a>
+													<span class="text-muted"><?php echo $row["fac_created_at"] ?></span>
+												</div>
+												<!--end::Text-->
+											</div>
+											<!--end::Item-->
+										<?php
+												}
+											}
+										?>
+									</div>
+									<!--end::Body-->
+								</div>
+							</div>
+						</div>
 						<div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
 							<div class="alert-icon">
 								<span class="svg-icon svg-icon-primary svg-icon-xl">
@@ -233,10 +381,10 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 									<!--end::Svg Icon-->
 								</span>
 							</div>
-							<div class="alert-text font-size-h3 font-weight-bold">Recent Department </div>
+							<div class="alert-text font-size-h3 font-weight-bold">Recently Added Department </div>
 							<div class="card-toolbar">
 								<!--begin::Button-->
-								<button class="btn btn-info font-weight-bolder" data-toggle="modal" data-target="#DepartmentModels" id="add_departments">
+								<button class="btn btn-info font-weight-bolder" data-toggle="modal" data-target="#DepartmentModel" id="add_departments">
 									<span class="svg-icon svg-icon-md">
 										<!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Design/Flatten.svg-->
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -247,86 +395,160 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 											</g>
 										</svg>
 										<!--end::Svg Icon-->
-									</span>New Student
+									</span>New Department
 								</button>
 								<!--end::Button-->
 							</div>
 						</div>
+
 						<div class="row">
-							<?php 
-								$fac = $db->get('em_department',array('dept_status','=','Active'));
-								if($fac->count()){
-									$i = 0;
-									foreach($fac->results() as $row){ $i++; 
-							?>
-								<div class="col-xl-4">
-									<div class="card card-custom gutter-b card-stretch">
-										<!--begin::Card body-->
-										<div class="card-body">
-											<div class="d-flex flex-wrap align-items-center py-1">
-												<!--begin::Pic-->
-												<div class="symbol symbol-80 symbol-light-success mr-5 flex-shrink-0">
-													<?php if($row->dept_image){ ?>														
-															<img src="data:image/png;base64,<?php echo base64_encode($row->dept_image) ?>" class="h-50 align-self-center" alt="">
+							<div class="col-xl-4">
+								<div class="card card-custom card-stretch bg-light-danger gutter-b">
+									<!--begin::Header-->
+									<div class="card-header border-0 pt-5">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label font-weight-bolder text-dark">Recently Added Departments</span>
+											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->department_count() ?> Department</span>
+										</h3>										
+									</div>
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body pt-8">
+										<?php 
+											$query = "SELECT * FROM em_department WHERE dept_status = :_status ORDER BY dept_id DESC LIMIT 4";
+											$statement = $connect->prepare($query);
+											$statement->execute(array(
+												':_status' => 'Active'
+											));
+											if($statement->rowCount()){
+												foreach($statement->fetchAll() as $row){
+										?>
+											<!--begin::Item-->
+											<div class="d-flex align-items-center mb-10">
+												<!--begin::Symbol-->
+												<div class="symbol symbol-60 symbol-light-primary mr-5">
+													<?php if($row["dept_image"]){ ?>														
+															<img src="data:image/png;base64,<?php echo base64_encode($row["dept_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["dept_name"] ?>">
 													<?php	}else{ ?>
-																<span class="symbol-label"><?php echo $row->dept_sname ?></span>
+																<span class="symbol-label"><?php echo $row["dept_sname"] ?></span>
 													<?php	} ?>
 													
 												</div>
-												<!--end::Pic-->
-												<!--begin::Title-->
-												<div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 pr-3">
-													<a href="#" class="text-dark font-weight-bolder text-hover-primary font-size-h5"><span class="symbol-label"><?php echo $row->dept_name ?></span>
-													<br><span class="symbol-label"><?php echo $row->dept_sname ?></span></a>
-													<span class="text-muted font-weight-bold font-size-lg"><span class="symbol-label"><?php echo $row->dept_created_at ?></span></span>
+												<!--end::Symbol-->
+												<!--begin::Text-->
+												<div class="d-flex flex-column font-weight-bold">
+													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["dept_name"] ?></a>
+													<span class="text-muted"><?php echo time_difference($row["dept_created_at"]) ?></span>
 												</div>
-												<!--end::Title-->
-												<!--begin::Stats-->
-												<div class="d-flex flex-column w-100 mt-12">
-													<span class="text-dark mr-2 font-size-lg font-weight-bolder pb-3">Progress</span>
-													<div class="progress progress-xs w-100">
-														<div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-													</div>
-												</div>
-												<!--end::Stats-->
-												<!--begin::Team-->
-												<div class="d-flex flex-column mt-10">
-													<span class="text-dark mr-2 font-size-lg font-weight-bolder pb-4">Team</span>
-													<div class="d-flex">
-														<!--begin::Pic-->
-														<a href="#" class="symbol symbol-50 symbol-light-success mr-3">
-															<div class="symbol-label">
-																<img src="/metronic/theme/html/demo11/dist/assets/media/svg/avatars/001-boy.svg" class="h-75 align-self-end" alt="">
-															</div>
-														</a>
-														<!--end::Pic-->
-														<!--begin::Pic-->
-														<a href="#" class="symbol symbol-50 symbol-light-success mr-3">
-															<div class="symbol-label">
-																<img src="/metronic/theme/html/demo11/dist/assets/media/svg/avatars/028-girl-16.svg" class="h-75 align-self-end" alt="">
-															</div>
-														</a>
-														<!--end::Pic-->
-														<!--begin::Pic-->
-														<a href="#" class="symbol symbol-50 symbol-light-success mr-3">
-															<div class="symbol-label">
-																<img src="/metronic/theme/html/demo11/dist/assets/media/svg/avatars/024-boy-9.svg" class="h-75 align-self-end" alt="">
-															</div>
-														</a>
-														<!--end::Pic-->
-													</div>
-												</div>
-												<!--end::Team-->
+												<!--end::Text-->
 											</div>
-										</div>
-										<!--end::Body-->
+											<!--end::Item-->
+										<?php
+												}
+											}
+										?>
 									</div>
+									<!--end::Body-->
 								</div>
-							<?php
-									}
-								}
-							?>
+							</div>
+							<div class="col-xl-8">
+								<div class="row">
+									<?php 
+										$query = "SELECT * FROM em_department WHERE dept_status = :_status ORDER BY dept_id DESC LIMIT 4";
+										$statement = $connect->prepare($query);
+										$statement->execute(array(
+											':_status' => 'Active'
+										));
+										if($statement->rowCount()){
+											foreach($statement->fetchAll() as $row){
+									?>
+									<div class="col-xl-6">
+										<div class="card card-custom gutter-b">
+											<!--begin::Card body-->
+											<div class="card-body">
+												<div class="d-flex flex-wrap align-items-center py-1">
+													<!--begin::Pic-->
+													<div class="symbol symbol-80 symbol-light-success mr-5 flex-shrink-0">
+														<?php if($row["dept_image"]){ ?>														
+																<img src="data:image/png;base64,<?php echo base64_encode($row["dept_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["dept_name"] ?>">
+														<?php	}else{ ?>
+																	<span class="symbol-label"><?php echo $row["dept_sname"] ?></span>
+														<?php	} ?>
+														
+													</div>
+													<!--end::Pic-->
+													<!--begin::Title-->
+													<div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 pr-3">
+														<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg font-weight-bolder"><?php echo $row["dept_name"] ?></a>
+														<span class="text-muted font-weight-bold font-size-sm mb-1"><i class="fa fa-1x fa-clock mr-1"></i> <?php echo time_difference($row["dept_created_at"]) ?></span>
+														<div class="text-muted font-size-lg">
+															<span class="label label-inline label-danger"><?php echo $row["dept_sname"] ?></span>
+															<span class="label label-inline label-primary"><i class="fa fa-1x fa-at mr-1"></i><?php echo $row["dept_username"] ?></span>
+														</div>
+																												
+														
+													</div>
+													<!--end::Title-->
+													<!--begin::Stats-->
+													<div class="d-flex flex-column w-100 mt-12">
+														<div class="text-dark mr-2 font-size-lg font-weight-bolder pb-3">
+															Students
+															<span class='float-right label label-inline label-danger'><?php echo $user->dept_student_count($row["dept_passkey"]) ?> /100</span>
+														</div>
+														
+														<div class="progress w-100">
+															<div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: <?php echo $user->dept_student_count($row["dept_passkey"]) ?>%;" aria-valuenow="<?php echo $user->dept_student_count($row["dept_passkey"]) ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $user->dept_student_count($row["dept_passkey"]) ?>%</div>
+														</div>
+													</div>
+													<!--end::Stats-->
+													<!--begin::Team-->
+													<div class="d-flex flex-column w-100 mt-10">														
+														<div class="text-dark mr-2 font-size-lg font-weight-bolder pb-3">
+															Faculty's
+															<span class='float-right label label-inline label-primary'><?php echo $user->dept_faculty_count($row["dept_passkey"]) ?> /100</span>
+														</div>
+														<div class="symbol-list d-flex flex-wrap ml-1">
+															<?php 
+																$query = "SELECT * FROM em_faculty WHERE fac_dept_hash = :_hash AND fac_status = :_status ORDER BY RAND() LIMIT 8";
+																$statement = $connect->prepare($query);
+																$statement->execute(array(
+																	':_status' => 'Active',
+																	':_hash' => $row["dept_passkey"]
+																));
+																if($statement->rowCount()){
+																	foreach($statement->fetchAll() as $rows){
+																
+															?>
+															<!--begin::Pic-->
+															<a href="#" class="symbol symbol-40 mr-3">
+																<?php if($rows["fac_image"]){ ?>														
+																		<img src="data:image/png;base64,<?php echo base64_encode($rows["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $rows["fac_name"] ?>">
+																<?php	}else{ ?>
+																			<span class="symbol-label"><?php echo $rows["fac_name"] ?></span>
+																<?php	} ?>
+																
+															</a>
+															<!--end::Pic-->	
+															<?php
+																	}
+																}
+															?>													
+														</div>
+													</div>
+													<!--end::Team-->
+												</div>
+											</div>
+											<!--end::Body-->
+										</div>
+									</div>
+									<?php
+											}
+										}
+									?>
+								</div>
+							</div>
 						</div>
+
 						<!--begin::Row-->
 						<div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
 							<div class="alert-icon">

@@ -67,6 +67,46 @@ class DB
                     return $this;
                 }
             }
+        } elseif (count($where) === 6) {
+            $operators = array('=', '>', '<', '>=', '<=', '!=');
+
+            $field = $where[0];
+            $operator = $where[1];
+            $value = $where[2];
+
+            $field1 = $where[3];
+            $operator1 = $where[4];
+            $value1 = $where[5];
+
+            if (in_array($operator, $operators)) {
+                $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ? AND {$field1} {$operator1} ?";
+
+                if (!$this->query($sql, array($value, $value1))->error()) {
+                    return $this;
+                }
+            }
+        } else {
+            $operators = array('=', '>', '<', '>=', '<=', '!=');
+
+            $field = $where[0];
+            $operator = $where[1];
+            $value = $where[2];
+
+            $field1 = $where[3];
+            $operator1 = $where[4];
+            $value1 = $where[5];
+
+            $clouse = $where[6];
+            $field2 = $where[7];
+            $operator2 = $where[8];
+            $value2 = $where[9];
+
+            if (in_array($operator, $operators)) {
+                $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ? AND {$field1} {$operator1} ? {$clouse} {$field2} {$operator2} ?";
+                if (!$this->query($sql, array($value, $value1, $value2))->error()) {
+                    return $this;
+                }
+            }
         }
 
         return false;
