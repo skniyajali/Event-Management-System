@@ -256,13 +256,13 @@ if (Input::exists()) {
                     $ett_number = '+91'. $_POST["te_phone"];
                     $ett_name = $_POST["te_name"];
                     // Your Account SID and Auth Token from twilio.com/console
-                    $account_sid = 'ACaa3b76c388e4ac6f3bdb1bf870369f5c';
-                    $auth_token = 'f6d6a5f5e456053dbe2464b78cf1fe7a';
+                    $account_sid = '';
+                    $auth_token = '';
                     // In production, these should be environment variables. E.g.:
                     // $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
 
                     // A Twilio number you own with SMS capabilities
-                    $twilio_number = "+12074219132";
+                    $twilio_number = "";
                     $client = new Client($account_sid, $auth_token);
                     $client->messages->create(
                         // Where to send a text message (your cell phone?)
