@@ -86,6 +86,16 @@ class User
         }
     }
 
+    public function department_name($user)
+    {
+        $data = $this->_db->get('em_department', array('dept_passkey', '=', $user));
+        if ($data->count()) {
+            return $data->first()->dept_sname;
+        } else {
+            return '';
+        }
+    }
+
     public function faculty_count()
     {
         $data = $this->_db->get('em_faculty', array('fac_status', '=', 'Active'));

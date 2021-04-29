@@ -61,7 +61,7 @@ foreach($result as $row)
     $sub_array[] = $row["dept_username"];
     $sub_array[] = '<span class="label label-warning label-pill label-inline mr-2" id="status">' . $status . '</span>';
 	$sub_array[] = $row["dept_created_at"];
-    $sub_array[] = '<a href="profile/index.php?emd_department_hash=' . convert_string('decrypt',$row["dept_hash"]) . '&em_admin=admin" id="' . convert_string('decrypt',$row["dept_hash"]) . '" class="ett_profile btn btn-sm btn-clean btn-icon" title="View Profile"> <i class="la la-cog"></i> </a> <button id="' . $row["dept_hash"] . '" name="ett_edit" class="ett_edit btn btn-sm btn-clean btn-icon" title="Teacher Details"> <i class="la la-eye"></i> </button> <a id="' . $row["dept_hash"] . '" name="ett_delete" class="ett_delete btn btn-sm btn-clean btn-icon" title="Update Status" data-status="' . $row["dept_status"] . '"> <i class="la la-trash"></i> </a>';
+    $sub_array[] = '<a href="profile/index.php?emd_department_hash=' . convert_string('decrypt',$row["dept_hash"]) . '&em_admin=admin" id="' . convert_string('decrypt',$row["dept_hash"]) . '" class="ett_profile btn btn-sm btn-clean btn-icon" title="View Profile"> <i class="la la-cog"></i> </a> <button id="' . convert_string('decrypt',$row["dept_hash"]) . '" name="ett_edit" class="ett_edit btn btn-sm btn-clean btn-icon" title="Teacher Details"> <i class="la la-eye"></i> </button> <a id="' . convert_string('decrypt',$row["dept_hash"]) . '" name="ett_delete" class="ett_delete btn btn-sm btn-clean btn-icon" title="Update Status" data-status="' . $row["dept_status"] . '"> <i class="la la-trash"></i> </a>';
 	$data[] = $sub_array;
 
 }

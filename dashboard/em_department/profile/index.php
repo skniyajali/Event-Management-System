@@ -6,12 +6,7 @@ require '../../includes/function.php';
 require '../../includes/db.php';
 $user = new User();
 if($user->isLoggedIn()){
-    function description($string) {	
-        $expr = '/(?<=\s|^)[A-Z]/';
-        preg_match_all($expr, $string, $matches);    
-        $result = implode('', $matches[0]);
-        return $result;
-     }
+    
 
 ?>
 <?php

@@ -114,7 +114,7 @@ if (isset($_POST["operation"])) {
 		$statement = $connect->prepare($query);
 		$statement->execute(
 			array(
-				':ett_id' => $_POST['ett_id']
+				':ett_id' => convert_string('encrypt',$_POST['ett_id'])
 			)
 		);
 		$result = $statement->fetchAll();
@@ -143,7 +143,7 @@ if (isset($_POST["operation"])) {
 		$statement->execute(
 			array(
 				':ett_status'  =>  $ett_status,
-				':ett_hash'      =>  $_POST["ett_id"]
+				':ett_hash'      =>  convert_string('encrypt',$_POST['ett_id'])
 			)
 		);
 		$result = $statement->fetchAll();

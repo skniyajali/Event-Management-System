@@ -8,7 +8,7 @@ $db = DB::getInstance();
 
 <!DOCTYPE html>
 <!--
-Page Name: Enhanced Teaching
+Page Name: Event Management System(EMS)
 Author: Sk Niyaj Ali
 Website: https://www.niyaj.enhancedteaching.co.in/
 Contact: niyaj320@gmail.com
@@ -218,7 +218,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 					<!--begin::Container-->
 					<div class="container">
 						<!--begin::Dashboard-->
-						<div class="row mt-4 pt-10">
+						<div class="row mt-4 pt-10">							
 							<div class="col-xl-4">
 								<div class="card card-custom card-stretch bg-light-danger gutter-b">
 									<!--begin::Header-->
@@ -415,7 +415,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 									<!--begin::Body-->
 									<div class="card-body pt-8">
 										<?php 
-											$query = "SELECT * FROM em_department WHERE dept_status = :_status ORDER BY dept_id DESC LIMIT 4";
+											$query = "SELECT * FROM em_department WHERE dept_status = :_status ORDER BY dept_id DESC LIMIT 6";
 											$statement = $connect->prepare($query);
 											$statement->execute(array(
 												':_status' => 'Active'
@@ -437,8 +437,8 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 												<!--end::Symbol-->
 												<!--begin::Text-->
 												<div class="d-flex flex-column font-weight-bold">
-													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["dept_name"] ?></a>
-													<span class="text-muted"><?php echo time_difference($row["dept_created_at"]) ?></span>
+													<a href="em_department/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row["dept_passkey"]) ?>&&em_admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["dept_name"] ?></a>
+													<span class="text-muted"><i class="fa fa-clock text-danger fa-1x mr-2"></i><?php echo time_difference($row["dept_created_at"]) ?></span>
 												</div>
 												<!--end::Text-->
 											</div>
@@ -479,7 +479,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 													<!--end::Pic-->
 													<!--begin::Title-->
 													<div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 pr-3">
-														<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg font-weight-bolder"><?php echo $row["dept_name"] ?></a>
+														<a href="em_department/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row["dept_passkey"]) ?>&&em_admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="text-dark text-hover-primary mb-1 font-size-lg font-weight-bolder"><?php echo $row["dept_name"] ?></a>
 														<span class="text-muted font-weight-bold font-size-sm mb-1"><i class="fa fa-1x fa-clock mr-1"></i> <?php echo time_difference($row["dept_created_at"]) ?></span>
 														<div class="text-muted font-size-lg">
 															<span class="label label-inline label-danger"><?php echo $row["dept_sname"] ?></span>
@@ -520,7 +520,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 																
 															?>
 															<!--begin::Pic-->
-															<a href="#" class="symbol symbol-40 mr-3">
+															<a href="em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$rows["fac_passkey"]) ?>&&em_admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="symbol symbol-40 mr-3">
 																<?php if($rows["fac_image"]){ ?>														
 																		<img src="data:image/png;base64,<?php echo base64_encode($rows["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $rows["fac_name"] ?>">
 																<?php	}else{ ?>
@@ -548,6 +548,188 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 								</div>
 							</div>
 						</div>
+
+						<div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
+							<div class="alert-icon">
+								<span class="svg-icon svg-icon-primary svg-icon-xl">
+									<!--begin::Svg Icon | path:/metronic/theme/html/demo11/dist/assets/media/svg/icons/Tools/Compass.svg-->
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<rect x="0" y="0" width="24" height="24"></rect>
+											<path d="M7.07744993,12.3040451 C7.72444571,13.0716094 8.54044565,13.6920474 9.46808594,14.1079953 L5,23 L4.5,18 L7.07744993,12.3040451 Z M14.5865511,14.2597864 C15.5319561,13.9019016 16.375416,13.3366121 17.0614026,12.6194459 L19.5,18 L19,23 L14.5865511,14.2597864 Z M12,3.55271368e-14 C12.8284271,3.53749572e-14 13.5,0.671572875 13.5,1.5 L13.5,4 L10.5,4 L10.5,1.5 C10.5,0.671572875 11.1715729,3.56793164e-14 12,3.55271368e-14 Z" fill="#000000" opacity="0.3"></path>
+											<path d="M12,10 C13.1045695,10 14,9.1045695 14,8 C14,6.8954305 13.1045695,6 12,6 C10.8954305,6 10,6.8954305 10,8 C10,9.1045695 10.8954305,10 12,10 Z M12,13 C9.23857625,13 7,10.7614237 7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 C17,10.7614237 14.7614237,13 12,13 Z" fill="#000000" fill-rule="nonzero"></path>
+										</g>
+									</svg>
+									<!--end::Svg Icon-->
+								</span>
+							</div>
+							<div class="alert-text font-size-h3 font-weight-bold">Recently Added Faculty </div>
+							<div class="card-toolbar">
+								<!--begin::Button-->
+								<button class="btn btn-danger font-weight-bolder" data-toggle="modal" data-target="#DepartmentModel" id="add_department">
+									<span class="svg-icon svg-icon-md">
+										<!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Design/Flatten.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<rect x="0" y="0" width="24" height="24"></rect>
+												<circle fill="#000000" cx="9" cy="15" r="6"></circle>
+												<path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3"></path>
+											</g>
+										</svg>
+										<!--end::Svg Icon-->
+									</span>New Faculty
+								</button>
+								<!--end::Button-->
+							</div>
+						</div>
+						<!--begin::Row-->
+						<div class="row">
+							<div class="col-xl-4">
+								<div class="card card-custom card-stretch bg-light-warning gutter-b">
+									<!--begin::Header-->
+									<div class="card-header border-0 pt-5">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label font-weight-bolder text-dark">Recently Added Faculty's</span>
+											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->faculty_count() ?> Faculty's</span>
+										</h3>										
+									</div>
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body pt-8">
+										<?php 
+											$query = "SELECT * FROM em_faculty WHERE fac_status = :_status ORDER BY fac_id DESC LIMIT 7";
+											$statement = $connect->prepare($query);
+											$statement->execute(array(
+												':_status' => 'Active'
+											));
+											if($statement->rowCount()){
+												foreach($statement->fetchAll() as $row){
+										?>
+											<!--begin::Item-->
+											<div class="d-flex align-items-center mb-10">
+												<!--begin::Symbol-->
+												<div class="symbol symbol-60 symbol-light-primary mr-5">
+													<?php if($row["fac_image"]){ ?>														
+															<img src="data:image/png;base64,<?php echo base64_encode($row["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["fac_name"] ?>">
+													<?php	}else{ ?>
+																<span class="symbol-label"><?php echo $row["fac_name"] ?></span>
+													<?php	} ?>
+													
+												</div>
+												<!--end::Symbol-->
+												<!--begin::Text-->
+												<div class="d-flex flex-column font-weight-bold">
+													<a href="em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row["fac_passkey"]) ?>&&em_admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["fac_name"] ?></a>
+													<span class="text-muted"><i class="fa fa-1x fa-clock text-warning mr-2"></i><?php echo time_difference($row["fac_created_at"]) ?></span>
+												</div>
+												<!--end::Text-->
+											</div>
+											<!--end::Item-->
+										<?php
+												}
+											}
+										?>
+									</div>
+									<!--end::Body-->
+								</div>
+							</div>
+							<div class="col-xl-8">
+								<div class="row">
+									<?php 
+										$fac = $db->get('em_faculty',array('fac_status','=','Active'));
+										if($fac->count()){
+											$i = 0;
+											foreach($fac->results() as $row){ $i++; 
+									?>
+									<div class="col-lg-6">
+										<!--begin::List Widget 14-->
+										<div class="card card-custom gutter-b card-stretch">
+											<!--begin::Body-->
+											<div class="card-body pt-4 ribbon ribbon-clip ribbon-right">
+												<?php  
+													if($row->fac_role == 'HOD'){
+														$bg = 'bg-primary';
+													}elseif($row->fac_role == 'Faculty'){
+														$bg = 'bg-info';
+													}else{
+														$bg = 'bg-danger';
+													}
+												?>
+												<div class="ribbon-target" style="top: 12px;">
+													<span class="ribbon-inner <?php echo $bg ?>"></span><?php echo $row->fac_role ?>
+												</div>												
+												<!--begin::User-->
+												<div class="d-flex align-items-center flex-column flex-center mb-7">
+													<!--begin::Pic-->
+													<div class="d-flex flex-column flex-center flex-shrink-0 mr-4">
+														<?php if($row->fac_image){ ?>
+															<div class="symbol symbol-circle symbol-100">
+																<img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" alt="<?php echo $row->fac_name ?> image">
+															</div>
+														<?php }else{ ?> 
+															<div class="symbol symbol-circle symbol-100">
+																<div class="symbol-label font-size-auto"><?php echo description($row->fac_name) ?></div>
+															</div>
+														<?php } ?>
+														
+													</div>
+													<!--end::Pic-->
+													<!--begin::Title-->
+													<div class="d-flex flex-center flex-column mt-2">
+														<a href="em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0"><?php echo $row->fac_name ?></a>
+														<div class="mt-1">
+															<span class="text-white font-weight-bold label label-inline label-danger"><?php echo $user->department_name($row->fac_dept_hash) ?></span>
+															<span class="ml-2 text-white font-weight-bold label label-inline label-primary"><?php echo $row->fac_designation ?></span>
+														</div>
+														
+													</div>
+													<!--end::Title-->
+												</div>
+												<!--end::User-->                                                    
+												<!--begin::Info-->
+												<div class="mb-7">
+													<div class="d-flex justify-content-between align-items-center">
+														<span class="text-dark-75 font-weight-bolder mr-2">Email:</span>
+														<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_email ?></a>
+													</div>
+													<div class="d-flex justify-content-between align-items-cente my-1">
+														<span class="text-dark-75 font-weight-bolder mr-2">Phone:</span>
+														<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_phone ?></a>
+													</div>
+													<div class="d-flex justify-content-between align-items-center">
+														<span class="text-dark-75 font-weight-bolder mr-2">Desegination:</span>
+														<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_designation ?></a>
+													</div>
+													<div class="d-flex justify-content-between align-items-cente my-1">
+														<span class="text-dark-75 font-weight-bolder mr-2">Qualification:</span>
+														<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_qualification ?></a>
+													</div>
+													<div class="d-flex justify-content-between align-items-center">
+														<span class="text-dark-75 font-weight-bolder mr-2">Location:</span>
+														<span class="text-muted font-weight-bold"><?php echo $row->fac_address ?></span>
+													</div>
+													<div class="d-flex justify-content-between align-items-center">
+														<span class="text-dark-75 font-weight-bolder mr-2">Created At:</span>
+														<span class="text-muted font-weight-bold"><?php echo $row->fac_created_at ?></span>
+													</div>
+												</div>
+												<!--end::Info-->
+												<div class="text-center">
+													<a href="em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="btn btn-danger font-weight-bolder font-size-sm py-3 px-14">View Profile</a>
+												</div>
+											</div>
+											<!--end::Body-->
+										</div>
+										<!--end::List Widget 14-->
+									</div>
+									<?php
+											}
+										}
+									?>
+								</div>
+							</div>
+						</div>
+						<!--end::Row-->
 
 						<!--begin::Row-->
 						<div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
@@ -585,226 +767,157 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 						</div>
 						<!--begin::Row-->
 						<div class="row">
-							<?php 
-								$fac = $db->get('em_students',array('fac_status','=','Active'));
-								if($fac->count()){
-									$i = 0;
-									foreach($fac->results() as $row){ $i++; 
-							?>
-							<div class="col-lg-4">                                            
-								<div class="card card-custom gutter-b">
-									<!--begin::Body-->
-									<div class="card-body">
-										<!--begin::Wrapper-->
-										<div class="d-flex justify-content-between flex-column pt-4 h-100">
-											<!--begin::Container-->
-											<div class="pb-5">
-												<!--begin::Header-->
-												<div class="d-flex flex-column flex-center">
-													<?php  
-														if($row->fac_year == 1){
-															$year = "First Year";
-														}elseif($row->fac_year == 2){
-															$year = "Second Year";
-														}elseif($row->fac_year == 3){
-															$year = "Third Year";
-														}else{
-															$year = "Final Year";
-														}
-
-													?>
-													<!--begin::Symbol-->                                                                                                                                
-													<?php if($row->fac_image){ ?>
-														<div class="symbol symbol-120 symbol-circle symbol-success overflow-hidden">
-															<img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" alt="<?php echo $row->fac_name ?> image">
-														</div>
-													<?php }else{ ?> 
-														<div class="symbol symbol-120 symbol-circle symbol-success overflow-hidden">
-															<div class="symbol-label font-size-auto"><?php echo description($row->fac_name) ?></div>
-														</div>
-													<?php } ?>
-													<!--end::Symbol-->
-													<!--begin::Username-->
-													<a href="#" class="card-title font-weight-bolder text-dark-75 text-hover-primary font-size-h4 m-0 pt-7 pb-1"><?php echo $row->fac_name ?></a>
-													<!--end::Username-->
-													<!--begin::Info-->
-													<div class="font-weight-bold text-dark-50 font-size-sm pb-6"><span class="label label-lg label-light-primary label-inline"><?php echo $year ?></span><span class="label label-lg ml-2 label-light-danger label-inline"><?php echo $row->fac_gender ?></span></div>
-													<!--end::Info-->
-												</div>
-												<!--end::Header-->
-												<!--begin::Body-->
-												<!--begin::Info-->
-												<div class="pt-1">
-													<div class="d-flex justify-content-between align-items-center">
-														<span class="text-dark-75 font-weight-bolder mr-2">Email:</span>
-														<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_email ?></a>
-													</div>
-													<div class="d-flex justify-content-between align-items-cente my-1">
-														<span class="text-dark-75 font-weight-bolder mr-2">Phone:</span>
-														<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_phone ?></a>
-													</div>
-													<div class="d-flex justify-content-between align-items-center">
-														<span class="text-dark-75 font-weight-bolder mr-2">Date of Birth:</span>
-														<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_dob ?></a>
-													</div>
-													<div class="d-flex justify-content-between align-items-cente my-1">
-														<span class="text-dark-75 font-weight-bolder mr-2">Mentor:</span>
-														<a href="#" class=" text-hover-primary label label-danger label-inline"><?php echo $row->fac_mentor ?></a>
-													</div>
-													<div class="d-flex justify-content-between align-items-center my-1">
-														<span class="text-dark-75 font-weight-bolder mr-2">Location:</span>
-														<span class="text-muted font-weight-bold"><?php echo $row->fac_address ?></span>
-													</div>
-													<div class="d-flex justify-content-between align-items-center">
-														<span class="text-dark-75 font-weight-bolder mr-2">Created At:</span>
-														<span class="text-muted font-weight-bold"><?php echo $row->fac_created_at ?></span>
-													</div>
-												</div>
-												<!--end::Info-->
-												<!--end::Body-->
-											</div>
-											<!--eng::Container-->
-											<!--begin::Footer-->
-											<div class="d-flex flex-center" id="kt_sticky_toolbar_chat_toggler_1">
-												<a href="../../em_student/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="btn btn-primary font-weight-bolder font-size-sm py-3 px-14">View Profile</a>
-											</div>
-											<!--end::Footer-->
-										</div>
-										<!--end::Wrapper-->
+							<div class="col-xl-4">
+								<div class="card card-custom card-stretch bg-light-primary gutter-b">
+									<!--begin::Header-->
+									<div class="card-header border-0 pt-5">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label font-weight-bolder text-dark">Recently Added Student's</span>
+											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->student_count() ?> Student</span>
+										</h3>										
 									</div>
-									<!--end::Body-->
-								</div>
-							</div>
-							<?php
-									}
-								}
-							?>
-						</div>
-						<!--end::Row-->
-
-						<div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
-							<div class="alert-icon">
-								<span class="svg-icon svg-icon-primary svg-icon-xl">
-									<!--begin::Svg Icon | path:/metronic/theme/html/demo11/dist/assets/media/svg/icons/Tools/Compass.svg-->
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-											<rect x="0" y="0" width="24" height="24"></rect>
-											<path d="M7.07744993,12.3040451 C7.72444571,13.0716094 8.54044565,13.6920474 9.46808594,14.1079953 L5,23 L4.5,18 L7.07744993,12.3040451 Z M14.5865511,14.2597864 C15.5319561,13.9019016 16.375416,13.3366121 17.0614026,12.6194459 L19.5,18 L19,23 L14.5865511,14.2597864 Z M12,3.55271368e-14 C12.8284271,3.53749572e-14 13.5,0.671572875 13.5,1.5 L13.5,4 L10.5,4 L10.5,1.5 C10.5,0.671572875 11.1715729,3.56793164e-14 12,3.55271368e-14 Z" fill="#000000" opacity="0.3"></path>
-											<path d="M12,10 C13.1045695,10 14,9.1045695 14,8 C14,6.8954305 13.1045695,6 12,6 C10.8954305,6 10,6.8954305 10,8 C10,9.1045695 10.8954305,10 12,10 Z M12,13 C9.23857625,13 7,10.7614237 7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 C17,10.7614237 14.7614237,13 12,13 Z" fill="#000000" fill-rule="nonzero"></path>
-										</g>
-									</svg>
-									<!--end::Svg Icon-->
-								</span>
-							</div>
-							<div class="alert-text font-size-h3 font-weight-bold">Recently Added Faculty </div>
-							<div class="card-toolbar">
-								<!--begin::Button-->
-								<button class="btn btn-danger font-weight-bolder" data-toggle="modal" data-target="#DepartmentModel" id="add_department">
-									<span class="svg-icon svg-icon-md">
-										<!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Design/Flatten.svg-->
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-												<rect x="0" y="0" width="24" height="24"></rect>
-												<circle fill="#000000" cx="9" cy="15" r="6"></circle>
-												<path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3"></path>
-											</g>
-										</svg>
-										<!--end::Svg Icon-->
-									</span>New Faculty
-								</button>
-								<!--end::Button-->
-							</div>
-						</div>
-						<!--begin::Row-->
-						<div class="row">
-							<?php 
-								$fac = $db->get('em_faculty',array('fac_status','=','Active'));
-								if($fac->count()){
-									$i = 0;
-									foreach($fac->results() as $row){ $i++; 
-							?>
-							<div class="col-lg-4">
-								<!--begin::List Widget 14-->
-								<div class="card card-custom gutter-b card-stretch">
+									<!--end::Header-->
 									<!--begin::Body-->
-									<div class="card-body pt-4 ribbon ribbon-clip ribbon-right">
-										<?php  
-											if($row->fac_role == 'HOD'){
-												$bg = 'bg-primary';
-											}elseif($row->fac_role == 'Faculty'){
-												$bg = 'bg-info';
-											}else{
-												$bg = 'bg-danger';
+									<div class="card-body pt-8">
+										<?php 
+											$query = "SELECT * FROM em_students WHERE fac_status = :_status ORDER BY fac_id DESC LIMIT 7";
+											$statement = $connect->prepare($query);
+											$statement->execute(array(
+												':_status' => 'Active'
+											));
+											if($statement->rowCount()){
+												foreach($statement->fetchAll() as $row){
+										?>
+											<!--begin::Item-->
+											<div class="d-flex align-items-center mb-10">
+												<!--begin::Symbol-->
+												<div class="symbol symbol-60 symbol-light-primary mr-5">
+													<?php if($row["fac_image"]){ ?>														
+															<img src="data:image/png;base64,<?php echo base64_encode($row["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["fac_name"] ?>">
+													<?php	}else{ ?>
+																<span class="symbol-label"><?php echo $row["fac_name"] ?></span>
+													<?php	} ?>
+													
+												</div>
+												<!--end::Symbol-->
+												<!--begin::Text-->
+												<div class="d-flex flex-column font-weight-bold">
+													<a href="em_student/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$rows["fac_passkey"]) ?>&&em_admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["fac_name"] ?></a>
+													<span class="text-muted"><?php echo $row["fac_created_at"] ?></span>
+												</div>
+												<!--end::Text-->
+											</div>
+											<!--end::Item-->
+										<?php
+												}
 											}
 										?>
-										<div class="ribbon-target" style="top: 12px;">
-											<span class="ribbon-inner <?php echo $bg ?>"></span><?php echo $row->fac_role ?>
-										</div>												
-										<!--begin::User-->
-										<div class="d-flex align-items-center mb-7">
-											<!--begin::Pic-->
-											<div class="flex-shrink-0 mr-4">
-												<?php if($row->fac_image){ ?>
-													<div class="symbol symbol-circle symbol-lg-75">
-														<img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" alt="<?php echo $row->fac_name ?> image">
-													</div>
-												<?php }else{ ?> 
-													<div class="symbol symbol-circle symbol-lg-75">
-														<div class="symbol-label font-size-auto"><?php echo description($row->fac_name) ?></div>
-													</div>
-												<?php } ?>
-												
-											</div>
-											<!--end::Pic-->
-											<!--begin::Title-->
-											<div class="d-flex flex-column">
-												<a href="#" class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0"><?php echo $row->fac_name ?></a>
-												<span class="text-muted font-weight-bold"><?php echo $row->fac_designation ?></span>
-											</div>
-											<!--end::Title-->
-										</div>
-										<!--end::User-->                                                    
-										<!--begin::Info-->
-										<div class="mb-7">
-											<div class="d-flex justify-content-between align-items-center">
-												<span class="text-dark-75 font-weight-bolder mr-2">Email:</span>
-												<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_email ?></a>
-											</div>
-											<div class="d-flex justify-content-between align-items-cente my-1">
-												<span class="text-dark-75 font-weight-bolder mr-2">Phone:</span>
-												<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_phone ?></a>
-											</div>
-											<div class="d-flex justify-content-between align-items-center">
-												<span class="text-dark-75 font-weight-bolder mr-2">Desegination:</span>
-												<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_designation ?></a>
-											</div>
-											<div class="d-flex justify-content-between align-items-cente my-1">
-												<span class="text-dark-75 font-weight-bolder mr-2">Qualification:</span>
-												<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_qualification ?></a>
-											</div>
-											<div class="d-flex justify-content-between align-items-center">
-												<span class="text-dark-75 font-weight-bolder mr-2">Location:</span>
-												<span class="text-muted font-weight-bold"><?php echo $row->fac_address ?></span>
-											</div>
-											<div class="d-flex justify-content-between align-items-center">
-												<span class="text-dark-75 font-weight-bolder mr-2">Created At:</span>
-												<span class="text-muted font-weight-bold"><?php echo $row->fac_created_at ?></span>
-											</div>
-										</div>
-										<!--end::Info-->
-										<a href="../../em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="btn btn-block btn-sm btn-light-info font-weight-bolder text-uppercase py-4">View Profile</a>
 									</div>
 									<!--end::Body-->
 								</div>
-								<!--end::List Widget 14-->
 							</div>
-							<?php
-									}
-								}
-							?>
+							<div class="col-xl-8">
+								<div class="row">																
+									<?php 
+										$fac = $db->get('em_students',array('fac_status','=','Active'));
+										if($fac->count()){
+											$i = 0;
+											foreach($fac->results() as $row){ $i++; 
+									?>
+									<div class="col-lg-6">                                            
+										<div class="card card-custom gutter-b">
+											<!--begin::Body-->
+											<div class="card-body">
+												<!--begin::Wrapper-->
+												<div class="d-flex justify-content-between flex-column pt-4 h-100">
+													<!--begin::Container-->
+													<div class="pb-5">
+														<!--begin::Header-->
+														<div class="d-flex flex-column flex-center">
+															<?php  
+																if($row->fac_year == 1){
+																	$year = "First Year";
+																}elseif($row->fac_year == 2){
+																	$year = "Second Year";
+																}elseif($row->fac_year == 3){
+																	$year = "Third Year";
+																}else{
+																	$year = "Final Year";
+																}
+
+															?>
+															<!--begin::Symbol-->                                                                                                                                
+															<?php if($row->fac_image){ ?>
+																<div class="symbol symbol-120 symbol-circle symbol-success overflow-hidden">
+																	<img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" alt="<?php echo $row->fac_name ?> image">
+																</div>
+															<?php }else{ ?> 
+																<div class="symbol symbol-120 symbol-circle symbol-success overflow-hidden">
+																	<div class="symbol-label font-size-auto"><?php echo description($row->fac_name) ?></div>
+																</div>
+															<?php } ?>
+															<!--end::Symbol-->
+															<!--begin::Username-->
+															<a href="#" class="card-title font-weight-bolder text-dark-75 text-hover-primary font-size-h4 m-0 pt-7 pb-1"><?php echo $row->fac_name ?></a>
+															<!--end::Username-->
+															<!--begin::Info-->
+															<div class="font-weight-bold text-dark-50 font-size-sm pb-6"><span class="label label-lg label-light-primary label-inline"><?php echo $year ?></span><span class="label label-lg ml-2 label-light-danger label-inline"><?php echo $row->fac_gender ?></span></div>
+															<!--end::Info-->
+														</div>
+														<!--end::Header-->
+														<!--begin::Body-->
+														<!--begin::Info-->
+														<div class="pt-1">
+															<div class="d-flex justify-content-between align-items-center">
+																<span class="text-dark-75 font-weight-bolder mr-2">Email:</span>
+																<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_email ?></a>
+															</div>
+															<div class="d-flex justify-content-between align-items-cente my-1">
+																<span class="text-dark-75 font-weight-bolder mr-2">Phone:</span>
+																<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_phone ?></a>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<span class="text-dark-75 font-weight-bolder mr-2">Date of Birth:</span>
+																<a href="#" class="text-muted text-hover-primary"><?php echo $row->fac_dob ?></a>
+															</div>
+															<div class="d-flex justify-content-between align-items-cente my-1">
+																<span class="text-dark-75 font-weight-bolder mr-2">Mentor:</span>
+																<a href="#" class=" text-hover-primary label label-danger label-inline"><?php echo $row->fac_mentor ?></a>
+															</div>
+															<div class="d-flex justify-content-between align-items-center my-1">
+																<span class="text-dark-75 font-weight-bolder mr-2">Location:</span>
+																<span class="text-muted font-weight-bold"><?php echo $row->fac_address ?></span>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<span class="text-dark-75 font-weight-bolder mr-2">Created At:</span>
+																<span class="text-muted font-weight-bold"><?php echo $row->fac_created_at ?></span>
+															</div>
+														</div>
+														<!--end::Info-->
+														<!--end::Body-->
+													</div>
+													<!--eng::Container-->
+													<!--begin::Footer-->
+													<div class="d-flex flex-center">
+														<a href="../../em_student/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="btn btn-primary font-weight-bolder font-size-sm py-3 px-14">View Profile</a>
+													</div>
+													<!--end::Footer-->
+												</div>
+												<!--end::Wrapper-->
+											</div>
+											<!--end::Body-->
+										</div>
+									</div>
+									<?php
+											}
+										}
+									?>
+								</div>
+							</div>
 						</div>
 						<!--end::Row-->
 
+						
 						<!--begin::Advance Table: Widget 7-->
 						<div class="card card-custom gutter-b">
 							<!--begin::Header-->
@@ -867,7 +980,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 													</div>
 												</td>
 												<td class="pl-0">
-													<a href="../../em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg"><?php echo $row->fac_name ?></a>
+													<a href="em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg"><?php echo $row->fac_name ?></a>
 													<span class="text-muted font-weight-bold d-block mt-1 mb-1"><?php echo $row->fac_email ?></span>
 													<span class="text-muted font-weight-bold d-block"><?php echo $row->fac_phone ?></span>
 												</td>
@@ -1036,7 +1149,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 													<span class="label label-lg label-light-danger label-inline"><?php echo $row->fac_status ?></span>
 												</td>
 												<td class="pr-0 text-right">
-													<a href="../../em_student/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_hash) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="btn btn-icon btn-light btn-hover-primary btn-sm">
+													<a href="em_student/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt',$row->fac_hash) ?>&&admin=<?php echo convert_string('decrypt',$user->data()->passkey) ?>" class="btn btn-icon btn-light btn-hover-primary btn-sm">
 														<span class="svg-icon svg-icon-md svg-icon-primary">
 															<!--begin::Svg Icon | path:/metronic/theme/html/demo11/dist/assets/media/svg/icons/General/Settings-1.svg-->
 															<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1790,9 +1903,11 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 </script>
 <!--begin::Global Theme Bundle(used by all pages)-->
 <script src="theme/plugins/global/plugins.bundlec7e5.min.js"></script>
-<!--
+<!---->
 <script src="theme/plugins/custom/prismjs/prismjs.bundlec7e5.js"></script>
--->
+
+<script src="theme/js/pages/widgetsc7e5.js"></script>
+
 <script src="theme/js/scripts.bundlec7e5.min.js"></script>
 <!--end::Global Theme Bundle-->
 <!--begin::Page Vendors(used by this page)-->
