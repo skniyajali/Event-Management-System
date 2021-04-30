@@ -2,9 +2,9 @@
 
 require_once 'core/init.php';
 require '../../includes/function.php';
+require '../../includes/db.php';
 $user = new User();
 if ($user->isLoggedIn()) {
-
 ?>
     <?php
     if (!$ett_hash = Input::get('emd_department_hash')) {
@@ -16,6 +16,7 @@ if ($user->isLoggedIn()) {
             Redirect::to('../index.php');
         } else {
             $data = $ett_teacher->data();
+            $db = DB::getInstance();
 
     ?>
 
@@ -56,7 +57,8 @@ if ($user->isLoggedIn()) {
 
             <head>
                 <meta charset="utf-8" />
-                <title><?php echo escape($data->dept_name) ?> | Account Information</title>
+                <title><?php echo escape($data->dept_name) ?> | Faculty Information</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <link rel="canonical" href="https://niyaj.enhancedteaching.co.in" />
                 <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
                 <meta name="description" content="EMS Department" />
@@ -185,75 +187,7 @@ if ($user->isLoggedIn()) {
                                                 <!--end::Svg Icon-->
                                             </span>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                            <!--begin::Navigation-->
-                                            <ul class="navi navi-hover py-5">
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-drop"></i>
-                                                        </span>
-                                                        <span class="navi-text">New Group</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-list-3"></i>
-                                                        </span>
-                                                        <span class="navi-text">Contacts</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-rocket-1"></i>
-                                                        </span>
-                                                        <span class="navi-text">Groups</span>
-                                                        <span class="navi-link-badge">
-                                                            <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-bell-2"></i>
-                                                        </span>
-                                                        <span class="navi-text">Calls</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-gear"></i>
-                                                        </span>
-                                                        <span class="navi-text">Settings</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-separator my-3"></li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-magnifier-tool"></i>
-                                                        </span>
-                                                        <span class="navi-text">Help</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-bell-2"></i>
-                                                        </span>
-                                                        <span class="navi-text">Privacy</span>
-                                                        <span class="navi-link-badge">
-                                                            <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <!--end::Navigation-->
-                                        </div>
+
                                     </div>
                                     <!--end::Dropdown-->
                                     <!--begin::Dropdown-->
@@ -272,55 +206,6 @@ if ($user->isLoggedIn()) {
                                             </span>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                            <!--begin::Navigation-->
-                                            <ul class="navi navi-hover">
-                                                <li class="navi-header font-weight-bold py-4">
-                                                    <span class="font-size-lg">Choose Label:</span>
-                                                    <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                                </li>
-                                                <li class="navi-separator mb-3 opacity-70"></li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-separator mt-3 opacity-70"></li>
-                                                <li class="navi-footer py-4">
-                                                    <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                        <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                                </li>
-                                            </ul>
-                                            <!--end::Navigation-->
                                         </div>
                                     </div>
                                     <!--end::Dropdown-->
@@ -336,7 +221,7 @@ if ($user->isLoggedIn()) {
                     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
                         <!--begin::Subheader-->
                         <div class="subheader py-2 py-lg-6 subheader-transparent" id="kt_subheader">
-                            <div class="container d-flex align-items-start justify-content-between flex-wrap flex-sm-nowrap">
+                            <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
                                 <!--begin::Info-->
                                 <div class="d-flex align-items-start flex-wrap mr-1">
                                     <!--begin::Mobile Toggle-->
@@ -364,7 +249,7 @@ if ($user->isLoggedIn()) {
                                                 <a href="#" class="text-muted">Profile</a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="#" class="text-muted">Account Information</a>
+                                                <a href="#" class="text-muted">Faculty Event Organized</a>
                                             </li>
                                         </ul>
                                         <!--end::Breadcrumb-->
@@ -372,6 +257,7 @@ if ($user->isLoggedIn()) {
                                     <!--end::Page Heading-->
                                 </div>
                                 <!--end::Info-->
+
                             </div>
                         </div>
                         <!--end::Subheader-->
@@ -476,7 +362,7 @@ if ($user->isLoggedIn()) {
                                                         </a>
                                                     </div>
                                                     <div class="navi-item mb-2">
-                                                        <a href="ett_account-information.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4 active">
+                                                        <a href="ett_account-information.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4">
                                                             <span class="navi-icon mr-2">
                                                                 <span class="svg-icon">
                                                                     <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Code/Compiling.svg-->
@@ -537,7 +423,7 @@ if ($user->isLoggedIn()) {
                                                         </a>
                                                     </div>
                                                     <div class="navi-item mb-2">
-                                                        <a href="fac_event_org.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Faculty" data-placement="right">
+                                                        <a href="fac_event_org.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4 active" data-toggle="tooltip" title="Faculty" data-placement="right">
                                                             <span class="navi-icon mr-2">
                                                                 <span class="svg-icon">
                                                                     <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Layout/Layout-top-panel-6.svg-->
@@ -610,178 +496,203 @@ if ($user->isLoggedIn()) {
                                     </div>
                                     <!--end::Aside-->
                                     <!--begin::Content-->
-                                    <div class="flex-row-fluid ml-lg-6">
+                                    <div class="flex-row-fluid ml-lg-8">
                                         <!--begin::Card-->
-                                        <form class="form" method="post" id="ett_account_form">
-                                            <div class="card card-custom card-stretch" id="kt_page_sticky_card">
-                                                <!--begin::Header-->
-                                                <div class="card-header py-3">
-                                                    <div class="card-title align-items-start flex-column">
-                                                        <h3 class="card-label font-weight-bolder text-dark">
-                                                            Account Information
-                                                        </h3>
-                                                        <span class="text-muted font-weight-bold font-size-sm mt-1">Change
-                                                            Department
-                                                            account
-                                                            settings</span>
-                                                    </div>
+                                        <div class="row">
+                                            <?php
+                                            $event = $db->get('dept_event', array('fe_dept_hash', '=', $data->dept_passkey));
+                                            if ($event->count()) {
+                                                $i = 0;
+                                                foreach ($event->results() as $rows) {
+                                                    $fac = $db->get('em_faculty', array('fac_passkey', '=', $rows->fe_fac_hash));
+                                                    if ($fac->count()) {
+                                                        $i = 0;
+                                                        foreach ($fac->results() as $row) {
+                                            ?>
+                                                            <div class="col-xl-4">
+                                                                <!--begin::Featured Product-->
+                                                                <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(../../theme/media/svg/shapes/abstract-3.svg)">
+                                                                    <div class="card-body d-flex flex-column bg-white shadow-sm border-1 border-bottom justify-content-between ribbon ribbon-top">
+                                                                        <div class="ribbon-target bg-info" style="top: -2px; right: 20px;">
+                                                                            <?php echo $rows->fe_activity ?>
+                                                                        </div>
+                                                                        <div class="rounded text-center mb-7 pt-7">
+                                                                            <?php if ($row->fac_image) { ?>
+                                                                                <div class="symbol symbol-80 symbol-circle align-self-start align-self-xxl-center">
+                                                                                    <img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" style="transform: scale(1.4);">
+                                                                                </div>
 
-                                                </div>
-                                                <!--end::Header-->
-                                                <!--begin::Form-->
+                                                                            <?php } else { ?>
+                                                                                <div class="symbol symbol-80 align-self-start align-self-xxl-center">
+                                                                                    <div class="symbol-label font-size-auto" \style="transform: scale(1.4);"><?php echo $row->fac_name ?></div>
+                                                                                </div>
+                                                                            <?php } ?>
 
-                                                <div class="card-body">
-                                                    <!--begin::Heading-->
-                                                    <div class="row">
-                                                        <label class="col-xl-3"></label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mb-6">
-                                                                Account:
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                    <!--begin::Alert-->
-                                                    <div class="alert alert-custom alert-light-danger fade show mb-10" role="alert">
-                                                        <div class="alert-icon">
-                                                            <span class="svg-icon svg-icon-3x svg-icon-danger">
-                                                                <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Code/Info-circle.svg-->
-                                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                        <rect x="0" y="0" width="24" height="24" />
-                                                                        <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
-                                                                        <rect fill="#000000" x="11" y="10" width="2" height="7" rx="1" />
-                                                                        <rect fill="#000000" x="11" y="7" width="2" height="2" rx="1" />
-                                                                    </g>
-                                                                </svg>
-                                                                <!--end::Svg Icon-->
-                                                            </span>
-                                                        </div>
-                                                        <div class="alert-text font-weight-bold">
-                                                            Make Sure choose Unique and mixed password for teacher, It is help to keep account secure.
-                                                            <br />Choose Maximum 8 Character including Upper & Lowercase and special Character with Number for more security.
-                                                        </div>
-                                                        <div class="alert-close">
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                <span aria-hidden="true">
-                                                                    <i class="ki ki-close"></i>
-                                                                </span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Alert-->
-                                                    <!--begin::Form Group-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">Username</label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <input class="form-control form-control-lg form-control-solid" type="text" name="te_username" id="te_username" value="<?php echo escape($data->dept_username); ?>" />
-                                                        </div>
-                                                    </div>
-                                                    <!--begin::Form Group-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">Email
-                                                            Address</label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <div class="input-group input-group-lg input-group-solid">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="la la-at"></i>
-                                                                    </span>
+
+                                                                        </div>
+                                                                        <div class="text-center">
+                                                                            <h3 class="font-size-h1">
+                                                                                <a href="../../em_faculty/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt', $row->fac_passkey) ?>&&admin=<?php echo convert_string('decrypt', $user->data()->passkey) ?>" class="text-dark font-weight-bolder text-hover-info"><?php echo $row->fac_name ?></a>
+                                                                            </h3>
+                                                                            <div class="font-size-h4 text-primary">
+                                                                                <span class="label label-light-info label-inline mr-2"><?php echo $rows->fe_activity ?></span>
+                                                                                <span class="label label-light-danger label-inline"><?php echo $rows->fe_topic ?></span>
+                                                                            </div>
+
+                                                                            <!--begin::Contact-->
+                                                                            <div class="py-9">
+                                                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">Event Name:</span>
+                                                                                    <a href="#" class="text-info text-hover-primary font-size-h6"><?php echo escape($rows->fe_name); ?></a>
+                                                                                </div>
+                                                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">Activity:</span>
+                                                                                    <span class="text-info font-size-h6"><?php echo escape($rows->fe_activity); ?></span>
+                                                                                </div>
+                                                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">Topic:</span>
+                                                                                    <span class="text-info font-size-h6"><?php echo escape($rows->fe_topic); ?></span>
+                                                                                </div>
+                                                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">Venue:</span>
+                                                                                    <span class="text-info font-size-h6"><?php echo escape($rows->fe_venue); ?></span>
+                                                                                </div>
+                                                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">Start Date:</span>
+                                                                                    <a href="#" class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_s_date); ?></a>
+                                                                                </div>
+                                                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">End Date:</span>
+                                                                                    <span class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_e_date); ?></span>
+                                                                                </div>
+                                                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">Academic Year:</span>
+                                                                                    <span class="text-info font-size-h6"><?php echo escape($rows->fe_year); ?></span>
+                                                                                </div>
+                                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                                    <span class="font-weight-bold mr-2 font-size-h6 text-danger">Created at:</span>
+                                                                                    <span class="text-info font-size-h6"><?php echo escape($rows->fe_created_at); ?></span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--end::Contact-->
+                                                                        </div>
+
+                                                                    </div>
                                                                 </div>
-                                                                <input type="text" class="form-control form-control-lg form-control-solid" name="te_email" id="te_email" value="<?php echo escape($data->dept_email); ?>" placeholder="Email" />
+                                                                <!--end::Featured Product-->
                                                             </div>
-                                                            <span class="form-text text-muted">Email
-                                                                will
-                                                                not
-                                                                be
-                                                                publicly
-                                                                displayed.
-                                                                <a href="#" class="font-weight-bold">Learn
-                                                                    more</a>.</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="separator separator-dashed">
-                                                    </div>
-                                                    <div class="row">
-                                                        <label class="col-xl-3"></label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mt-4 mb-4 text-center">
-                                                                Change Password
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="separator separator-dashed mb-4">
-                                                    </div>
+                                            <?php
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                        <!--end::Card-->
 
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label text-alert">New
-                                                            Password</label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <div class="input-group">
-
-                                                                <input type="text" class="form-control form-control-lg form-control-solid" id="te_pass" name="te_pass" placeholder="New password" />
-                                                                <div class="input-group-append">
-                                                                    <button class="btn btn-primary" type="button" id="gen_password" name="gen_password" title="Generate Password"><i class="flaticon-refresh"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label text-alert">Confirm
-                                                            Password</label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <input type="text" class="form-control form-control-lg form-control-solid" id="te_cpass" name="te_cpass" placeholder="Confirm Teacher password" />
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="separator separator-dashed">
-                                                    </div>
-                                                    <!--begin::Form Group-->
-                                                    <div class="row">
-                                                        <label class="col-xl-3"></label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mb-4 mt-4 text-center">
-                                                                Security:
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="separator separator-dashed mb-4">
-                                                    </div>
-                                                    <!--begin::Form Group-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">Send Account Details</label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <button type="button" class="btn btn-light-primary font-weight-bold btn-sm send_acc_details" id="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" name="send_acc_details">Send Account Details</button>
-                                                        </div>
-                                                    </div>
-                                                    <!--begin::Form Group-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">Change Account Status</label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <?php if ($data->dept_status == "Active") { ?>
-                                                                <button type="button" class="btn btn-light-danger font-weight-bold btn-sm account" data_value="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" id="deactivate_account" name="deactivate_account">Deactivate Department account?</button>
-                                                            <?php
-                                                            } else { ?><button type="button" class="btn btn-light-success font-weight-bold btn-sm account" data_value="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" id="activate_account" name="activate_account">Activate Department account?</button> <?php } ?>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <div class="card-toolbar">
-                                                        <input type="hidden" name="action" id="action" value="insert" />
-                                                        <input type="hidden" name="ett_token" id="ett_token" value="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" />
-                                                        <button type="submit" name="ett_account_submit" class="btn btn-success mr-2 float-right">Save
-                                                            Changes</button>
-                                                        <button type="" class="btn btn-secondary">Cancel</button>
-                                                    </div>
-                                                </div>
-
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-border gutter-b">
+                                            <!--begin::Header-->
+                                            <div class="card-header border-0 py-5">
+                                                <h3 class="card-title align-items-start flex-column">
+                                                    <span class="card-label font-weight-bolder text-dark">Faculty Event Organized</span>
+                                                    <span class="text-muted mt-3 font-weight-bold font-size-sm">More than <?php echo $user->fac_event_org($data->dept_passkey); ?>+ new event</span>
+                                                </h3>
                                             </div>
-                                            <!--end::Card-->
-                                        </form>
-                                        <!--end::Form-->
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body py-0">
+                                                <!--begin::Table-->
+                                                <div class="table-responsive">
+                                                    <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_2">
+                                                        <thead>
+                                                            <tr class="text-uppercase">
+                                                                <th class="pl-0" style="width: 40px">
+                                                                    <span class="text-primary">id</span>
+                                                                </th>
+                                                                <th class="pl-0" style="min-width: 100px"><span class="text-primary">Image</span></th>
+                                                                <th class="pl-0" style="min-width: 100px"><span class="text-primary">Faculty Name</span></th>
+                                                                <th style="min-width: 80px"><span class="text-primary">Event Info</span></th>
+                                                                <th style="min-width: 120px"><span class="text-primary">Event Period</span></th>
+                                                                <th style="min-width: 100px"><span class="text-primary">Venue</span></th>
+                                                                <th style="min-width: 60px"><span class="text-primary">status</span></th>
+                                                                <th style="min-width: 100px"><span class="text-primary">Created at</span></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php
+                                                            $event = $db->get('dept_event', array('fe_dept_hash', '=', $data->dept_passkey));
+                                                            if ($event->count()) {
+                                                                $i = 0;
+                                                                foreach ($event->results() as $rows) {
+                                                                    $i++;
+                                                                    $fac = $db->get('em_faculty', array('fac_passkey', '=', $rows->fe_fac_hash));
+                                                                    if ($fac->count()) {
+                                                                        foreach ($fac->results() as $row) {
+                                                            ?>
+                                                                            <tr>
+                                                                                <td class="pl-0 py-6">
+                                                                                    <?php echo $i; ?>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="symbol symbol-70 symbol-light mr-5">
+                                                                                        <?php if ($row->fac_image) { ?>
+                                                                                            <img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" class="h-50 align-self-center" alt="" />
+                                                                                        <?php } else { ?>
+                                                                                            <span class="symbol-label">
+                                                                                                <?php echo description($row->fac_name) ?>
+                                                                                            </span>
+                                                                                        <?php } ?>
+
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td class="pl-0">
+                                                                                    <a href="../../em_student/profile/index.php?emd_department_hash=<?php echo convert_string('decrypt', $row->fac_hash) ?>&&admin=<?php echo convert_string('decrypt', $user->data()->passkey) ?>" class="text-info font-weight-bolder text-hover-primary font-size-lg"><?php echo $row->fac_name; ?></a>
+                                                                                    <span class="text-muted font-weight-bold d-block"><?php echo $row->fac_email; ?></span>
+                                                                                    <span class="text-muted font-weight-bold mt-1"><?php echo $row->fac_phone; ?></span>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <span class="text-warning font-weight-bolder d-block font-size-lg"><?php echo $rows->fe_activity; ?></span>
+                                                                                    <span class="text-danger font-weight-bolder d-block font-size-lg"><?php echo $rows->fe_topic; ?></span>
+
+                                                                                </td>
+                                                                                <td>
+                                                                                    <span class="label label-lg label-light-primary mb-1 label-inline font-weight-bold"><?php echo $rows->fe_s_date; ?> -> <?php echo $rows->fe_e_date; ?></span>
+
+                                                                                    <span class="label label-lg label-light-danger label-inline "><?php echo $rows->fe_year; ?></span>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <span class="text-danger font-weight-bolder d-block font-size-lg"><?php echo $rows->fe_venue; ?></span>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <span class="label label-lg label-light-primary label-inline"><?php echo $rows->fe_status; ?></span>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <span class="text-info font-weight-bolder d-block font-size-lg"><?php echo $rows->fe_created_at; ?></span>
+                                                                                </td>
+
+                                                                            </tr>
+                                                            <?php
+                                                                        }
+                                                                    }
+                                                                }
+                                                            } else {
+                                                                echo '<p class="text-center">No Data Found</p>';
+                                                            }
+                                                            ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!--end::Table-->
+                                            </div>
+                                            <!--end::Body-->
+                                        </div>
+                                        <!--end::Card-->
+
+
                                     </div>
                                     <!--end::Content-->
+
                                 </div>
                                 <!--end::Profile Account Information-->
                             </div>
@@ -790,121 +701,250 @@ if ($user->isLoggedIn()) {
                         <!--end::Entry-->
                     </div>
                     <!--end::Content-->
+                    <!-- Modal-->
+                    <div class="modal fade" id="DepartmentModel" tabindex="-1" role="dialog" aria-labelledby="DepartmentModelLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="teacherModelLabel">Modal Title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <i aria-hidden="true" class="ki ki-close"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <!--begin::Entry-->
+                                    <form class="form" id="department_form" method="post" enctype="multipart/form-data">
+                                        <div class="card-body">
+                                            <div class="alert alert-custom alert-primary fade show" role="alert">
+                                                <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                                                <div class="alert-text font-weight-bold">Don't forget to generate Student <b>Passkey</b> & <b>Token</b></div>
+                                                <div class="alert-close">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-xl-4">
+                                                    <label>Department</label>
+                                                    <select class="form-control form-control-solid selectpicker" name="ett_dept" id="ett_dept" data-style="btn-primary" data-size="4" required>
+                                                        <option val="">Select an option</option>
+                                                        <?php
+                                                        $query = "SELECT * FROM em_department";
+                                                        $statement = $connect->prepare($query);
+                                                        $statement->execute();
+                                                        if ($statement->rowCount() > 0) {
+                                                            $result = $statement->fetchAll();
+                                                            foreach ($result as $row) {
+                                                        ?>
+                                                                <option value="<?php echo convert_string('decrypt', $row["dept_passkey"]) ?>"><?php echo $row["dept_name"]  ?>(<?php echo $row["dept_sname"]  ?>)</option>
+                                                            <?php   }
+                                                        } else { ?>
+                                                            <option>No Option Found.</option>
+                                                        <?php
+                                                        }
+                                                        ?>
+
+                                                    </select>
+                                                    <span class="form-text text-muted">
+                                                        Please select department
+                                                    </span>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <label>Mentor</label>
+                                                    <select class="form-control form-control-solid selectpicker" name="ett_mentor" id="ett_mentor" data-style="btn-danger" data-size="4" required>
+                                                        <option val="">Select an option</option>
+                                                        <?php
+                                                        $query = "SELECT * FROM em_faculty";
+                                                        $statement = $connect->prepare($query);
+                                                        $statement->execute();
+                                                        if ($statement->rowCount() > 0) {
+                                                            $result = $statement->fetchAll();
+                                                            foreach ($result as $row) {
+                                                        ?>
+                                                                <option value="<?php echo convert_string('decrypt', $row["fac_passkey"]) ?>"><?php echo $row["fac_name"]  ?></option>
+                                                            <?php   }
+                                                        } else { ?>
+                                                            <option>No Option Found.</option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <span class="form-text text-muted">
+                                                        Please select mentor name
+                                                    </span>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <label>Year:</label>
+                                                    <select class="form-control form-control-solid selectpicker" name="ett_year" id="ett_year" data-style="btn-info" data-size="4" required>
+                                                        <option value="">Select an option</option>
+                                                        <option value="1">1st Year</option>
+                                                        <option value="2">2nd Year</option>
+                                                        <option value="3">3rd Year</option>
+                                                        <option value="4">4th Year</option>
+                                                    </select>
+                                                    <span class="form-text text-muted">
+                                                        Please select year
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-xl-8">
+                                                    <label>Student Name:</label>
+                                                    <input class="form-control form-control-solid" name="ett_name" type="text" id="ett_name" placeholder="Enter Name" required />
+                                                    <span class="form-text text-muted">
+                                                        Please enter student name
+                                                    </span>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <label>Gender:</label>
+                                                    <select class="form-control form-control-solid selectpicker" name="ett_gen" id="ett_gen" data-style="btn-warning" data-size="4" required>
+                                                        <option value="">Select an option</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Other">Other</option>
+
+                                                    </select>
+                                                    <span class="form-text text-muted">
+                                                        Please select gender
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Phone:</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control form-control-solid" name="ett_phone" id="ett_phone" placeholder="Enter Phone No" required />
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-phone"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="form-text text-muted">Please enter student phone no</span>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Email:</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control form-control-solid " name="ett_email" id="ett_email" placeholder="Enter Department E-Mail Address" required />
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-at"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="form-text text-muted">Please enter student email</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-4">
+                                                    <label>Username:</label>
+                                                    <div class="input-group">
+                                                        <input class="form-control form-control-solid " name="ett_username" type="text" id="ett_username" placeholder="Enter student Username" required />
+                                                    </div>
+                                                    <span class="form-text text-muted">Please enter student Username</span>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Password:</label>
+                                                    <div class="input-group">
+                                                        <input class="form-control form-control-solid " name="ett_password" type="password" id="ett_password" placeholder="Enter student Password" required />
+                                                    </div>
+                                                    <span class="form-text text-muted">Please enter student Password</span>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label>Confirm Password:</label>
+                                                    <div class="input-group">
+                                                        <input class="form-control form-control-solid " name="ett_cpassword" type="password" id="ett_cpassword" placeholder="Enter Teacher Password" required />
+                                                    </div>
+                                                    <span class="form-text text-muted">
+                                                        Please confirm Password
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-xl-4">
+                                                    <label>Date of birth:</label>
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control form-control-solid" readonly name="ett_dob" id="kt_datepicker_3" />
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <label>Roll No/Reg No:</label>
+                                                    <input class="form-control form-control-solid" name="ett_roll" type="text" id="ett_roll" placeholder="Roll/Reg No" required />
+                                                    <span class="form-text text-muted">
+                                                        Please enter you rollno or regno
+                                                    </span>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <label>Location:</label>
+                                                    <input class="form-control form-control-solid" name="ett_location" type="text" id="ett_location" placeholder="Enter Address" required />
+                                                    <span class="form-text text-muted">
+                                                        Please enter qualification
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Passkey:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-primary" type="button" id="gen_passkey" name="gen_passkey" title="Generate Passkey"><i class="flaticon-refresh"></i></button>
+                                                        </div>
+                                                        <input class="form-control form-control-solid form-control-lg" name="ett_passkey" type="text" id="ett_passkey" required />
+
+                                                    </div>
+                                                    <span class="form-text text-muted">
+                                                        Please generate student passkey
+                                                    </span>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Token:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-primary" type="button" id="gen_token" name="gen_token" title="Generate Token!"><i class="flaticon-refresh"></i></button>
+                                                        </div>
+                                                        <input class="form-control form-control-solid form-control-lg" name="ett_hash" type="text" id="ett_hash" required />
+
+                                                    </div>
+                                                    <span class="form-text text-muted">Please generate student token</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <button data-dismiss="modal" class="btn btn-primary mr-2">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                                <div class="col-lg-6 text-lg-right">
+                                                    <input type="hidden" name="ett_id" id="ett_id" />
+                                                    <input type="hidden" name="operation" id="operation" />
+                                                    <input type="submit" name="teacher_action" value="Submit" class="teacher_action btn btn-danger">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!--end::Entry-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <?php require('footer.php'); ?>
                     <script src="../../theme/js/pages/widgetsc7e5.js?v=7.1.1">
                     </script>
                     <script src="../../theme/js/pages/custom/profile/profilec7e5.js?v=7.1.1">
                     </script>
-                    <script src="ett_account-information.js">
-                    </script>
-                    <script>
-                        $(document).ready(function() {
-                            $('#ett_account_form').submit(function(event) {
-                                event.preventDefault();
-                                $('#action').val('Teacher_update');
-                                var form_data = $(this).serialize();
-                                $.ajax({
-                                    url: 'ett_account-information_action.php',
-                                    method: 'post',
-                                    data: form_data,
-                                    dataType: 'json',
-                                    success: function(data) {
-                                        if (data.error != '') {
-                                            Swal.fire({
-                                                position: 'top-right',
-                                                icon: 'error',
-                                                title: data.error,
-                                                showConfirmButton: false,
-                                                timer: 1500,
-                                            });
-                                            setTimeout(function() {
-                                                location.reload(); //Refresh page
-                                            }, 1500);
-                                        } else {
-                                            Swal.fire({
-                                                position: 'top-right',
-                                                icon: 'success',
-                                                title: data.message,
-                                                showConfirmButton: false,
-                                                timer: 1500,
-                                            });
-                                            setTimeout(function() {
-                                                location.reload(); //Refresh page
-                                            }, 1500);
-                                        }
-                                    },
-                                });
-                            });
-                            $(document).on('click', '#gen_password', function() {
-                                var passkey = generate_passkey(10);
-                                document.getElementById('te_pass').value = passkey;
-                                document.getElementById('te_cpass').value = passkey;
-                            });
+                    <!--begin::Page Scripts(used by this page)-->
+                    <script src="../../theme/plugins/custom/datatables/datatables.bundlec7e5.js"></script>
+                    <script src="../../theme/js/pages/crud/forms/widgets/bootstrap-datepickerc7e5.js?v=7.2.6"></script>
 
-                            $(document).on('click', '.send_acc_details', function() {
-                                var ett_id = $(this).attr('id');
-                                var action = 'mail';
-                                $.ajax({
-                                    url: 'ett_account-information_action.php',
-                                    method: 'POST',
-                                    data: {
-                                        ett_id: ett_id,
-                                        action: action,
-                                    },
-                                    dataType: 'json',
-                                    success: function(data) {
-                                        Swal.fire({
-                                            position: 'top-right',
-                                            icon: 'success',
-                                            title: data.message,
-                                            showConfirmButton: false,
-                                            timer: 1500,
-                                        });
-                                    },
-                                });
-                            });
-
-                            $(document).on('click', '.account', function() {
-                                var ett_id = $(this).attr('id');
-                                var ett_value = $(this).attr('data_value');
-                                var action = 'status';
-                                $.ajax({
-                                    url: 'ett_account-information_action.php',
-                                    method: 'POST',
-                                    data: {
-                                        ett_id: ett_id,
-                                        action: action,
-                                        ett_token: ett_value,
-                                    },
-                                    dataType: 'json',
-                                    success: function(data) {
-                                        Swal.fire({
-                                            position: 'top-right',
-                                            icon: 'success',
-                                            title: data.message,
-                                            showConfirmButton: false,
-                                            timer: 1500,
-                                        });
-                                        setTimeout(function() {
-                                            location.reload(); //Refresh page
-                                        }, 1500);
-                                    },
-                                });
-                            });
-                        });
-                    </script>
-                    <script>
-                        function generate_passkey(length) {
-                            //edit the token allowed characters
-                            var a = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~`@#$%^&*--+='.split('');
-                            var b = [];
-                            for (var i = 0; i < length; i++) {
-                                var j = (Math.random() * (a.length - 1)).toFixed(0);
-                                b[i] = a[j];
-                            }
-                            return b.join('');
-                        }
-                    </script>
             </body>
             <!--end::Body-->
 

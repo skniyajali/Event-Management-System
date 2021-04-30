@@ -21,7 +21,35 @@ if ($user->isLoggedIn()) {
     ?>
 
             <!DOCTYPE html>
+            <!--
+            Page Name: Event Management System(EMS)
+            Author: Sk Niyaj Ali
+            Website: https://www.niyaj.enhancedteaching.co.in/
+            Contact: niyaj320@gmail.com
+            Facebook : https://www.facebook.com/skniyajali7/
+            Instagram : https://www.instagram.com/_niyajali/
+            Twitter : https://twitter.com/skniyajali1
+            Behance.net : https://www.behance.net/skniyajali/
+            Codepen.io : https://codepen.io/skniyajali/
+            Creativemarket : https://creativemarket.com/users/skniyajali
+            Medium : https://medium.com/@skniyajali
+            Portfolio : https://skniyajali.myportfolio.com/
+            Vimeo : https://vimeo.com/skniyajali/
+            Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+            YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+            Pinterest : https://in.pinterest.com/skniyajali/
+            Thumblr : https://skniyajali2.tumblr.com/
+            Github : https://github.com/niyaj320/
+            Dribbble : https://dribbble.com/skniyajali/
+            Flickr : https://www.flickr.com/people/skniyajali/
+            Figma : https://www.figma.com/@skniyajali
+            LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+            Society6 : https://society6.com/skniyajali
+            Website : https://skniyaj.blogspot.com/?m=1
+            Hackaday.io : https://hackaday.io/niyaj320
 
+            License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+            -->
             <html lang="en">
             <!--begin::Head-->
 
@@ -30,10 +58,12 @@ if ($user->isLoggedIn()) {
             <head>
                 <meta charset="utf-8" />
                 <title><?php echo escape($data->dept_name) ?> | Faculty Information</title>
-                <meta name="description" content="<?php echo escape($data->dept_name) ?> Faculty Information" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                <meta name="robots" content="noindex, nofollow">
-                <link rel="canonical" href="#" />
+                <link rel="canonical" href="https://niyaj.enhancedteaching.co.in" />
+                <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+                <meta name="description" content="EMS Department" />
+                <meta name="robots" content="index, follow" />
+                <meta name="author" content="SK NIYAJ ALI" />
                 <!--begin::Fonts-->
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
                 <!--end::Fonts-->
@@ -157,7 +187,7 @@ if ($user->isLoggedIn()) {
                                                 <!--end::Svg Icon-->
                                             </span>
                                         </a>
-                                        
+
                                     </div>
                                     <!--end::Dropdown-->
                                     <!--begin::Dropdown-->
@@ -175,7 +205,7 @@ if ($user->isLoggedIn()) {
                                                 <!--end::Svg Icon-->
                                             </span>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">                                            
+                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
                                         </div>
                                     </div>
                                     <!--end::Dropdown-->
@@ -227,85 +257,7 @@ if ($user->isLoggedIn()) {
                                     <!--end::Page Heading-->
                                 </div>
                                 <!--end::Info-->
-                                <!--begin::Toolbar-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Actions-->
-                                    <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">Actions</a>
-                                    <!--end::Actions-->
-                                    <!--begin::Dropdown-->
-                                    <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                                        <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="svg-icon svg-icon-success svg-icon-2x">
-                                                <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File-plus.svg-->
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <polygon points="0 0 24 0 24 24 0 24" />
-                                                        <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                        <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
-                                                    </g>
-                                                </svg>
-                                                <!--end::Svg Icon-->
-                                            </span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 m-0">
-                                            <!--begin::Navigation-->
-                                            <ul class="navi navi-hover">
-                                                <li class="navi-header font-weight-bold py-4">
-                                                    <span class="font-size-lg">Choose
-                                                        Label:</span>
-                                                    <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                                </li>
-                                                <li class="navi-separator mb-3 opacity-70">
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-separator mt-3 opacity-70">
-                                                </li>
-                                                <li class="navi-footer py-4">
-                                                    <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                        <i class="ki ki-plus icon-sm"></i>Add new
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <!--end::Navigation-->
-                                        </div>
-                                    </div>
-                                    <!--end::Dropdown-->
-                                </div>
-                                <!--end::Toolbar-->
+
                             </div>
                         </div>
                         <!--end::Subheader-->
@@ -321,97 +273,17 @@ if ($user->isLoggedIn()) {
                                         <div class="card card-custom card-stretch">
                                             <!--begin::Body-->
                                             <div class="card-body pt-4">
-                                                <!--begin::Toolbar-->
-                                                <div class="d-flex justify-content-end">
-                                                    <div class="dropdown dropdown-inline">
-                                                        <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="ki ki-bold-more-hor"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                                            <!--begin::Navigation-->
-                                                            <ul class="navi navi-hover py-5">
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-drop"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">New Group</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-list-3"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Contacts</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-rocket-1"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Groups</span>
-                                                                        <span class="navi-link-badge">
-                                                                            <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-bell-2"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Calls</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-gear"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Settings</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-separator my-3"></li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-magnifier-tool"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Help</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-bell-2"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Privacy</span>
-                                                                        <span class="navi-link-badge">
-                                                                            <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                            <!--end::Navigation-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--end::Toolbar-->
                                                 <!--begin::User-->
-                                                <div class="d-flex align-items-center">
+                                                <div class="d-flex align-items-center mt-2">
                                                     <?php if ($data->dept_image) { ?>
                                                         <div class="symbol mr-5 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
-                                                            <div class="symbol symbol-60">
-                                                                <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->dept_image); ?>" alt="<?php echo escape($data->dept_name); ?> image">
-                                                            </div>
+                                                            <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->dept_image); ?>" alt="<?php echo escape($data->dept_name); ?> image">
                                                             <i class="symbol-badge bg-success"></i>
                                                         </div>
                                                     <?php
                                                     } else {
                                                     ?>
-                                                        <div class="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
+                                                        <div class="symbol symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
                                                             <div class=" symbol-label font-size-auto"><?php echo $data->dept_sname; ?>
                                                             </div>
                                                             <i class="symbol-badge bg-success"></i>
@@ -550,6 +422,71 @@ if ($user->isLoggedIn()) {
                                                             </span>
                                                         </a>
                                                     </div>
+                                                    <div class="navi-item mb-2">
+                                                        <a href="fac_event_org.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Faculty" data-placement="right">
+                                                            <span class="navi-icon mr-2">
+                                                                <span class="svg-icon">
+                                                                    <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Layout/Layout-top-panel-6.svg-->
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <rect x="0" y="0" width="24" height="24" />
+                                                                            <rect fill="#000000" x="2" y="5" width="19" height="4" rx="1" />
+                                                                            <rect fill="#000000" opacity="0.3" x="2" y="11" width="19" height="10" rx="1" />
+                                                                        </g>
+                                                                    </svg>
+                                                                    <!--end::Svg Icon-->
+                                                                </span>
+                                                            </span>
+                                                            <span class="navi-text font-size-lg">Event Organized</span>
+                                                            <span class="navi-label">
+                                                                <span class="label label-light-info label-inline font-weight-bold">Faculty</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="navi-item mb-2">
+                                                        <a href="fac_event_part.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Faculty" data-placement="right">
+                                                            <span class="navi-icon mr-2">
+                                                                <span class="svg-icon">
+                                                                    <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File.svg-->
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                                            <rect fill="#000000" x="6" y="11" width="9" height="2" rx="1" />
+                                                                            <rect fill="#000000" x="6" y="15" width="5" height="2" rx="1" />
+                                                                        </g>
+                                                                    </svg>
+                                                                    <!--end::Svg Icon-->
+                                                                </span>
+                                                            </span>
+                                                            <span class="navi-text font-size-lg">Event Participated</span>
+                                                            <span class="navi-label">
+                                                                <span class="label label-light-info label-inline font-weight-bold">Faculty</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="navi-item mb-2">
+                                                        <a href="fas_event_part.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Students" data-placement="right">
+                                                            <span class="navi-icon mr-2">
+                                                                <span class="svg-icon">
+                                                                    <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File.svg-->
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                                            <rect fill="#000000" x="6" y="11" width="9" height="2" rx="1" />
+                                                                            <rect fill="#000000" x="6" y="15" width="5" height="2" rx="1" />
+                                                                        </g>
+                                                                    </svg>
+                                                                    <!--end::Svg Icon-->
+                                                                </span>
+                                                            </span>
+                                                            <span class="navi-text font-size-lg">Event Participated</span>
+                                                            <span class="navi-label">
+                                                                <span class="label label-light-info label-inline font-weight-bold">Student</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                                 <!--end::Nav-->
                                             </div>
@@ -575,22 +512,22 @@ if ($user->isLoggedIn()) {
 
                                                             <div class="card-body d-flex flex-column bg-white shadow-sm border-1 border-bottom justify-content-between ribbon ribbon-top">
                                                                 <?php
-                                                                    if($row->fac_year == 1){
-                                                                        $bg = "bg-primary";
-                                                                        $bgs = 'border-info';
-                                                                        $year = "First Year";
-                                                                    }elseif($row->fac_year == 2){
-                                                                        $bg = "bg-dark";
-                                                                        $bgs = 'border-primary';
-                                                                        $year = "Second Year";
-                                                                    }elseif($row->fac_year == 3){
-                                                                        $bg = "bg-danger";
-                                                                        $bgs = 'border-warning';
-                                                                        $year = "Third Year";
-                                                                    }else{
-                                                                        $bg = "bg-warning";
-                                                                        $bgs = 'border-danger';
-                                                                        $year = "Final Year";
+                                                                if ($row->fac_year == 1) {
+                                                                    $bg = "bg-primary";
+                                                                    $bgs = 'border-info';
+                                                                    $year = "First Year";
+                                                                } elseif ($row->fac_year == 2) {
+                                                                    $bg = "bg-dark";
+                                                                    $bgs = 'border-primary';
+                                                                    $year = "Second Year";
+                                                                } elseif ($row->fac_year == 3) {
+                                                                    $bg = "bg-danger";
+                                                                    $bgs = 'border-warning';
+                                                                    $year = "Third Year";
+                                                                } else {
+                                                                    $bg = "bg-warning";
+                                                                    $bgs = 'border-danger';
+                                                                    $year = "Final Year";
                                                                 }
                                                                 ?>
                                                                 <div class="ribbon-target <?php echo $bg ?>" style="top: -2px; right: 20px;">
@@ -698,7 +635,7 @@ if ($user->isLoggedIn()) {
                                                                 </th>
                                                                 <th class="pl-0" style="min-width: 100px"><span class="text-primary">Image</span></th>
                                                                 <th class="pl-0" style="min-width: 100px"><span class="text-primary">Name</span></th>
-                                                                <th style="min-width: 80px"><span class="text-primary">Info</span></th>                                                                
+                                                                <th style="min-width: 80px"><span class="text-primary">Info</span></th>
                                                                 <th style="min-width: 120px"><span class="text-primary">Department</span></th>
                                                                 <th style="min-width: 100px"><span class="text-primary">Location</span></th>
                                                                 <th style="min-width: 60px"><span class="text-primary">status</span></th>
@@ -713,26 +650,26 @@ if ($user->isLoggedIn()) {
                                                             if ($fac->count()) {
                                                                 $i = 0;
                                                                 foreach ($fac->results() as $row) {
-                                                                    
+
                                                                     $i++; ?>
                                                                     <?php
-                                                                        if($row->fac_year == 1){
-                                                                            $bg = "bg-primary";
-                                                                            $bgs = 'border-info';
-                                                                            $year = "First Year";
-                                                                        }elseif($row->fac_year == 2){
-                                                                            $bg = "bg-dark";
-                                                                            $bgs = 'border-primary';
-                                                                            $year = "Second Year";
-                                                                        }elseif($row->fac_year == 3){
-                                                                            $bg = "bg-danger";
-                                                                            $bgs = 'border-warning';
-                                                                            $year = "Third Year";
-                                                                        }else{
-                                                                            $bg = "bg-warning";
-                                                                            $bgs = 'border-danger';
-                                                                            $year = "Final Year";
-                                                                        }
+                                                                    if ($row->fac_year == 1) {
+                                                                        $bg = "bg-primary";
+                                                                        $bgs = 'border-info';
+                                                                        $year = "First Year";
+                                                                    } elseif ($row->fac_year == 2) {
+                                                                        $bg = "bg-dark";
+                                                                        $bgs = 'border-primary';
+                                                                        $year = "Second Year";
+                                                                    } elseif ($row->fac_year == 3) {
+                                                                        $bg = "bg-danger";
+                                                                        $bgs = 'border-warning';
+                                                                        $year = "Third Year";
+                                                                    } else {
+                                                                        $bg = "bg-warning";
+                                                                        $bgs = 'border-danger';
+                                                                        $year = "Final Year";
+                                                                    }
                                                                     ?>
                                                                     <tr>
                                                                         <td class="pl-0 py-6">
@@ -740,14 +677,14 @@ if ($user->isLoggedIn()) {
                                                                         </td>
                                                                         <td>
                                                                             <div class="symbol symbol-70 symbol-light mr-5">
-                                                                                <?php if($row->fac_image){ ?>                                                                        
-                                                                                        <img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" class="h-50 align-self-center" alt="" />                                                                        
-                                                                                    <?php }else{ ?>
-                                                                                        <span class="symbol-label">
-                                                                                            <?php echo description($row->fac_name) ?>
-                                                                                        </span>
-                                                                                    <?php } ?>
-                                                                                
+                                                                                <?php if ($row->fac_image) { ?>
+                                                                                    <img src="data:image/png;base64,<?php echo base64_encode($row->fac_image) ?>" class="h-50 align-self-center" alt="" />
+                                                                                <?php } else { ?>
+                                                                                    <span class="symbol-label">
+                                                                                        <?php echo description($row->fac_name) ?>
+                                                                                    </span>
+                                                                                <?php } ?>
+
                                                                             </div>
                                                                         </td>
                                                                         <td class="pl-0">
@@ -760,12 +697,12 @@ if ($user->isLoggedIn()) {
                                                                             <span class="text-danger font-weight-bolder d-block font-size-lg"><?php echo $row->fac_dob; ?></span>
 
                                                                         </td>
-                                                                        
+
                                                                         <td>
-                                                                            <span class="label label-lg label-light-primary mb-1 label-inline font-weight-bold"><?php echo $row->fac_department; ?></span>
+                                                                            <span class="label label-lg label-light-primary mb-1 label-inline font-weight-bold"><?php echo $data->dept_sname; ?></span>
                                                                             <span class="label label-lg label-light-info label-inline font-weight-bold "><?php echo $row->fac_mentor; ?></span>
                                                                             <span class="label label-lg label-light-danger label-inline "><?php echo $year; ?></span>
-                                                                        </td>                                                                        
+                                                                        </td>
                                                                         <td>
                                                                             <span class="text-danger font-weight-bolder d-block font-size-lg"><?php echo $row->fac_address; ?></span>
                                                                         </td>
@@ -938,7 +875,7 @@ if ($user->isLoggedIn()) {
                                                                         <th class="min-w-100px">Phone</th>
                                                                         <th class="min-w-100px">Username</th>
                                                                         <th class="min-w-100px">Mentor</th>
-                                                                        <th class="min-w-140px">Department</th>                                                        
+                                                                        <th class="min-w-140px">Department</th>
                                                                         <th>Year</th>
                                                                         <th>Status</th>
                                                                         <th>Location</th>
@@ -958,7 +895,7 @@ if ($user->isLoggedIn()) {
                                                                         <th>Phone</th>
                                                                         <th>Username</th>
                                                                         <th>Mentor</th>
-                                                                        <th>Department</th>                                                        
+                                                                        <th>Department</th>
                                                                         <th>Year</th>
                                                                         <th>Status</th>
                                                                         <th>Location</th>
@@ -977,7 +914,7 @@ if ($user->isLoggedIn()) {
                                         <!--end::Card-->
                                     </div>
                                     <!--end::Content-->
-                                    
+
                                 </div>
                                 <!--end::Profile Account Information-->
                             </div>
@@ -1008,27 +945,28 @@ if ($user->isLoggedIn()) {
                                                         <span aria-hidden="true"><i class="ki ki-close"></i></span>
                                                     </button>
                                                 </div>
-                                            </div>                                    
+                                            </div>
                                             <div class="form-group row">
-                                                <div class="col-xl-4">                                            
+                                                <div class="col-xl-4">
                                                     <label>Department</label>
                                                     <select class="form-control form-control-solid selectpicker" name="ett_dept" id="ett_dept" data-style="btn-primary" data-size="4" required>
                                                         <option val="">Select an option</option>
-                                                        <?php  
-                                                            $query = "SELECT * FROM em_department";
-                                                            $statement = $connect->prepare($query);
-                                                            $statement->execute();
-                                                            if($statement->rowCount() > 0){
-                                                                $result = $statement->fetchAll();
-                                                                foreach($result as $row){                                                        
+                                                        <?php
+                                                        $query = "SELECT * FROM em_department";
+                                                        $statement = $connect->prepare($query);
+                                                        $statement->execute();
+                                                        if ($statement->rowCount() > 0) {
+                                                            $result = $statement->fetchAll();
+                                                            foreach ($result as $row) {
                                                         ?>
-                                                            <option value="<?php echo convert_string('decrypt',$row["dept_passkey"]) ?>"><?php echo $row["dept_name"]  ?>(<?php echo $row["dept_sname"]  ?>)</option>
-                                                        <?php   }}else{ ?>
+                                                                <option value="<?php echo convert_string('decrypt', $row["dept_passkey"]) ?>"><?php echo $row["dept_name"]  ?>(<?php echo $row["dept_sname"]  ?>)</option>
+                                                            <?php   }
+                                                        } else { ?>
                                                             <option>No Option Found.</option>
                                                         <?php
-                                                            }
+                                                        }
                                                         ?>
-                                                        
+
                                                     </select>
                                                     <span class="form-text text-muted">
                                                         Please select department
@@ -1037,21 +975,22 @@ if ($user->isLoggedIn()) {
                                                 <div class="col-xl-4">
                                                     <label>Mentor</label>
                                                     <select class="form-control form-control-solid selectpicker" name="ett_mentor" id="ett_mentor" data-style="btn-danger" data-size="4" required>
-                                                    <option val="">Select an option</option>
-                                                        <?php  
-                                                            $query = "SELECT * FROM em_faculty";
-                                                            $statement = $connect->prepare($query);
-                                                            $statement->execute();
-                                                            if($statement->rowCount() > 0){
-                                                                $result = $statement->fetchAll();
-                                                                foreach($result as $row){                                                        
+                                                        <option val="">Select an option</option>
+                                                        <?php
+                                                        $query = "SELECT * FROM em_faculty";
+                                                        $statement = $connect->prepare($query);
+                                                        $statement->execute();
+                                                        if ($statement->rowCount() > 0) {
+                                                            $result = $statement->fetchAll();
+                                                            foreach ($result as $row) {
                                                         ?>
-                                                            <option value="<?php echo convert_string('decrypt',$row["fac_passkey"]) ?>"><?php echo $row["fac_name"]  ?></option>
-                                                        <?php   }}else{ ?>
+                                                                <option value="<?php echo convert_string('decrypt', $row["fac_passkey"]) ?>"><?php echo $row["fac_name"]  ?></option>
+                                                            <?php   }
+                                                        } else { ?>
                                                             <option>No Option Found.</option>
                                                         <?php
-                                                            }
-                                                        ?>                                               
+                                                        }
+                                                        ?>
                                                     </select>
                                                     <span class="form-text text-muted">
                                                         Please select mentor name
@@ -1064,8 +1003,8 @@ if ($user->isLoggedIn()) {
                                                         <option value="1">1st Year</option>
                                                         <option value="2">2nd Year</option>
                                                         <option value="3">3rd Year</option>
-                                                        <option value="4">4th Year</option>                                                                                            
-                                                    </select>                                              
+                                                        <option value="4">4th Year</option>
+                                                    </select>
                                                     <span class="form-text text-muted">
                                                         Please select year
                                                     </span>
@@ -1086,8 +1025,8 @@ if ($user->isLoggedIn()) {
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
                                                         <option value="Other">Other</option>
-                                                                                                    
-                                                    </select>                                            
+
+                                                    </select>
                                                     <span class="form-text text-muted">
                                                         Please select gender
                                                     </span>
@@ -1145,14 +1084,14 @@ if ($user->isLoggedIn()) {
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <div class="col-xl-4">                                            
-                                                    <label>Date of birth:</label>                                            
+                                                <div class="col-xl-4">
+                                                    <label>Date of birth:</label>
                                                     <div class="input-group date">
-                                                    <input type="text" class="form-control form-control-solid" readonly name="ett_dob" id="kt_datepicker_3"/>
+                                                        <input type="text" class="form-control form-control-solid" readonly name="ett_dob" id="kt_datepicker_3" />
                                                         <div class="input-group-append">
-                                                        <span class="input-group-text">
-                                                            <i class="la la-calendar"></i>
-                                                        </span>
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1332,8 +1271,8 @@ if ($user->isLoggedIn()) {
                                             $('#DepartmentModel').modal('hide');
                                             t.ajax.reload();
                                             setTimeout(function() {
-                                            location.reload(); //Refresh page
-                                        }, 1500);
+                                                location.reload(); //Refresh page
+                                            }, 1500);
                                         }
                                     }
                                 });
@@ -1354,8 +1293,8 @@ if ($user->isLoggedIn()) {
                                     success: function(data) {
                                         $('#DepartmentModel').modal('show');
                                         $("#ett_password").prop("type", "text");
-                                        $("#ett_cpassword").prop("type", "text");                                
-                                        $(".teacher_action").val('Back');                                
+                                        $("#ett_cpassword").prop("type", "text");
+                                        $(".teacher_action").val('Back');
                                         $('#ett_name').val(data.te_name);
                                         $('#kt_datepicker_3').val(data.te_dob);
                                         $('#ett_phone').val(data.te_phone);
@@ -1363,9 +1302,9 @@ if ($user->isLoggedIn()) {
                                         $('#ett_mentor').val(data.te_mentor).change();
                                         $('#ett_dept').val(data.te_dept).change();
                                         $('#ett_year').val(data.te_year).change();
-                                        $('#ett_gen').val(data.te_gen).change();                                                          
+                                        $('#ett_gen').val(data.te_gen).change();
                                         $('#ett_location').val(data.te_location);
-                                        $('#ett_roll').val(data.te_roll);                                
+                                        $('#ett_roll').val(data.te_roll);
                                         $('#ett_username').val(data.te_username);
                                         $('#ett_password').val(data.te_password);
                                         $('#ett_cpassword').val(data.te_password);
@@ -1424,7 +1363,7 @@ if ($user->isLoggedIn()) {
                                 document.getElementById("ett_hash").value = token;
                             });
 
-                            
+
 
                         });
                     </script>

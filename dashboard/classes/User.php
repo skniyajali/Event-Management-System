@@ -75,7 +75,32 @@ class User
         }
         return false;
     }
+    public function fac_event_org($user=null){
+        $fac = $this->_db->get('dept_event',array('fe_dept_hash','=',$user));
+        if($fac->count()){
+            return $fac->count();
+        }else{
+            return '0';
+        }
+    }
 
+    public function fac_event_part($user=null){
+        $fac = $this->_db->get('fac_event',array('fe_dept_hash','=',$user));
+        if($fac->count()){
+            return $fac->count();
+        }else{
+            return '0';
+        }
+    }
+
+    public function fas_event_part($user=null){
+        $fac = $this->_db->get('fas_event',array('fe_dept_hash','=',$user));
+        if($fac->count()){
+            return $fac->count();
+        }else{
+            return '0';
+        }
+    }
     public function department_count()
     {
         $data = $this->_db->get('em_department', array('dept_status', '=', 'Active'));

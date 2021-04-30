@@ -1,8 +1,8 @@
 	<!--begin::Header Mobile-->
 	<div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
 		<!--begin::Logo-->
-		<a href="index.php">
-			<img alt="Logo" src="../index.php" class="logo-default max-h-30px" />
+		<a href="index.php" class="font-weight-bolder font-size-h2">
+			EMS			
 		</a>
 		<!--end::Logo-->
 		<!--begin::Toolbar-->

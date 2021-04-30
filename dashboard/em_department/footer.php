@@ -4,10 +4,16 @@
     <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
-            <span class="text-muted font-weight-bold mr-2">©2021 All Rights Reserved. Developed By</span>
-            <a href="https://niyaj.enhancedteaching.co.in/" target="_blank" class="text-dark-75 text-hover-primary">Sk Niyaj Ali</a>
+            <span class="text-muted font-weight-bold mr-2">©2021</span>
+            <a href="#" target="_blank" class="text-dark-75 text-hover-primary">Event Management System(EMS)</a>
         </div>
         <!--end::Copyright-->
+        <!--begin::Developer-->
+        <div class="text-dark order-2 order-md-1">
+            <span class="text-muted font-weight-bold mr-2">Developed By</span>
+            <a href="https://niyaj.enhancedteaching.co.in/" target="_blank" class="text-dark-75 text-hover-primary">SK NIYAJ ALI</a>
+        </div>
+        <!--end::Developer-->
         <!--begin::Nav-->
         <div class="nav nav-dark order-1 order-md-2">
             <a href="#" target="_blank" class="nav-link pr-3 pl-0">About</a>

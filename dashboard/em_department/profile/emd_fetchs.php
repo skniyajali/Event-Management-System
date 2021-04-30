@@ -3,12 +3,7 @@ require('core/init.php');
 include('../../includes/db.php');
 include('../../includes/function.php');
 $user = new User();
-function description($string) {	
-    $expr = '/(?<=\s|^)[A-Z]/';
-    preg_match_all($expr, $string, $matches);    
-    $result = implode('', $matches[0]);
-    return $result;
- }
+
 $query = '';
 
 $output = array();
