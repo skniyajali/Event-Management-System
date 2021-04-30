@@ -339,7 +339,7 @@ if ($user->isLoggedIn()) {
                 <!--begin::Entry-->
                 <div class="d-flex flex-column-fluid">
                     <!--begin::Container-->
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
 							<div class="alert-icon">
 								<span class="svg-icon svg-icon-primary svg-icon-xl">
