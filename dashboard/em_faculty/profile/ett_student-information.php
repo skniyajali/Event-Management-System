@@ -24,18 +24,48 @@ if ($user->isLoggedIn()) {
     ?>
 
             <!DOCTYPE html>
+                <!--
+                Page Name: Event Management System(EMS)
+                Author: Sk Niyaj Ali
+                Website: http://www.niyaj.enhancedteaching.in/
+                Contact: niyaj320@gmail.com
+                Facebook : https://www.facebook.com/skniyajali7/
+                Instagram : https://www.instagram.com/_niyajali/
+                Twitter : https://twitter.com/skniyajali1
+                Behance.net : https://www.behance.net/skniyajali/
+                Codepen.io : https://codepen.io/skniyajali/
+                Creativemarket : https://creativemarket.com/users/skniyajali
+                Medium : https://medium.com/@skniyajali
+                Portfolio : https://skniyajali.myportfolio.com/
+                Vimeo : https://vimeo.com/skniyajali/
+                Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+                YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+                Pinterest : https://in.pinterest.com/skniyajali/
+                Thumblr : https://skniyajali2.tumblr.com/
+                Github : https://github.com/niyaj320/
+                Dribbble : https://dribbble.com/skniyajali/
+                Flickr : https://www.flickr.com/people/skniyajali/
+                Figma : https://www.figma.com/@skniyajali
+                LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+                Society6 : https://society6.com/skniyajali
+                Website : https://skniyaj.blogspot.com/?m=1
+                Hackaday.io : https://hackaday.io/niyaj320
 
+                License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+                -->
             <html lang="en">
             <!--begin::Head-->
 
             <head>
                 <meta charset="utf-8" />
                 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-                <title><?php echo escape($data->fac_name) ?> | Account Information</title>
-                <meta name="description" content="<?php echo escape($data->fac_name) ?> Account Information" />
+                <title><?php echo escape($data->fac_name) ?> | Student Information</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                <meta name="robots" content="noindex, nofollow">
-                <link rel="canonical" href="#" />
+                <link rel="canonical" href="http://niyaj.enhancedteaching.in" />
+                <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+                <meta name="description" content="EMS Dashboard" />
+                <meta name="robots" content="index, follow" />
+                <meta name="author" content="SK NIYAJ ALI" />
                 <!--begin::Fonts-->
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
                 <!--end::Fonts-->
@@ -86,7 +116,7 @@ if ($user->isLoggedIn()) {
                                                 </a>
                                             </li>
                                             <li class="menu-item menu-item-active" aria-haspopup="true">
-                                                <a href="../../em_faculty/index.php" class="menu-link">
+                                                <a href="../../index.php" class="menu-link">
                                                     <span class="menu-text">Faculty</span>
                                                 </a>
                                             </li>
@@ -159,76 +189,7 @@ if ($user->isLoggedIn()) {
                                                 </svg>
                                                 <!--end::Svg Icon-->
                                             </span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                            <!--begin::Navigation-->
-                                            <ul class="navi navi-hover py-5">
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-drop"></i>
-                                                        </span>
-                                                        <span class="navi-text">New Group</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-list-3"></i>
-                                                        </span>
-                                                        <span class="navi-text">Contacts</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-rocket-1"></i>
-                                                        </span>
-                                                        <span class="navi-text">Groups</span>
-                                                        <span class="navi-link-badge">
-                                                            <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-bell-2"></i>
-                                                        </span>
-                                                        <span class="navi-text">Calls</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-gear"></i>
-                                                        </span>
-                                                        <span class="navi-text">Settings</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-separator my-3"></li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-magnifier-tool"></i>
-                                                        </span>
-                                                        <span class="navi-text">Help</span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-icon">
-                                                            <i class="flaticon2-bell-2"></i>
-                                                        </span>
-                                                        <span class="navi-text">Privacy</span>
-                                                        <span class="navi-link-badge">
-                                                            <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <!--end::Navigation-->
-                                        </div>
+                                        </a>                                        
                                     </div>
                                     <!--end::Dropdown-->
                                     <!--begin::Dropdown-->
@@ -245,58 +206,7 @@ if ($user->isLoggedIn()) {
                                                 </svg>
                                                 <!--end::Svg Icon-->
                                             </span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                            <!--begin::Navigation-->
-                                            <ul class="navi navi-hover">
-                                                <li class="navi-header font-weight-bold py-4">
-                                                    <span class="font-size-lg">Choose Label:</span>
-                                                    <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                                </li>
-                                                <li class="navi-separator mb-3 opacity-70"></li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-separator mt-3 opacity-70"></li>
-                                                <li class="navi-footer py-4">
-                                                    <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                        <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                                </li>
-                                            </ul>
-                                            <!--end::Navigation-->
-                                        </div>
+                                        </a>                                        
                                     </div>
                                     <!--end::Dropdown-->
                                 </div>
@@ -330,7 +240,7 @@ if ($user->isLoggedIn()) {
                                                 <a href="#" class="text-muted">Dashboard</a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="#" class="text-muted">Department</a>
+                                                <a href="#" class="text-muted">Faculty</a>
                                             </li>
                                             <li class="breadcrumb-item">
                                                 <a href="#" class="text-muted"><?php echo escape($data->fac_name) ?></a>
@@ -346,82 +256,7 @@ if ($user->isLoggedIn()) {
                                     </div>
                                     <!--end::Page Heading-->
                                 </div>
-                                <!--end::Info-->
-                                <!--begin::Toolbar-->
-                                <div class="d-flex align-items-center">
-                                    <!--begin::Actions-->
-                                    <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">Actions</a>
-                                    <!--end::Actions-->
-                                    <!--begin::Dropdown-->
-                                    <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                                        <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="svg-icon svg-icon-success svg-icon-2x">
-                                                <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File-plus.svg-->
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <polygon points="0 0 24 0 24 24 0 24" />
-                                                        <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                        <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
-                                                    </g>
-                                                </svg>
-                                                <!--end::Svg Icon-->
-                                            </span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 m-0">
-                                            <!--begin::Navigation-->
-                                            <ul class="navi navi-hover">
-                                                <li class="navi-header font-weight-bold py-4">
-                                                    <span class="font-size-lg">Choose Label:</span>
-                                                    <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                                </li>
-                                                <li class="navi-separator mb-3 opacity-70"></li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-item">
-                                                    <a href="#" class="navi-link">
-                                                        <span class="navi-text">
-                                                            <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="navi-separator mt-3 opacity-70"></li>
-                                                <li class="navi-footer py-4">
-                                                    <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                        <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                                </li>
-                                            </ul>
-                                            <!--end::Navigation-->
-                                        </div>
-                                    </div>
-                                    <!--end::Dropdown-->
-                                </div>
-                                <!--end::Toolbar-->
+                                <!--end::Info-->                                
                             </div>
                         </div>
                         <!--end::Subheader-->
@@ -436,98 +271,18 @@ if ($user->isLoggedIn()) {
                                         <!--begin::Profile Card-->
                                         <div class="card card-custom card-stretch">
                                             <!--begin::Body-->
-                                            <div class="card-body pt-4">
-                                                <!--begin::Toolbar-->
-                                                <div class="d-flex justify-content-end">
-                                                    <div class="dropdown dropdown-inline">
-                                                        <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="ki ki-bold-more-hor"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                                            <!--begin::Navigation-->
-                                                            <ul class="navi navi-hover py-5">
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-drop"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">New Group</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-list-3"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Contacts</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-rocket-1"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Groups</span>
-                                                                        <span class="navi-link-badge">
-                                                                            <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-bell-2"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Calls</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-gear"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Settings</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-separator my-3"></li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-magnifier-tool"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Help</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="navi-item">
-                                                                    <a href="#" class="navi-link">
-                                                                        <span class="navi-icon">
-                                                                            <i class="flaticon2-bell-2"></i>
-                                                                        </span>
-                                                                        <span class="navi-text">Privacy</span>
-                                                                        <span class="navi-link-badge">
-                                                                            <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                            <!--end::Navigation-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--end::Toolbar-->
+                                            <div class="card-body pt-4">                                                
                                                 <!--begin::User-->
-                                                <div class="d-flex align-items-center">
+                                                <div class="d-flex align-items-center mt-2">
                                                     <?php if ($data->fac_image) { ?>
                                                         <div class="symbol mr-5 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
-                                                            <div class="symbol symbol-60">
-                                                                <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->fac_image); ?>" alt="<?php echo escape($data->fac_name); ?> image">
-                                                            </div>
+                                                            <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->fac_image); ?>" alt="<?php echo escape($data->fac_name); ?> image">
                                                             <i class="symbol-badge bg-success"></i>
                                                         </div>
                                                     <?php
                                                     } else {
                                                     ?>
-                                                        <div class="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
+                                                        <div class="symbol symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
                                                             <div class=" symbol-label font-size-auto"><?php echo $data->fac_name; ?>
                                                             </div>
                                                             <i class="symbol-badge bg-success"></i>
@@ -538,7 +293,7 @@ if ($user->isLoggedIn()) {
                                                         <div class="text-muted"><?php echo escape($data->fac_department) ?></div>
                                                         <div class="mt-2">
                                                             <a href="#" class="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"><?php echo escape($datas->dept_sname) ?></a>
-                                                            <a href="#" class="btn btn-sm btn-danger font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"><?php echo escape($data->fac_role) ?></a>
+                                                            <a href="#" class="btn btn-sm btn-danger font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"><?php echo escape($data->fac_role) ?></a>                                                        
                                                         </div>
                                                     </div>
                                                 </div>
@@ -671,7 +426,7 @@ if ($user->isLoggedIn()) {
                                                         </a>
                                                     </div>
                                                     <div class="navi-item mb-2">
-                                                        <a href="efp_event.php.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->fac_passkey)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Event Participates" data-placement="right">
+                                                        <a href="efp_event.php?emd_department_hash=<?php echo escape(convert_string('decrypt', $data->fac_passkey)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Event Participates" data-placement="right">
                                                             <span class="navi-icon mr-2">
                                                                 <span class="svg-icon">
                                                                     <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File.svg-->

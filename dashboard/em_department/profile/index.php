@@ -109,7 +109,7 @@ if ($user->isLoggedIn()) {
                                                 </a>
                                             </li>
                                             <li class="menu-item menu-item-active" aria-haspopup="true">
-                                                <a href="index.php" class="menu-link">
+                                                <a href="../index.php" class="menu-link">
                                                     <span class="menu-text">Department</span>
                                                 </a>
                                             </li>

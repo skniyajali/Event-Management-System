@@ -31,19 +31,49 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
 
 
         <!DOCTYPE html>
+            <!--
+        Page Name: Event Management System(EMS)
+        Author: Sk Niyaj Ali
+        Website: http://www.niyaj.enhancedteaching.in/
+        Contact: niyaj320@gmail.com
+        Facebook : https://www.facebook.com/skniyajali7/
+        Instagram : https://www.instagram.com/_niyajali/
+        Twitter : https://twitter.com/skniyajali1
+        Behance.net : https://www.behance.net/skniyajali/
+        Codepen.io : https://codepen.io/skniyajali/
+        Creativemarket : https://creativemarket.com/users/skniyajali
+        Medium : https://medium.com/@skniyajali
+        Portfolio : https://skniyajali.myportfolio.com/
+        Vimeo : https://vimeo.com/skniyajali/
+        Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+        YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+        Pinterest : https://in.pinterest.com/skniyajali/
+        Thumblr : https://skniyajali2.tumblr.com/
+        Github : https://github.com/niyaj320/
+        Dribbble : https://dribbble.com/skniyajali/
+        Flickr : https://www.flickr.com/people/skniyajali/
+        Figma : https://www.figma.com/@skniyajali
+        LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+        Society6 : https://society6.com/skniyajali
+        Website : https://skniyaj.blogspot.com/?m=1
+        Hackaday.io : https://hackaday.io/niyaj320
 
+        License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+        -->
         <html lang="en">
         <!--begin::Head-->
-
+        
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
         <head>
             <meta charset="utf-8" />
             <title><?php echo escape($data->fac_name) ?> | Profile Overview</title>
-            <meta name="description" content="View all Teachers" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-            <meta name="robots" content="noindex, nofollow">
-            <link rel="canonical" href="#" />
+            <link rel="canonical" href="http://niyaj.enhancedteaching.in" />
+            <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+            <meta name="description" content="EMS Dashboard" />
+            <meta name="robots" content="index, follow" />
+            <meta name="author" content="SK NIYAJ ALI" />
             <!--begin::Fonts-->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
             <!--end::Fonts-->
@@ -92,7 +122,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             </a>
                                         </li>                                        
                                         <li class="menu-item menu-item-active" aria-haspopup="true">
-                                            <a href="../../em_faculty/index.php" class="menu-link">
+                                            <a href="../../index.php" class="menu-link">
                                                 <span class="menu-text">Faculty</span>
                                             </a>
                                         </li>
@@ -165,76 +195,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             </svg>
                                             <!--end::Svg Icon-->
                                         </span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover py-5">
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-drop"></i>
-                                                    </span>
-                                                    <span class="navi-text">New Group</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-list-3"></i>
-                                                    </span>
-                                                    <span class="navi-text">Contacts</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-rocket-1"></i>
-                                                    </span>
-                                                    <span class="navi-text">Groups</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-bell-2"></i>
-                                                    </span>
-                                                    <span class="navi-text">Calls</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-gear"></i>
-                                                    </span>
-                                                    <span class="navi-text">Settings</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-separator my-3"></li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-magnifier-tool"></i>
-                                                    </span>
-                                                    <span class="navi-text">Help</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-bell-2"></i>
-                                                    </span>
-                                                    <span class="navi-text">Privacy</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
+                                    </a>                                    
                                 </div>
                                 <!--end::Dropdown-->
                                 <!--begin::Dropdown-->
@@ -251,58 +212,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             </svg>
                                             <!--end::Svg Icon-->
                                         </span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover">
-                                            <li class="navi-header font-weight-bold py-4">
-                                                <span class="font-size-lg">Choose Label:</span>
-                                                <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                            </li>
-                                            <li class="navi-separator mb-3 opacity-70"></li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-separator mt-3 opacity-70"></li>
-                                            <li class="navi-footer py-4">
-                                                <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                    <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
+                                    </a>                                    
                                 </div>
                                 <!--end::Dropdown-->
                             </div>
@@ -336,7 +246,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             <a href="#" class="text-muted">Dashboard</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#" class="text-muted">Department</a>
+                                            <a href="#" class="text-muted">Faculty</a>
                                         </li>
                                         <li class="breadcrumb-item">
                                             <a href="#" class="text-muted"><?php echo escape($data->fac_name) ?></a>
@@ -353,81 +263,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                 <!--end::Page Heading-->
                             </div>
                             <!--end::Info-->
-                            <!--begin::Toolbar-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Actions-->
-                                <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">Actions</a>
-                                <!--end::Actions-->
-                                <!--begin::Dropdown-->
-                                <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                                    <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="svg-icon svg-icon-success svg-icon-2x">
-                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File-plus.svg-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                                    <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                    <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
-                                                </g>
-                                            </svg>
-                                            <!--end::Svg Icon-->
-                                        </span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 m-0">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover">
-                                            <li class="navi-header font-weight-bold py-4">
-                                                <span class="font-size-lg">Choose Label:</span>
-                                                <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                            </li>
-                                            <li class="navi-separator mb-3 opacity-70"></li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-separator mt-3 opacity-70"></li>
-                                            <li class="navi-footer py-4">
-                                                <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                    <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
-                                </div>
-                                <!--end::Dropdown-->
-                            </div>
-                            <!--end::Toolbar-->
+                            
                         </div>
                     </div>
                     <!--end::Subheader-->
@@ -442,98 +278,18 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                     <!--begin::Profile Card-->
                                     <div class="card card-custom card-stretch">
                                         <!--begin::Body-->
-                                        <div class="card-body pt-4">
-                                            <!--begin::Toolbar-->
-                                            <div class="d-flex justify-content-end">
-                                                <div class="dropdown dropdown-inline">
-                                                    <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="ki ki-bold-more-hor"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                                        <!--begin::Navigation-->
-                                                        <ul class="navi navi-hover py-5">
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-drop"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">New Group</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-list-3"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Contacts</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-rocket-1"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Groups</span>
-                                                                    <span class="navi-link-badge">
-                                                                        <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-bell-2"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Calls</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-gear"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Settings</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-separator my-3"></li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-magnifier-tool"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Help</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-bell-2"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Privacy</span>
-                                                                    <span class="navi-link-badge">
-                                                                        <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <!--end::Navigation-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Toolbar-->
+                                        <div class="card-body pt-4">                                            
                                             <!--begin::User-->
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex align-items-center mt-2">
                                                 <?php if ($data->fac_image) { ?>
                                                     <div class="symbol mr-5 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
-                                                        <div class="symbol symbol-60">
-                                                            <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->fac_image); ?>" alt="<?php echo escape($data->fac_name); ?> image">
-                                                        </div>
+                                                        <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->fac_image); ?>" alt="<?php echo escape($data->fac_name); ?> image">
                                                         <i class="symbol-badge bg-success"></i>
                                                     </div>
                                                 <?php
                                                 } else {
                                                 ?>
-                                                    <div class="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
+                                                    <div class="symbol symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
                                                         <div class=" symbol-label font-size-auto"><?php echo $data->fac_name; ?>
                                                         </div>
                                                         <i class="symbol-badge bg-success"></i>
@@ -677,7 +433,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                                     </a>
                                                 </div>
                                                 <div class="navi-item mb-2">
-                                                    <a href="efp_event.php.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->fac_passkey)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Event Participates" data-placement="right">
+                                                    <a href="efp_event.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->fac_passkey)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Event Participates" data-placement="right">
                                                         <span class="navi-icon mr-2">
                                                             <span class="svg-icon">
                                                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File.svg-->
@@ -708,6 +464,213 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                 <!--end::Aside-->
                                 <!--begin::Content-->
                                 <div class="flex-row-fluid ml-lg-8">
+                                    <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
+                                        <div class="alert-icon">
+                                            <span class="svg-icon svg-icon-primary svg-icon-xl">
+                                                <!--begin::Svg Icon | path:/metronic/theme/html/demo11/dist/assets/media/svg/icons/Tools/Compass.svg-->
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                                        <path d="M7.07744993,12.3040451 C7.72444571,13.0716094 8.54044565,13.6920474 9.46808594,14.1079953 L5,23 L4.5,18 L7.07744993,12.3040451 Z M14.5865511,14.2597864 C15.5319561,13.9019016 16.375416,13.3366121 17.0614026,12.6194459 L19.5,18 L19,23 L14.5865511,14.2597864 Z M12,3.55271368e-14 C12.8284271,3.53749572e-14 13.5,0.671572875 13.5,1.5 L13.5,4 L10.5,4 L10.5,1.5 C10.5,0.671572875 11.1715729,3.56793164e-14 12,3.55271368e-14 Z" fill="#000000" opacity="0.3"></path>
+                                                        <path d="M12,10 C13.1045695,10 14,9.1045695 14,8 C14,6.8954305 13.1045695,6 12,6 C10.8954305,6 10,6.8954305 10,8 C10,9.1045695 10.8954305,10 12,10 Z M12,13 C9.23857625,13 7,10.7614237 7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 C17,10.7614237 14.7614237,13 12,13 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                    </g>
+                                                </svg>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                        </div>
+                                        <div class="alert-text font-size-h3 font-weight-bold">Event Organized </div>
+                                        <div class="card-toolbar">
+                                            <!--begin::Button-->
+                                            <button class="btn btn-info btn-icon font-weight-bolder">
+                                                <?php echo $user->fac_fevent_org($data->fac_passkey); ?>
+                                            </button>
+                                            <!--end::Button-->
+                                        </div>
+                                    </div>
+                                    <!--begin::Card-->
+                                    <div class="row">
+                                        <?php
+                                        $event = $db->get('dept_event', array('fe_fac_hash', '=', $data->fac_passkey));
+                                        if ($event->count()) {
+                                            $i = 0;
+                                            foreach ($event->results() as $rows) {
+                                                $fac = $db->get('em_faculty', array('fac_passkey', '=', $rows->fe_fac_hash));
+                                                if ($fac->count()) {
+                                                    $i = 0;
+                                                    foreach ($fac->results() as $row) {
+                                        ?>
+                                                        <div class="col-xl-4">
+                                                            <!--begin::Featured Product-->
+                                                            <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(../../theme/media/svg/shapes/abstract-3.svg)">
+                                                                <div class="card-body d-flex flex-column bg-white shadow-sm border-1 border-bottom justify-content-between ribbon ribbon-top">
+                                                                    <div class="ribbon-target bg-info" style="top: -2px; right: 20px;">
+                                                                        <?php echo $rows->fe_activity ?>
+                                                                    </div>
+                                                                    
+                                                                    <div class="text-center mt-3">
+                                                                        <h3 class="font-size-h1">
+                                                                            <a href="" class="text-dark font-weight-bolder text-hover-info"><?php echo $rows->fe_name ?></a>
+                                                                        </h3>
+                                                                        <div class="font-size-h4 text-primary">
+                                                                            <span class="label label-light-info label-inline mr-2"><?php echo $rows->fe_activity ?></span>
+                                                                            <span class="label label-light-danger label-inline"><?php echo $rows->fe_topic ?></span>
+                                                                        </div>
+
+                                                                        <!--begin::Contact-->
+                                                                        <div class="py-9">
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Event Name:</span>
+                                                                                <a href="#" class="text-info text-hover-primary font-size-h6"><?php echo escape($rows->fe_name); ?></a>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Activity:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_activity); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Topic:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_topic); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Venue:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_venue); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Start Date:</span>
+                                                                                <a href="#" class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_s_date); ?></a>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">End Date:</span>
+                                                                                <span class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_e_date); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Academic Year:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_year); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Created at:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_created_at); ?></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end::Contact-->
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Featured Product-->
+                                                        </div>
+                                        <?php
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                    <!--end::Card-->
+                                    
+                                    <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
+                                        <div class="alert-icon">
+                                            <span class="svg-icon svg-icon-primary svg-icon-xl">
+                                                <!--begin::Svg Icon | path:/metronic/theme/html/demo11/dist/assets/media/svg/icons/Tools/Compass.svg-->
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                                        <path d="M7.07744993,12.3040451 C7.72444571,13.0716094 8.54044565,13.6920474 9.46808594,14.1079953 L5,23 L4.5,18 L7.07744993,12.3040451 Z M14.5865511,14.2597864 C15.5319561,13.9019016 16.375416,13.3366121 17.0614026,12.6194459 L19.5,18 L19,23 L14.5865511,14.2597864 Z M12,3.55271368e-14 C12.8284271,3.53749572e-14 13.5,0.671572875 13.5,1.5 L13.5,4 L10.5,4 L10.5,1.5 C10.5,0.671572875 11.1715729,3.56793164e-14 12,3.55271368e-14 Z" fill="#000000" opacity="0.3"></path>
+                                                        <path d="M12,10 C13.1045695,10 14,9.1045695 14,8 C14,6.8954305 13.1045695,6 12,6 C10.8954305,6 10,6.8954305 10,8 C10,9.1045695 10.8954305,10 12,10 Z M12,13 C9.23857625,13 7,10.7614237 7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 C17,10.7614237 14.7614237,13 12,13 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                    </g>
+                                                </svg>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                        </div>
+                                        <div class="alert-text font-size-h3 font-weight-bold">Event Participated </div>
+                                        <div class="card-toolbar">
+                                            <!--begin::Button-->
+                                            <button class="btn btn-info btn-icon font-weight-bolder">
+                                                <?php echo $user->fac_fevent_part($data->fac_passkey); ?>
+                                            </button>
+                                            <!--end::Button-->
+                                        </div>
+                                    </div>
+
+                                    <!--begin::Card-->
+                                    <div class="row">
+                                        <?php
+                                        $event = $db->get('fac_event', array('fe_fac_hash', '=', $data->fac_passkey));
+                                        if ($event->count()) {
+                                            $i = 0;
+                                            foreach ($event->results() as $rows) {
+                                                $fac = $db->get('em_faculty', array('fac_passkey', '=', $rows->fe_fac_hash));
+                                                if ($fac->count()) {
+                                                    $i = 0;
+                                                    foreach ($fac->results() as $row) {
+                                        ?>
+                                                        <div class="col-xl-4">
+                                                            <!--begin::Featured Product-->
+                                                            <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(../../theme/media/svg/shapes/abstract-3.svg)">
+                                                                <div class="card-body d-flex flex-column bg-white shadow-sm border-1 border-bottom justify-content-between ribbon ribbon-top">
+                                                                    <div class="ribbon-target bg-info" style="top: -2px; right: 20px;">
+                                                                        <?php echo $rows->fe_activity ?>
+                                                                    </div>
+                                                                    
+                                                                    <div class="text-center mt-3">
+                                                                        <h3 class="font-size-h1">
+                                                                            <a href="#" class="text-dark font-weight-bolder text-hover-info"><?php echo $rows->fe_name ?></a>
+                                                                        </h3>
+                                                                        <div class="font-size-h4 text-primary">
+                                                                            <span class="label label-light-info label-inline mr-2"><?php echo $rows->fe_activity ?></span>
+                                                                            <span class="label label-light-danger label-inline"><?php echo $rows->fe_topic ?></span>
+                                                                        </div>
+
+                                                                        <!--begin::Contact-->
+                                                                        <div class="py-9">
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Event Name:</span>
+                                                                                <a href="#" class="text-info text-hover-primary font-size-h6"><?php echo escape($rows->fe_name); ?></a>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Activity:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_activity); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Topic:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_topic); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Venue:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_venue); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Start Date:</span>
+                                                                                <a href="#" class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_s_date); ?></a>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">End Date:</span>
+                                                                                <span class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_e_date); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Academic Year:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_year); ?></span>
+                                                                            </div>
+                                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                                <span class="font-weight-bold mr-2 font-size-h6 text-danger">Created at:</span>
+                                                                                <span class="text-info font-size-h6"><?php echo escape($rows->fe_created_at); ?></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end::Contact-->
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Featured Product-->
+                                                        </div>
+                                        <?php
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                    <!--end::Card-->
+
                                     <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
                                         <div class="alert-icon">
                                             <span class="svg-icon svg-icon-primary svg-icon-xl">
@@ -839,6 +802,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                         ?>
                                     </div>
                                     <!--end::Row-->
+
                                     <!--begin::Advance Table: Widget 7-->
                                     <div class="card card-custom gutter-b">
                                         <!--begin::Header-->

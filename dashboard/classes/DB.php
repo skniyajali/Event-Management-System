@@ -85,7 +85,7 @@ class DB
                     return $this;
                 }
             }
-        } else {
+        } elseif (count($where) === 7) {
             $operators = array('=', '>', '<', '>=', '<=', '!=');
 
             $field = $where[0];
@@ -107,6 +107,12 @@ class DB
                     return $this;
                 }
             }
+        }else{
+            $operators = array('=', '>', '<', '>=', '<=', '!=');
+            $sql = "{$action} FROM {$table}";
+                if (!$this->query($sql, array())->error()) {
+                    return $this;
+                }
         }
 
         return false;

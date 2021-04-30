@@ -11,7 +11,7 @@
         <!--begin::Developer-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted font-weight-bold mr-2">Developed By</span>
-            <a href="https://niyaj.enhancedteaching.co.in/" target="_blank" class="text-dark-75 text-hover-primary">SK NIYAJ ALI</a>
+            <a href="http://niyaj.enhancedteaching.in/" target="_blank" class="text-dark-75 text-hover-primary">SK NIYAJ ALI</a>
         </div>
         <!--end::Developer-->
         <!--begin::Nav-->

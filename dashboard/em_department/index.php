@@ -103,7 +103,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 									</a>
 								</li>
 								<li class="menu-item menu-item-active" aria-haspopup="true">
-									<a href="em_department/index.php" class="menu-link">
+									<a href="index.php" class="menu-link">
 										<span class="menu-text">Department</span>
 									</a>
 								</li>								
@@ -339,7 +339,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
             <!--begin::Entry-->
             <div class="d-flex flex-column-fluid">
                 <!--begin::Container-->
-                <div class="container">
+                <div class="container-fluid">
                     <!--begin::Notice-->                    
                     <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
                         <div class="alert-icon">

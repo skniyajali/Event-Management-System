@@ -45,7 +45,7 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="canonical" href="https://niyaj.enhancedteaching.co.in" />
+	<link rel="canonical" href="http://niyaj.enhancedteaching.in" />
 	<meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
 	<meta name="description" content="EMS Dashboard" />
 	<meta name="robots" content="index, follow" />

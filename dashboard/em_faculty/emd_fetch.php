@@ -67,12 +67,12 @@ foreach($result as $row)
     $sub_array[] = $row["fac_phone"];
     $sub_array[] = $row["fac_username"];
     $sub_array[] = $row["fac_designation"];
-	$sub_array[] = '<span class="label label-primary label-pill label-inline mr-2" id="status">' . $row["fac_department"] . '</span>';    
+	$sub_array[] = '<span class="label label-primary label-pill label-inline mr-2" id="status">' . $user->department_name($row["fac_dept_hash"]) . '</span>';    
     $sub_array[] = '<span class="label label-danger label-pill label-inline mr-2" id="status">' . $row["fac_role"] . '</span>';;    
     $sub_array[] = '<span class="label label-warning label-pill label-inline mr-2" id="status">' . $status . '</span>';
     $sub_array[] = $row["fac_address"];
 	$sub_array[] = $row["fac_created_at"];
-    $sub_array[] = '<a href="profile/index.php?emd_department_hash=' . convert_string('decrypt',$row["fac_passkey"]) . '&&em_admin='.convert_string('decrypt',$user->data()->passkey).'" id="' . convert_string('decrypt',$row["fac_hash"]) . '" class="ett_profile btn btn-sm btn-clean btn-icon" title="View Profile"> <i class="la la-cog"></i> </a> <button id="' . $row["fac_hash"] . '" name="ett_edit" class="ett_edit btn btn-sm btn-clean btn-icon" title="Teacher Details"> <i class="la la-eye"></i> </button> <a id="' . $row["fac_hash"] . '" name="ett_delete" class="ett_delete btn btn-sm btn-clean btn-icon" title="Update Status" data-status="' . $row["fac_status"] . '"> <i class="la la-trash"></i> </a>';
+    $sub_array[] = '<a href="profile/index.php?emd_department_hash=' . convert_string('decrypt',$row["fac_passkey"]) . '&&em_admin='.convert_string('decrypt',$user->data()->passkey).'" id="' . convert_string('decrypt',$row["fac_hash"]) . '" class="ett_profile btn btn-sm btn-clean btn-icon" title="View Profile"> <i class="la la-cog"></i> </a> <button id="' . convert_string('decrypt',$row["fac_hash"]) . '" name="ett_edit" class="ett_edit btn btn-sm btn-clean btn-icon" title="Teacher Details"> <i class="la la-eye"></i> </button> <a id="' . convert_string('decrypt',$row["fac_hash"]) . '" name="ett_delete" class="ett_delete btn btn-sm btn-clean btn-icon" title="Update Status" data-status="' . $row["fac_status"] . '"> <i class="la la-trash"></i> </a>';
 	$data[] = $sub_array;
 
 }
