@@ -216,7 +216,7 @@ if ($user->isLoggedIn()) {
                     <li class="list-inline-item my-1"><a class="nav-link-style" href="#">Terms &amp; Conditions</a></li>
                 </ul>
                 <p class="font-size-sm mb-0 mr-3 order-md-1">
-                    <span class="text-muted mr-1">© All rights reserved. Made by</span><a class="nav-link-style font-weight-normal" href="" target="_blank" rel="noopener">EMS TEAM</a>
+                    <span class="text-muted mr-1">©2021 All rights reserved. Developed by</span><a class="nav-link-style font-weight-normal" href="http://niyaj.enhancedteaching.in/" target="_blank" rel="noopener">SK NIYAJ ALI</a>
                 </p>
             </div>
         </footer>

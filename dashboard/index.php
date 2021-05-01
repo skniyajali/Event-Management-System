@@ -10,7 +10,7 @@ $db = DB::getInstance();
 <!--
 Page Name: Event Management System(EMS)
 Author: Sk Niyaj Ali
-Website: https://www.niyaj.enhancedteaching.co.in/
+Website: http://www.niyaj.enhancedteaching.in/
 Contact: niyaj320@gmail.com
 Facebook : https://www.facebook.com/skniyajali7/
 Instagram : https://www.instagram.com/_niyajali/
@@ -216,157 +216,8 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
 				<!--begin::Entry-->
 				<div class="d-flex flex-column-fluid">
 					<!--begin::Container-->
-					<div class="container">
-						<!--begin::Dashboard-->
-						<div class="row mt-4 pt-10">							
-							<div class="col-xl-4">
-								<div class="card card-custom card-stretch bg-light-danger gutter-b">
-									<!--begin::Header-->
-									<div class="card-header border-0 pt-5">
-										<h3 class="card-title align-items-start flex-column">
-											<span class="card-label font-weight-bolder text-dark">Recently Added Departments</span>
-											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->department_count() ?> Department</span>
-										</h3>										
-									</div>
-									<!--end::Header-->
-									<!--begin::Body-->
-									<div class="card-body pt-8">
-										<?php 
-											$query = "SELECT * FROM em_department WHERE dept_status = :_status ORDER BY dept_id DESC LIMIT 4";
-											$statement = $connect->prepare($query);
-											$statement->execute(array(
-												':_status' => 'Active'
-											));
-											if($statement->rowCount()){
-												foreach($statement->fetchAll() as $row){
-										?>
-											<!--begin::Item-->
-											<div class="d-flex align-items-center mb-10">
-												<!--begin::Symbol-->
-												<div class="symbol symbol-60 symbol-light-primary mr-5">
-													<?php if($row["dept_image"]){ ?>														
-															<img src="data:image/png;base64,<?php echo base64_encode($row["dept_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["dept_name"] ?>">
-													<?php	}else{ ?>
-																<span class="symbol-label"><?php echo $row["dept_sname"] ?></span>
-													<?php	} ?>
-													
-												</div>
-												<!--end::Symbol-->
-												<!--begin::Text-->
-												<div class="d-flex flex-column font-weight-bold">
-													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["dept_name"] ?></a>
-													<span class="text-muted"><?php echo $row["dept_created_at"] ?></span>
-												</div>
-												<!--end::Text-->
-											</div>
-											<!--end::Item-->
-										<?php
-												}
-											}
-										?>
-									</div>
-									<!--end::Body-->
-								</div>
-							</div>
-							<div class="col-xl-4">
-								<div class="card card-custom card-stretch bg-light-warning gutter-b">
-									<!--begin::Header-->
-									<div class="card-header border-0 pt-5">
-										<h3 class="card-title align-items-start flex-column">
-											<span class="card-label font-weight-bolder text-dark">Recently Added Faculty's</span>
-											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->faculty_count() ?> Faculty's</span>
-										</h3>										
-									</div>
-									<!--end::Header-->
-									<!--begin::Body-->
-									<div class="card-body pt-8">
-										<?php 
-											$query = "SELECT * FROM em_faculty WHERE fac_status = :_status ORDER BY fac_id DESC LIMIT 4";
-											$statement = $connect->prepare($query);
-											$statement->execute(array(
-												':_status' => 'Active'
-											));
-											if($statement->rowCount()){
-												foreach($statement->fetchAll() as $row){
-										?>
-											<!--begin::Item-->
-											<div class="d-flex align-items-center mb-10">
-												<!--begin::Symbol-->
-												<div class="symbol symbol-60 symbol-light-primary mr-5">
-													<?php if($row["fac_image"]){ ?>														
-															<img src="data:image/png;base64,<?php echo base64_encode($row["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["fac_name"] ?>">
-													<?php	}else{ ?>
-																<span class="symbol-label"><?php echo $row["fac_name"] ?></span>
-													<?php	} ?>
-													
-												</div>
-												<!--end::Symbol-->
-												<!--begin::Text-->
-												<div class="d-flex flex-column font-weight-bold">
-													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["fac_name"] ?></a>
-													<span class="text-muted"><?php echo $row["fac_created_at"] ?></span>
-												</div>
-												<!--end::Text-->
-											</div>
-											<!--end::Item-->
-										<?php
-												}
-											}
-										?>
-									</div>
-									<!--end::Body-->
-								</div>
-							</div>
-							<div class="col-xl-4">
-								<div class="card card-custom card-stretch bg-light-primary gutter-b">
-									<!--begin::Header-->
-									<div class="card-header border-0 pt-5">
-										<h3 class="card-title align-items-start flex-column">
-											<span class="card-label font-weight-bolder text-dark">Recently Added Student's</span>
-											<span class="text-muted mt-3 font-weight-bold font-size-sm">More Than <?php echo $user->student_count() ?> Student</span>
-										</h3>										
-									</div>
-									<!--end::Header-->
-									<!--begin::Body-->
-									<div class="card-body pt-8">
-										<?php 
-											$query = "SELECT * FROM em_students WHERE fac_status = :_status ORDER BY fac_id DESC LIMIT 4";
-											$statement = $connect->prepare($query);
-											$statement->execute(array(
-												':_status' => 'Active'
-											));
-											if($statement->rowCount()){
-												foreach($statement->fetchAll() as $row){
-										?>
-											<!--begin::Item-->
-											<div class="d-flex align-items-center mb-10">
-												<!--begin::Symbol-->
-												<div class="symbol symbol-60 symbol-light-primary mr-5">
-													<?php if($row["fac_image"]){ ?>														
-															<img src="data:image/png;base64,<?php echo base64_encode($row["fac_image"]) ?>" class="h-50 align-self-center" alt="<?php echo $row["dept_name"] ?>">
-													<?php	}else{ ?>
-																<span class="symbol-label"><?php echo $row["fac_name"] ?></span>
-													<?php	} ?>
-													
-												</div>
-												<!--end::Symbol-->
-												<!--begin::Text-->
-												<div class="d-flex flex-column font-weight-bold">
-													<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"><?php echo $row["fac_name"] ?></a>
-													<span class="text-muted"><?php echo $row["fac_created_at"] ?></span>
-												</div>
-												<!--end::Text-->
-											</div>
-											<!--end::Item-->
-										<?php
-												}
-											}
-										?>
-									</div>
-									<!--end::Body-->
-								</div>
-							</div>
-						</div>
+					<div class="container-fluid">
+						<!--begin::Dashboard-->						
 						<div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
 							<div class="alert-icon">
 								<span class="svg-icon svg-icon-primary svg-icon-xl">

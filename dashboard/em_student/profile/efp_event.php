@@ -1,3 +1,4 @@
+
 <?php
 
 require_once 'core/init.php';
@@ -5,22 +6,61 @@ require '../../includes/function.php';
 
 $user = new User();
 if($user->isLoggedIn()){
- ?>
+
+
+?>
 <?php
 if (!$ett_hash = Input::get('emd_department_hash')) {
-    //Redirect::to('../index.php');
+    Redirect::to('../index.php');
 } else {
-    $ett_teacher = new Department(convert_string('encrypt', $ett_hash));
-
+    
+    $ett_teacher = new Student(convert_string('encrypt',Input::get('emd_department_hash')));
+    
     if (!$ett_teacher->exists()) {
-        Redirect::to('../index.php');
+        //Redirect::to('../index.php');
+        //echo 'notok';
     } else {
         $data = $ett_teacher->data();
+        $d_data = new Department($data->fac_dept_hash);
+        $datas = $d_data->data();
+        $d_datas = new Faculty($data->fac_mentor_hash);
+        $mentor = $d_datas->data();
+        $db = DB::getInstance();
 
 ?>
 
-        <!DOCTYPE html>
 
+
+        <!DOCTYPE html>
+        <!--
+            Page Name: Event Management System(EMS)
+            Author: Sk Niyaj Ali
+            Website: https://www.niyaj.enhancedteaching.co.in/
+            Contact: niyaj320@gmail.com
+            Facebook : https://www.facebook.com/skniyajali7/
+            Instagram : https://www.instagram.com/_niyajali/
+            Twitter : https://twitter.com/skniyajali1
+            Behance.net : https://www.behance.net/skniyajali/
+            Codepen.io : https://codepen.io/skniyajali/
+            Creativemarket : https://creativemarket.com/users/skniyajali
+            Medium : https://medium.com/@skniyajali
+            Portfolio : https://skniyajali.myportfolio.com/
+            Vimeo : https://vimeo.com/skniyajali/
+            Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+            YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+            Pinterest : https://in.pinterest.com/skniyajali/
+            Thumblr : https://skniyajali2.tumblr.com/
+            Github : https://github.com/niyaj320/
+            Dribbble : https://dribbble.com/skniyajali/
+            Flickr : https://www.flickr.com/people/skniyajali/
+            Figma : https://www.figma.com/@skniyajali
+            LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+            Society6 : https://society6.com/skniyajali
+            Website : https://skniyaj.blogspot.com/?m=1
+            Hackaday.io : https://hackaday.io/niyaj320
+
+            License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+            -->
         <html lang="en">
         <!--begin::Head-->
 
@@ -28,11 +68,14 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
 
         <head>
             <meta charset="utf-8" />
-            <title><?php echo escape($data->dept_name) ?> | Student Information</title>
-            <meta name="description" content="<?php echo escape($data->dept_name) ?> Student Information" />
+            <title><?php echo escape($data->fac_name) ?> | Event Participated</title>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-            <meta name="robots" content="noindex, nofollow">
-            <link rel="canonical" href="#" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <link rel="canonical" href="http://niyaj.enhancedteaching.in" />
+            <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+            <meta name="description" content="EMS Dashboard" />
+            <meta name="robots" content="index, follow" />
+            <meta name="author" content="SK NIYAJ ALI" />
             <!--begin::Fonts-->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
             <!--end::Fonts-->
@@ -47,18 +90,17 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
             <!--end::Global Theme Styles-->
             <!--begin::Layout Themes(used by all pages)-->
             <!--end::Layout Themes-->
-            <link rel="shortcut icon" href="../theme/media/logos/favicon.ico" />
+            <link rel="shortcut icon" href="../theme/media/logos/favicon.ico" />            
 
         </head>
         <!--end::Head-->
         <!--begin::Body-->
 
-        <body id="kt_body" class="header-fixed header-mobile-fixed">
-
+        <body id="kt_body" class="header-fixed header-mobile-fixed">            
             <!--begin::Main-->
             <?php require('../aside.php'); ?>
             <!--begin::Wrapper-->
-            <div class="d-flex flex-column-fluid flex-column flex-row-fluid wrapper" id="kt_wrapper">
+            <div class="d-flex flex-column-fluid flex-column flex-row-fluid wrapper mr-7" id="kt_wrapper">
                 <!--begin::Header-->
                 <div id="kt_header" class="header header-fixed">
                     <!--begin::Header Wrapper-->
@@ -76,27 +118,22 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                                 <span class="menu-text">Dashboard</span>
                                             </a>
                                         </li>
-                                        <li class="menu-item menu-item-active" aria-haspopup="true">
+                                        <li class="menu-item" aria-haspopup="true">
                                             <a href="../index.php" class="menu-link">
                                                 <span class="menu-text">Department</span>
                                             </a>
-                                        </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="../../em_hod/index.php" class="menu-link">
-                                                <span class="menu-text">HOD</span>
-                                            </a>
-                                        </li>
+                                        </li>                                        
                                         <li class="menu-item" aria-haspopup="true">
                                             <a href="../../em_faculty/index.php" class="menu-link">
                                                 <span class="menu-text">Faculty</span>
                                             </a>
                                         </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="../../em_student/index.php" class="menu-link">
+                                        <li class="menu-item menu-item-active" aria-haspopup="true">
+                                            <a href="../index.php" class="menu-link">
                                                 <span class="menu-text">Students</span>
                                             </a>
                                         </li>
-
+                                        
                                     </ul>
                                     <!--end::Nav-->
                                 </div>
@@ -161,75 +198,6 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             <!--end::Svg Icon-->
                                         </span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover py-5">
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-drop"></i>
-                                                    </span>
-                                                    <span class="navi-text">New Group</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-list-3"></i>
-                                                    </span>
-                                                    <span class="navi-text">Contacts</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-rocket-1"></i>
-                                                    </span>
-                                                    <span class="navi-text">Groups</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-bell-2"></i>
-                                                    </span>
-                                                    <span class="navi-text">Calls</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-gear"></i>
-                                                    </span>
-                                                    <span class="navi-text">Settings</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-separator my-3"></li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-magnifier-tool"></i>
-                                                    </span>
-                                                    <span class="navi-text">Help</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon">
-                                                        <i class="flaticon2-bell-2"></i>
-                                                    </span>
-                                                    <span class="navi-text">Privacy</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
                                 </div>
                                 <!--end::Dropdown-->
                                 <!--begin::Dropdown-->
@@ -247,57 +215,6 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             <!--end::Svg Icon-->
                                         </span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover">
-                                            <li class="navi-header font-weight-bold py-4">
-                                                <span class="font-size-lg">Choose Label:</span>
-                                                <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                            </li>
-                                            <li class="navi-separator mb-3 opacity-70"></li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-separator mt-3 opacity-70"></li>
-                                            <li class="navi-footer py-4">
-                                                <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                    <i class="ki ki-plus icon-sm"></i>Add new</a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
                                 </div>
                                 <!--end::Dropdown-->
                             </div>
@@ -323,7 +240,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                 <!--begin::Page Heading-->
                                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                                     <!--begin::Page Title-->
-                                    <h5 class="text-dark font-weight-bold my-1 mr-5">EMS@KIOT</h5>
+                                    <h5 class="text-dark font-weight-bold my-1 mr-5">KIOT@<?php echo $datas->dept_name ?>#<?php echo $mentor->fac_name ?></h5>
                                     <!--end::Page Title-->
                                     <!--begin::Breadcrumb-->
                                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -331,102 +248,23 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             <a href="#" class="text-muted">Dashboard</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#" class="text-muted">Department</a>
+                                            <a href="#" class="text-muted">Student</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#" class="text-muted"><?php echo escape($data->dept_name) ?></a>
+                                            <a href="#" class="text-muted"><?php echo escape($data->fac_name) ?></a>
                                         </li>
                                         <li class="breadcrumb-item">
                                             <a href="#" class="text-muted">Profile</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="#" class="text-muted">Student Information</a>
+                                            <a href="#" class="text-muted">Overview</a>
                                         </li>
                                     </ul>
                                     <!--end::Breadcrumb-->
                                 </div>
                                 <!--end::Page Heading-->
                             </div>
-                            <!--end::Info-->
-                            <!--begin::Toolbar-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Actions-->
-                                <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">Actions</a>
-                                <!--end::Actions-->
-                                <!--begin::Dropdown-->
-                                <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                                    <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="svg-icon svg-icon-success svg-icon-2x">
-                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File-plus.svg-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                                    <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                    <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
-                                                </g>
-                                            </svg>
-                                            <!--end::Svg Icon-->
-                                        </span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 m-0">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover">
-                                            <li class="navi-header font-weight-bold py-4">
-                                                <span class="font-size-lg">Choose
-                                                    Label:</span>
-                                                <i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-                                            </li>
-                                            <li class="navi-separator mb-3 opacity-70">
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-success">Customer</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-danger">Partner</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-warning">Suplier</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-primary">Member</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-text">
-                                                        <span class="label label-xl label-inline label-light-dark">Staff</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-separator mt-3 opacity-70">
-                                            </li>
-                                            <li class="navi-footer py-4">
-                                                <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                    <i class="ki ki-plus icon-sm"></i>Add new
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
-                                </div>
-                                <!--end::Dropdown-->
-                            </div>
-                            <!--end::Toolbar-->
+                            <!--end::Info-->                            
                         </div>
                     </div>
                     <!--end::Subheader-->
@@ -434,116 +272,36 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                     <div class="d-flex flex-column-fluid">
                         <!--begin::Container-->
                         <div class="container-fluid">
-                            <!--begin::Profile Account Information-->
+                            <!--begin::Profile Overview-->
                             <div class="d-flex flex-row">
                                 <!--begin::Aside-->
                                 <div class="flex-row-auto offcanvas-mobile w-300px w-xl-350px" id="kt_profile_aside">
                                     <!--begin::Profile Card-->
                                     <div class="card card-custom card-stretch">
                                         <!--begin::Body-->
-                                        <div class="card-body pt-4">
-                                            <!--begin::Toolbar-->
-                                            <div class="d-flex justify-content-end">
-                                                <div class="dropdown dropdown-inline">
-                                                    <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="ki ki-bold-more-hor"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                                        <!--begin::Navigation-->
-                                                        <ul class="navi navi-hover py-5">
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-drop"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">New Group</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-list-3"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Contacts</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-rocket-1"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Groups</span>
-                                                                    <span class="navi-link-badge">
-                                                                        <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-bell-2"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Calls</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-gear"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Settings</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-separator my-3"></li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-magnifier-tool"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Help</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="navi-item">
-                                                                <a href="#" class="navi-link">
-                                                                    <span class="navi-icon">
-                                                                        <i class="flaticon2-bell-2"></i>
-                                                                    </span>
-                                                                    <span class="navi-text">Privacy</span>
-                                                                    <span class="navi-link-badge">
-                                                                        <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                                    </span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <!--end::Navigation-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Toolbar-->
+                                        <div class="card-body pt-4">                                            
                                             <!--begin::User-->
                                             <div class="d-flex align-items-center">
-                                                <?php if ($data->dept_image) { ?>
+                                                <?php if ($data->fac_image) { ?>
                                                     <div class="symbol mr-5 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
-                                                        <div class="symbol symbol-60">
-                                                            <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->dept_image); ?>" alt="<?php echo escape($data->dept_name); ?> image">
-                                                        </div>
+                                                        <img src="data:image/png;base64,<?php echo base64_encode($ett_teacher->data()->fac_image); ?>" alt="<?php echo escape($data->fac_name); ?> image">
                                                         <i class="symbol-badge bg-success"></i>
                                                     </div>
                                                 <?php
                                                 } else {
                                                 ?>
-                                                    <div class="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
-                                                        <div class=" symbol-label font-size-auto"><?php echo $data->dept_sname; ?>
+                                                    <div class="symbol symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
+                                                        <div class=" symbol-label font-size-auto"><?php echo $data->fac_name; ?>
                                                         </div>
                                                         <i class="symbol-badge bg-success"></i>
                                                     </div>
                                                 <?php } ?>
                                                 <div>
-                                                    <a href="#" class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary"><?php echo escape($data->dept_name); ?></a>
-                                                    <div class="text-muted">*KIOT@EMS</div>
+                                                    <a href="#" class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary"><?php echo escape($data->fac_name); ?></a>
+                                                    <div class="text-muted"><?php echo escape($data->fac_department) ?></div>
                                                     <div class="mt-2">
-                                                        <a href="#" class="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1">Chat</a>
-                                                        <a href="#" class="btn btn-sm btn-success font-weight-bold py-2 px-3 px-xxl-5 my-1">Follow</a>
+                                                        <a href="#" class="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"><?php echo escape($datas->dept_sname) ?></a>
+                                                        <a href="#" class="btn btn-sm btn-danger font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"><?php echo escape($data->fac_year) ?></a>                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -551,31 +309,39 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                             <!--begin::Contact-->
                                             <div class="py-9">
                                                 <div class="d-flex align-items-center justify-content-between mb-2">
+                                                    <span class="font-weight-bold mr-2">Name:</span>
+                                                    <a href="#" class="text-muted text-hover-primary"><?php echo escape($data->fac_name); ?></a>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between mb-2">
                                                     <span class="font-weight-bold mr-2">Email:</span>
-                                                    <a href="#" class="text-muted text-hover-primary"><?php echo escape($data->dept_email); ?></a>
+                                                    <a href="#" class="text-muted text-hover-primary"><?php echo escape($data->fac_email); ?></a>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                                     <span class="font-weight-bold mr-2">Phone:</span>
-                                                    <span class="text-muted"><?php echo escape($data->dept_phone); ?></span>
+                                                    <span class="text-muted"><?php echo escape($data->fac_phone); ?></span>
+                                                </div>                                                
+                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                    <span class="font-weight-bold mr-2">Gender:</span>
+                                                    <span class="text-muted"><?php echo escape($data->fac_gender); ?></span>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-between mb-2">
-                                                    <span class="font-weight-bold mr-2">Website:</span>
-                                                    <span class="text-muted"><?php echo escape($data->dept_site); ?></span>
-                                                </div>
+                                                    <span class="font-weight-bold mr-2">Date of Birth:</span>
+                                                    <span class="label label-inline label-warning"><?php echo escape($data->fac_dob); ?></span>
+                                                </div>                                                
                                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                                     <span class="font-weight-bold mr-2">Location:</span>
-                                                    <span class="text-muted">*Location</span>
+                                                    <span class="text-muted"><?php echo escape($data->fac_address); ?></span>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <span class="font-weight-bold mr-2">Joined at:</span>
-                                                    <span class="text-muted"><?php echo escape($data->dept_created_at); ?></span>
+                                                    <span class="text-muted"><?php echo escape($data->fac_created_at); ?></span>
                                                 </div>
                                             </div>
                                             <!--end::Contact-->
                                             <!--begin::Nav-->
                                             <div class="navi navi-bold navi-hover navi-active navi-link-rounded">
                                                 <div class="navi-item mb-2">
-                                                    <a href="index.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4">
+                                                    <a href="index.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->fac_hash)); ?>&em_admin=admin" class="navi-link py-4">
                                                         <span class="navi-icon mr-2">
                                                             <span class="svg-icon">
                                                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Design/Layers.svg-->
@@ -593,7 +359,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                                     </a>
                                                 </div>
                                                 <div class="navi-item mb-2">
-                                                    <a href="ett_personal-information.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4">
+                                                    <a href="ett_personal-information.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->fac_hash)); ?>&em_admin=admin" class="navi-link py-4">
                                                         <span class="navi-icon mr-2">
                                                             <span class="svg-icon">
                                                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/General/User.svg-->
@@ -611,7 +377,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                                     </a>
                                                 </div>
                                                 <div class="navi-item mb-2">
-                                                    <a href="ett_account-information.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4">
+                                                    <a href="ett_account-information.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->fac_hash)); ?>&em_admin=admin" class="navi-link py-4">
                                                         <span class="navi-icon mr-2">
                                                             <span class="svg-icon">
                                                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Code/Compiling.svg-->
@@ -627,30 +393,9 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                                         </span>
                                                         <span class="navi-text font-size-lg">Account Information</span>
                                                     </a>
-                                                </div>                                                
-                                                <div class="navi-item mb-2">
-                                                    <a href="ema_faculty.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4" data-toggle="tooltip" title="Faculty Details" data-placement="right">
-                                                        <span class="navi-icon mr-2">
-                                                            <span class="svg-icon">
-                                                                <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Layout/Layout-top-panel-6.svg-->
-                                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                        <rect x="0" y="0" width="24" height="24" />
-                                                                        <rect fill="#000000" x="2" y="5" width="19" height="4" rx="1" />
-                                                                        <rect fill="#000000" opacity="0.3" x="2" y="11" width="19" height="10" rx="1" />
-                                                                    </g>
-                                                                </svg>
-                                                                <!--end::Svg Icon-->
-                                                            </span>
-                                                        </span>
-                                                        <span class="navi-text font-size-lg">Faculty Details</span>
-                                                        <span class="navi-label">
-                                                            <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                        </span>
-                                                    </a>
                                                 </div>
                                                 <div class="navi-item mb-2">
-                                                    <a href="ema_student.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->dept_hash)); ?>&em_admin=admin" class="navi-link py-4 active" data-toggle="tooltip" title="Students Details" data-placement="right">
+                                                    <a href="efp_event.php?emd_department_hash=<?php echo escape(convert_string('decrypt',$data->fac_hash)); ?>&em_admin=admin" class="navi-link py-4 active" data-toggle="tooltip" title="Event Participates" data-placement="right">
                                                         <span class="navi-icon mr-2">
                                                             <span class="svg-icon">
                                                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Files/File.svg-->
@@ -665,7 +410,7 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                                                 <!--end::Svg Icon-->
                                                             </span>
                                                         </span>
-                                                        <span class="navi-text font-size-lg">Students Details</span>
+                                                        <span class="navi-text font-size-lg">Event Participated</span>
                                                         <span class="navi-label">
                                                             <span class="label label-light-primary label-inline font-weight-bold">new</span>
                                                         </span>
@@ -680,180 +425,85 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                                 </div>
                                 <!--end::Aside-->
                                 <!--begin::Content-->
-                                <div class="flex-row-fluid ml-lg-6">
+                                <div class="flex-row-fluid ml-lg-8">
                                     <!--begin::Card-->
-                                    <form class="form" method="post" id="ett_account_form">
-                                        <div class="card card-custom card-stretch" id="kt_page_sticky_card">
-                                            <!--begin::Header-->
-                                            <div class="card-header py-3">
-                                                <div class="card-title align-items-start flex-column">
-                                                    <h3 class="card-label font-weight-bolder text-dark">
-                                                        Account Information
-                                                    </h3>
-                                                    <span class="text-muted font-weight-bold font-size-sm mt-1">Change
-                                                        Department
-                                                        account
-                                                        settings</span>
-                                                </div>
-
-                                            </div>
-                                            <!--end::Header-->
-                                            <!--begin::Form-->
-
-                                            <div class="card-body">
-                                                <!--begin::Heading-->
-                                                <div class="row">
-                                                    <label class="col-xl-3"></label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <h5 class="font-weight-bold mb-6">
-                                                            Account:
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <!--begin::Alert-->
-                                                <div class="alert alert-custom alert-light-danger fade show mb-10" role="alert">
-                                                    <div class="alert-icon">
-                                                        <span class="svg-icon svg-icon-3x svg-icon-danger">
-                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo6/dist/assets/media/svg/icons/Code/Info-circle.svg-->
-                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
-                                                                    <rect fill="#000000" x="11" y="10" width="2" height="7" rx="1" />
-                                                                    <rect fill="#000000" x="11" y="7" width="2" height="2" rx="1" />
-                                                                </g>
-                                                            </svg>
-                                                            <!--end::Svg Icon-->
-                                                        </span>
-                                                    </div>
-                                                    <div class="alert-text font-weight-bold">
-                                                        Make Sure choose Unique and mixed password for teacher, It is help to keep account secure.
-                                                        <br />Choose Maximum 8 Character including Upper & Lowercase and special Character with Number for more security.
-                                                    </div>
-                                                    <div class="alert-close">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                            <span aria-hidden="true">
-                                                                <i class="ki ki-close"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <!--end::Alert-->
-                                                <!--begin::Form Group-->
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Username</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <input class="form-control form-control-lg form-control-solid" type="text" name="te_username" id="te_username" value="<?php echo escape($data->dept_username); ?>" />
-                                                    </div>
-                                                </div>
-                                                <!--begin::Form Group-->
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Email
-                                                        Address</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <div class="input-group input-group-lg input-group-solid">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-at"></i>
-                                                                </span>
+                                    <div class="row">
+                                        <?php
+                                        $event = $db->get('fas_event', array('fe_std_hash', '=', $data->fac_passkey));
+                                        if ($event->count()) {
+                                            $i = 0;
+                                            foreach ($event->results() as $rows) {                                                
+                                        ?>
+                                                <div class="col-xl-4">
+                                                    <!--begin::Featured Product-->
+                                                    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(../../theme/media/svg/shapes/abstract-3.svg)">
+                                                        <div class="card-body d-flex flex-column bg-white shadow-sm border-1 border-bottom justify-content-between ribbon ribbon-top">
+                                                            <div class="ribbon-target bg-info" style="top: -2px; right: 20px;">
+                                                                <?php echo $rows->fe_activity ?>
                                                             </div>
-                                                            <input type="text" class="form-control form-control-lg form-control-solid" name="te_email" id="te_email" value="<?php echo escape($data->dept_email); ?>" placeholder="Email" />
-                                                        </div>
-                                                        <span class="form-text text-muted">Email
-                                                            will
-                                                            not
-                                                            be
-                                                            publicly
-                                                            displayed.
-                                                            <a href="#" class="font-weight-bold">Learn
-                                                                more</a>.</span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator separator-dashed">
-                                                </div>
-                                                <div class="row">
-                                                    <label class="col-xl-3"></label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <h5 class="font-weight-bold mt-4 mb-4 text-center">
-                                                            Change Password
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="separator separator-dashed mb-4">
-                                                </div>
+                                                            
+                                                            <div class="text-center mt-3">
+                                                                <h3 class="font-size-h1">
+                                                                    <a href="#" class="text-dark font-weight-bolder text-hover-info"><?php echo $rows->fe_name ?></a>
+                                                                </h3>
+                                                                <div class="font-size-h4 text-primary">
+                                                                    <span class="label label-light-info label-inline mr-2"><?php echo $rows->fe_activity ?></span>
+                                                                    <span class="label label-light-danger label-inline"><?php echo $rows->fe_topic ?></span>
+                                                                </div>
 
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-alert">New
-                                                        Password</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <div class="input-group">
-
-                                                            <input type="text" class="form-control form-control-lg form-control-solid" id="te_pass" name="te_pass" placeholder="New password" />
-                                                            <div class="input-group-append">
-                                                                <button class="btn btn-primary" type="button" id="gen_password" name="gen_password" title="Generate Password"><i class="flaticon-refresh"></i></button>
+                                                                <!--begin::Contact-->
+                                                                <div class="py-9">
+                                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">Event Name:</span>
+                                                                        <a href="#" class="text-info text-hover-primary font-size-h6"><?php echo escape($rows->fe_name); ?></a>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">Activity:</span>
+                                                                        <span class="text-info font-size-h6"><?php echo escape($rows->fe_activity); ?></span>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">Topic:</span>
+                                                                        <span class="text-info font-size-h6"><?php echo escape($rows->fe_topic); ?></span>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">Venue:</span>
+                                                                        <span class="text-info font-size-h6"><?php echo escape($rows->fe_venue); ?></span>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">Start Date:</span>
+                                                                        <a href="#" class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_s_date); ?></a>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">End Date:</span>
+                                                                        <span class="text-light font-size-h6 label label-inline label-danger"><?php echo escape($rows->fe_e_date); ?></span>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">Academic Year:</span>
+                                                                        <span class="text-info font-size-h6"><?php echo escape($rows->fe_year); ?></span>
+                                                                    </div>
+                                                                    <div class="d-flex align-items-center justify-content-between">
+                                                                        <span class="font-weight-bold mr-2 font-size-h6 text-danger">Created at:</span>
+                                                                        <span class="text-info font-size-h6"><?php echo escape($rows->fe_created_at); ?></span>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Contact-->
                                                             </div>
+
                                                         </div>
                                                     </div>
+                                                    <!--end::Featured Product-->
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label text-alert">Confirm
-                                                        Password</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <input type="text" class="form-control form-control-lg form-control-solid" id="te_cpass" name="te_cpass" placeholder="Confirm Teacher password" />
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="separator separator-dashed">
-                                                </div>
-                                                <!--begin::Form Group-->
-                                                <div class="row">
-                                                    <label class="col-xl-3"></label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <h5 class="font-weight-bold mb-4 mt-4 text-center">
-                                                            Security:
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="separator separator-dashed mb-4">
-                                                </div>
-                                                <!--begin::Form Group-->
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Send Account Details</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <button type="button" class="btn btn-light-primary font-weight-bold btn-sm send_acc_details" id="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" name="send_acc_details">Send Account Details</button>
-                                                    </div>
-                                                </div>
-                                                <!--begin::Form Group-->
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Change Account Status</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <?php if ($data->dept_status == "Active") { ?>
-                                                            <button type="button" class="btn btn-light-danger font-weight-bold btn-sm account" data_value="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" id="deactivate_account" name="deactivate_account">Deactivate Department account?</button>
-                                                        <?php
-                                                        } else { ?><button type="button" class="btn btn-light-success font-weight-bold btn-sm account" data_value="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" id="activate_account" name="activate_account">Activate Department account?</button> <?php } ?>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer">
-                                                <div class="card-toolbar">
-                                                    <input type="hidden" name="action" id="action" value="insert" />
-                                                    <input type="hidden" name="ett_token" id="ett_token" value="<?php echo escape(convert_string('decrypt', $data->dept_passkey)); ?>" />
-                                                    <button type="submit" name="ett_account_submit" class="btn btn-success mr-2 float-right">Save
-                                                        Changes</button>
-                                                    <button type="" class="btn btn-secondary">Cancel</button>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--end::Card-->
-                                    </form>
-                                    <!--end::Form-->
+                                        <?php
+                                                 
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                    <!--end::Card-->
                                 </div>
                                 <!--end::Content-->
                             </div>
-                            <!--end::Profile Account Information-->
+                            <!--end::Profile Overview-->
                         </div>
                         <!--end::Container-->
                     </div>
@@ -861,127 +511,20 @@ if (!$ett_hash = Input::get('emd_department_hash')) {
                 </div>
                 <!--end::Content-->
                 <?php require('footer.php'); ?>
-                <script src="../../theme/js/pages/widgetsc7e5.js?v=7.1.1">
-                </script>
-                <script src="../../theme/js/pages/custom/profile/profilec7e5.js?v=7.1.1">
-                </script>
-                <script src="ett_account-information.js">
-                </script>
-                <script>
-                    $(document).ready(function() {
-                        $('#ett_account_form').submit(function(event) {
-                            event.preventDefault();
-                            $('#action').val('Teacher_update');
-                            var form_data = $(this).serialize();
-                            $.ajax({
-                                url: 'ett_account-information_action.php',
-                                method: 'post',
-                                data: form_data,
-                                dataType: 'json',
-                                success: function(data) {
-                                    if (data.error != '') {
-                                        Swal.fire({
-                                            position: 'top-right',
-                                            icon: 'error',
-                                            title: data.error,
-                                            showConfirmButton: false,
-                                            timer: 1500,
-                                        });
-                                        setTimeout(function() {
-                                            location.reload(); //Refresh page
-                                        }, 1500);
-                                    } else {
-                                        Swal.fire({
-                                            position: 'top-right',
-                                            icon: 'success',
-                                            title: data.message,
-                                            showConfirmButton: false,
-                                            timer: 1500,
-                                        });
-                                        setTimeout(function() {
-                                            location.reload(); //Refresh page
-                                        }, 1500);
-                                    }
-                                },
-                            });
-                        });
-                        $(document).on('click', '#gen_password', function() {
-                            var passkey = generate_passkey(10);
-                            document.getElementById('te_pass').value = passkey;
-                            document.getElementById('te_cpass').value = passkey;
-                        });
+                <script src="../../theme/js/pages/widgetsc7e5.js?v=7.1.1"></script>
+                <script src="../../theme/js/pages/custom/profile/profilec7e5.js?v=7.1.1"></script>
 
-                        $(document).on('click', '.send_acc_details', function() {
-                            var ett_id = $(this).attr('id');
-                            var action = 'mail';
-                            $.ajax({
-                                url: 'ett_account-information_action.php',
-                                method: 'POST',
-                                data: {
-                                    ett_id: ett_id,
-                                    action: action,
-                                },
-                                dataType: 'json',
-                                success: function(data) {
-                                    Swal.fire({
-                                        position: 'top-right',
-                                        icon: 'success',
-                                        title: data.message,
-                                        showConfirmButton: false,
-                                        timer: 1500,
-                                    });
-                                },
-                            });
-                        });
-
-                        $(document).on('click', '.account', function() {
-                            var ett_id = $(this).attr('id');
-                            var ett_value = $(this).attr('data_value');
-                            var action = 'status';
-                            $.ajax({
-                                url: 'ett_account-information_action.php',
-                                method: 'POST',
-                                data: {
-                                    ett_id: ett_id,
-                                    action: action,
-                                    ett_token: ett_value,
-                                },
-                                dataType: 'json',
-                                success: function(data) {
-                                    Swal.fire({
-                                        position: 'top-right',
-                                        icon: 'success',
-                                        title: data.message,
-                                        showConfirmButton: false,
-                                        timer: 1500,
-                                    });
-                                    setTimeout(function() {
-                                        location.reload(); //Refresh page
-                                    }, 1500);
-                                },
-                            });
-                        });
-                    });
-                </script>
-                <script>
-                    function generate_passkey(length) {
-                        //edit the token allowed characters
-                        var a = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~`@#$%^&*--+='.split('');
-                        var b = [];
-                        for (var i = 0; i < length; i++) {
-                            var j = (Math.random() * (a.length - 1)).toFixed(0);
-                            b[i] = a[j];
-                        }
-                        return b.join('');
-                    }
-                </script>
         </body>
         <!--end::Body-->
 
 
         </html>
+
 <?php
     }
 }
+}else{
+    Redirect::to('../../../index.php');
 }
+
 ?>

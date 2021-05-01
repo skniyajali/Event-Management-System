@@ -71,7 +71,7 @@ foreach($result as $row)
     $sub_array[] = $row["fac_phone"];
     $sub_array[] = $row["fac_username"];
     $sub_array[] = $row["fac_mentor"];
-	$sub_array[] = '<span class="label label-primary label-pill label-inline mr-2" id="status">' . $row["fac_department"] . '</span>';    
+	$sub_array[] = '<span class="label label-primary label-pill label-inline mr-2" id="status">' . $user->department_name($row["fac_dept_hash"]) . '</span>';    
     $sub_array[] = '<span class="label label-danger label-pill label-inline mr-2" id="status">' . $row["fac_year"] . '</span>';;    
     $sub_array[] = '<span class="label label-warning label-pill label-inline mr-2" id="status">' . $status . '</span>';
     $sub_array[] = $row["fac_address"];

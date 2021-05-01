@@ -4,14 +4,14 @@
     <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
-            <span class="text-muted font-weight-bold mr-2">2021©</span>
-            <a href="#" target="_blank" class="text-dark-75 text-hover-primary">EMS@KIOT</a>
+            <span class="text-muted font-weight-bold mr-2">©2021</span>
+            <a href="#" target="_blank" class="text-dark-75 text-hover-primary">Event Management System(EMS)</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Developer-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted font-weight-bold mr-2">Developed By</span>
-            <a href="#" target="_blank" class="text-dark-75 text-hover-primary">EMS@Team</a>
+            <a href="http://niyaj.enhancedteaching.in/" target="_blank" class="text-dark-75 text-hover-primary">SK NIYAJ ALI</a>
         </div>
         <!--end::Developer-->
         <!--begin::Nav-->
