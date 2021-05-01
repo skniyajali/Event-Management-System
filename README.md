@@ -1,6 +1,6 @@
 # Event Management System(EMS)
 
-# Description
+## Description
 
     This EMS System is Developed Using PHP, MySql, Bootstrap, Javascript, and jQuery.
     This is a jQuery Based CRUD Application.
