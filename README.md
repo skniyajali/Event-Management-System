@@ -46,8 +46,9 @@
 
     Please make sure to update tests as appropriate.
 ## Author
-    [SK NIYAJ ALI](http://niyaj.enhancedteaching.in/)
+    SK NIYAJ ALI
     Web Developer and UI/UX Designer.
+    
     [GitHub](https://github.com/skniyajali/)
     [Facebook](https://www.facebook.com/skniyajali7/)
     [Instagram](https://www.instagram.com/_niyajali/)
