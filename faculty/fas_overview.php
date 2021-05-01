@@ -15,14 +15,45 @@ if ($user->isLoggedIn()) {
 ?>
                 <!DOCTYPE html>
                 <html lang="en">
+                <!--
+        Page Name: Event Management System(EMS)
+        Author: Sk Niyaj Ali
+        Website: http://niyaj.enhancedteaching.in/
+        Contact: niyaj320@gmail.com
+        Facebook : https://www.facebook.com/skniyajali7/
+        Instagram : https://www.instagram.com/_niyajali/
+        Twitter : https://twitter.com/skniyajali1
+        Behance.net : https://www.behance.net/skniyajali/
+        Codepen.io : https://codepen.io/skniyajali/
+        Creativemarket : https://creativemarket.com/users/skniyajali
+        Medium : https://medium.com/@skniyajali
+        Portfolio : https://skniyajali.myportfolio.com/
+        Vimeo : https://vimeo.com/skniyajali/
+        Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+        YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+        Pinterest : https://in.pinterest.com/skniyajali/
+        Thumblr : https://skniyajali2.tumblr.com/
+        Github : https://github.com/niyaj320/
+        Dribbble : https://dribbble.com/skniyajali/
+        Flickr : https://www.flickr.com/people/skniyajali/
+        Figma : https://www.figma.com/@skniyajali
+        LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+        Society6 : https://society6.com/skniyajali
+        Website : https://skniyaj.blogspot.com/?m=1
+        Hackaday.io : https://hackaday.io/niyaj320
+
+        License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+        -->
 
                 <head>
                     <meta charset="utf-8" />
                     <title><?php echo $data->fac_name ?> | EMS@Faculty</title>
                     <!-- SEO Meta Tags-->
-                    <meta name="description" content="EMS KIOT" />
-                    <meta name="keywords" content="ems,kiot" />
-                    <meta name="author" content="EMS Team" />
+                    <link rel="canonical" href="http://niyaj.enhancedteaching.in" />
+                    <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+                    <meta name="description" content="EMS Dashboard" />
+                    <meta name="robots" content="index, follow" />
+                    <meta name="author" content="SK NIYAJ ALI" />
                     <!-- Viewport-->
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -87,41 +118,41 @@ if ($user->isLoggedIn()) {
                                             <li class="nav-item">
                                                 <a class="nav-link" href="index.php">Home</a>
                                             </li>
-                                            <?php if($data->fac_role == 'HOD'){ ?>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                                    <li class="dropdown-divider"></li>                                        
-                                                    <li><a class="dropdown-item" href="fac_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Report</a></li>                                        
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="fas_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                                    <li class="dropdown-divider"></li>                                        
-                                                    <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Report</a></li>                                        
-                                                </ul>
-                                            </li>
-                                            <?php }else{ ?>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                                    <li class="dropdown-divider"></li>                                        
-                                                    <li><a class="dropdown-item" href="fac_event_create.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Participated</a></li>                                        
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item dropdown active">
-                                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item active" href="fas_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                                    <li class="dropdown-divider"></li>                                        
-                                                    <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Report</a></li>                                        
-                                                </ul>
-                                            </li>
-                                            <?php } ?>                                
+                                            <?php if ($data->fac_role == 'HOD') { ?>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                                        <li class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item" href="fac_event_report.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Report</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="nav-item dropdown active">
+                                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item active" href="fas_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                                        <li class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Report</a></li>
+                                                    </ul>
+                                                </li>
+                                            <?php } else { ?>
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                                        <li class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item" href="fac_event_create.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Participated</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="nav-item dropdown active">
+                                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item active" href="fas_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                                        <li class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Report</a></li>
+                                                    </ul>
+                                                </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -138,7 +169,7 @@ if ($user->isLoggedIn()) {
                         </div>
                         <!-- Page content-->
                         <div class="container bg-overlay-content pb-4 mb-md-3" style="margin-top: -350px">
-                            <div class="d-flex flex-column h-100 bg-light rounded-lg box-shadow-lg p-4">                                    
+                            <div class="d-flex flex-column h-100 bg-light rounded-lg box-shadow-lg p-4">
                                 <div class="py-1 p-md-3 mt-3  border-bottom">
                                     <!-- Title + Delete link-->
                                     <div class="d-sm-flex align-items-center justify-content-between pb-2 text-center text-sm-left">
@@ -156,13 +187,13 @@ if ($user->isLoggedIn()) {
                                                     <div class="ml-4 ml-sm-0 py-2">
                                                         <h3 class="mb-2 ml-4">Paper Presentation</h3>
                                                     </div>
-                                                    <?php 
-                                                        $jp = $db->get('fas_event',array('fe_activity','=','Paper Presentation'));
-                                                        if($jp->count()){
-                                                            $jpc = $jp->count();
-                                                        }else{
-                                                            $jpc = 0;
-                                                        }
+                                                    <?php
+                                                    $jp = $db->get('fas_event', array('fe_activity', '=', 'Paper Presentation'));
+                                                    if ($jp->count()) {
+                                                        $jpc = $jp->count();
+                                                    } else {
+                                                        $jpc = 0;
+                                                    }
                                                     ?>
                                                     <div class="d-flex align-items-end py-3 py-sm-2 px-4">
                                                         <span class="cs-price display-2 font-weight-normal text-primary px-1 mr-2"><?php echo $jpc ?></span>
@@ -180,13 +211,13 @@ if ($user->isLoggedIn()) {
                                                     <div class="ml-4 ml-sm-0 py-2">
                                                         <h3 class="mb-2 ml-4">Workshop</h3>
                                                     </div>
-                                                    <?php 
-                                                        $co = $db->get('fas_event',array('fe_activity','=','Workshop'));
-                                                        if($co->count()){
-                                                            $coc = $co->count();
-                                                        }else{
-                                                            $coc = 0;
-                                                        }
+                                                    <?php
+                                                    $co = $db->get('fas_event', array('fe_activity', '=', 'Workshop'));
+                                                    if ($co->count()) {
+                                                        $coc = $co->count();
+                                                    } else {
+                                                        $coc = 0;
+                                                    }
                                                     ?>
                                                     <div class="d-flex align-items-end py-3 py-sm-2 px-4">
                                                         <span class="cs-price display-2 font-weight-normal text-primary px-1 mr-2"><?php echo $coc ?></span>
@@ -204,13 +235,13 @@ if ($user->isLoggedIn()) {
                                                     <div class="ml-4 ml-sm-0 py-2">
                                                         <h3 class="mb-2 ml-4">Courses</h3>
                                                     </div>
-                                                    <?php 
-                                                        $gl = $db->get('fas_event',array('fe_activity','=','Courses'));
-                                                        if($gl->count()){
-                                                            $glc = $gl->count();
-                                                        }else{
-                                                            $glc = 0;
-                                                        }
+                                                    <?php
+                                                    $gl = $db->get('fas_event', array('fe_activity', '=', 'Courses'));
+                                                    if ($gl->count()) {
+                                                        $glc = $gl->count();
+                                                    } else {
+                                                        $glc = 0;
+                                                    }
                                                     ?>
                                                     <div class="d-flex align-items-end py-3 py-sm-2 px-4">
                                                         <span class="cs-price display-2 font-weight-normal text-primary px-1 mr-2"><?php echo $glc ?></span>
@@ -228,13 +259,13 @@ if ($user->isLoggedIn()) {
                                                     <div class="ml-4 ml-sm-0 py-2">
                                                         <h3 class="mb-2 ml-4">Contest</h3>
                                                     </div>
-                                                    <?php 
-                                                        $gl = $db->get('fas_event',array('fe_activity','=','Contest'));
-                                                        if($gl->count()){
-                                                            $glc = $gl->count();
-                                                        }else{
-                                                            $glc = 0;
-                                                        }
+                                                    <?php
+                                                    $gl = $db->get('fas_event', array('fe_activity', '=', 'Contest'));
+                                                    if ($gl->count()) {
+                                                        $glc = $gl->count();
+                                                    } else {
+                                                        $glc = 0;
+                                                    }
                                                     ?>
                                                     <div class="d-flex align-items-end py-3 py-sm-2 px-4">
                                                         <span class="cs-price display-2 font-weight-normal text-primary px-1 mr-2"><?php echo $glc ?></span>
@@ -252,13 +283,13 @@ if ($user->isLoggedIn()) {
                                                     <div class="ml-4 ml-sm-0 py-2">
                                                         <h3 class="mb-2 ml-4">Bootcamp</h3>
                                                     </div>
-                                                    <?php 
-                                                        $gp = $db->get('fac_event',array('fe_activity','=','Bootcamp'));
-                                                        if($gp->count()){
-                                                            $gpc = $gp->count();
-                                                        }else{
-                                                            $gpc = 0;
-                                                        }
+                                                    <?php
+                                                    $gp = $db->get('fac_event', array('fe_activity', '=', 'Bootcamp'));
+                                                    if ($gp->count()) {
+                                                        $gpc = $gp->count();
+                                                    } else {
+                                                        $gpc = 0;
+                                                    }
                                                     ?>
                                                     <div class="d-flex align-items-end py-3 py-sm-2 px-4">
                                                         <span class="cs-price display-2 font-weight-normal text-primary px-1 mr-2"><?php echo $gpc ?></span>
@@ -276,13 +307,13 @@ if ($user->isLoggedIn()) {
                                                     <div class="ml-4 ml-sm-0 py-2">
                                                         <h3 class="mb-2 ml-4">Internship</h3>
                                                     </div>
-                                                    <?php 
-                                                        $gc = $db->get('fas_event',array('fe_activity','=','Internship'));
-                                                        if($gc->count()){
-                                                            $gcc = $gc->count();
-                                                        }else{
-                                                            $gcc = 0;
-                                                        }
+                                                    <?php
+                                                    $gc = $db->get('fas_event', array('fe_activity', '=', 'Internship'));
+                                                    if ($gc->count()) {
+                                                        $gcc = $gc->count();
+                                                    } else {
+                                                        $gcc = 0;
+                                                    }
                                                     ?>
                                                     <div class="d-flex align-items-end py-3 py-sm-2 px-4">
                                                         <span class="cs-price display-2 font-weight-normal text-primary px-1 mr-2"><?php echo $gcc ?></span>
@@ -290,7 +321,7 @@ if ($user->isLoggedIn()) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>                                        
+                                    </div>
                                     <div class="col-lg-3 mt-2">
                                         <!-- Pricing -->
                                         <div class="card border-0 box-shadow">
@@ -300,13 +331,13 @@ if ($user->isLoggedIn()) {
                                                     <div class="ml-4 ml-sm-0 py-2">
                                                         <h3 class="mb-2 ml-4">Others</h3>
                                                     </div>
-                                                    <?php 
-                                                        $go = $db->get('fas_event',array('fe_activity','=','Others'));
-                                                        if($go->count()){
-                                                            $goc = $go->count();
-                                                        }else{
-                                                            $goc = 0;
-                                                        }
+                                                    <?php
+                                                    $go = $db->get('fas_event', array('fe_activity', '=', 'Others'));
+                                                    if ($go->count()) {
+                                                        $goc = $go->count();
+                                                    } else {
+                                                        $goc = 0;
+                                                    }
                                                     ?>
                                                     <div class="d-flex align-items-end py-3 py-sm-2 px-4">
                                                         <span class="cs-price display-2 font-weight-normal text-primary px-1 mr-2"><?php echo $goc ?></span>
@@ -314,7 +345,7 @@ if ($user->isLoggedIn()) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>                                        
+                                    </div>
                                 </div>
                                 <div class="row border-top mt-4">
                                     <?php
@@ -389,7 +420,7 @@ if ($user->isLoggedIn()) {
                                 <li class="list-inline-item my-1"><a class="nav-link-style" href="#">Terms &amp; Conditions</a></li>
                             </ul>
                             <p class="font-size-sm mb-0 mr-3 order-md-1">
-                                <span class="text-muted mr-1">© All rights reserved. Made by</span><a class="nav-link-style font-weight-normal" href="" target="_blank" rel="noopener">EMS TEAM</a>
+                                <span class="text-muted mr-1">©2021 All rights reserved. Developed by</span><a class="nav-link-style font-weight-normal" href="http://niyaj.enhancedteaching.in/" target="_blank" rel="noopener">SK NIYAJ ALI</a>
                             </p>
                         </div>
                     </footer>
@@ -397,7 +428,7 @@ if ($user->isLoggedIn()) {
                     <a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon fe-arrow-up">
                         </i></a>
                     <!-- Vendor scrits: js libraries and plugins -->
-                    <script src="..js/theme.min.js"></script> 
+                    <script src="..js/theme.min.js"></script>
                     <script src="../vendor/jquery/dist/jquery.slim.min.js"></script>
                     <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
                     <script src="../vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>

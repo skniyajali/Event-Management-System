@@ -13,14 +13,44 @@ if ($user->isLoggedIn()) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
+<!--
+        Page Name: Event Management System(EMS)
+        Author: Sk Niyaj Ali
+        Website: http://niyaj.enhancedteaching.in/
+        Contact: niyaj320@gmail.com
+        Facebook : https://www.facebook.com/skniyajali7/
+        Instagram : https://www.instagram.com/_niyajali/
+        Twitter : https://twitter.com/skniyajali1
+        Behance.net : https://www.behance.net/skniyajali/
+        Codepen.io : https://codepen.io/skniyajali/
+        Creativemarket : https://creativemarket.com/users/skniyajali
+        Medium : https://medium.com/@skniyajali
+        Portfolio : https://skniyajali.myportfolio.com/
+        Vimeo : https://vimeo.com/skniyajali/
+        Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+        YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+        Pinterest : https://in.pinterest.com/skniyajali/
+        Thumblr : https://skniyajali2.tumblr.com/
+        Github : https://github.com/niyaj320/
+        Dribbble : https://dribbble.com/skniyajali/
+        Flickr : https://www.flickr.com/people/skniyajali/
+        Figma : https://www.figma.com/@skniyajali
+        LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+        Society6 : https://society6.com/skniyajali
+        Website : https://skniyaj.blogspot.com/?m=1
+        Hackaday.io : https://hackaday.io/niyaj320
 
+        License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+        -->
     <head>
         <meta charset="utf-8" />
         <title><?php echo $data->dept_name ?> | EMS@DEPARTMENT</title>
         <!-- SEO Meta Tags-->
-        <meta name="description" content="EMS KIOT" />
-        <meta name="keywords" content="ems,kiot" />
-        <meta name="author" content="EMS Team" />
+        <link rel="canonical" href="http://niyaj.enhancedteaching.in" />
+        <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+        <meta name="description" content="EMS Dashboard" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="SK NIYAJ ALI" />
         <!-- Viewport-->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -269,7 +299,7 @@ if ($user->isLoggedIn()) {
                     <li class="list-inline-item my-1"><a class="nav-link-style" href="#">Terms &amp; Conditions</a></li>
                 </ul>
                 <p class="font-size-sm mb-0 mr-3 order-md-1">
-                    <span class="text-muted mr-1">© All rights reserved. Made by</span><a class="nav-link-style font-weight-normal" href="" target="_blank" rel="noopener">EMS TEAM</a>
+                    <span class="text-muted mr-1">©2021 All rights reserved. Developed by</span><a class="nav-link-style font-weight-normal" href="http://niyaj.enhancedteaching.in/" target="_blank" rel="noopener">SK NIYAJ ALI</a>
                 </p>
             </div>
         </footer>

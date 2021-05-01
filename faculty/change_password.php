@@ -11,14 +11,45 @@ if ($user->isLoggedIn()) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
+    <!--
+        Page Name: Event Management System(EMS)
+        Author: Sk Niyaj Ali
+        Website: http://niyaj.enhancedteaching.in/
+        Contact: niyaj320@gmail.com
+        Facebook : https://www.facebook.com/skniyajali7/
+        Instagram : https://www.instagram.com/_niyajali/
+        Twitter : https://twitter.com/skniyajali1
+        Behance.net : https://www.behance.net/skniyajali/
+        Codepen.io : https://codepen.io/skniyajali/
+        Creativemarket : https://creativemarket.com/users/skniyajali
+        Medium : https://medium.com/@skniyajali
+        Portfolio : https://skniyajali.myportfolio.com/
+        Vimeo : https://vimeo.com/skniyajali/
+        Etsy : https://www.etsy.com/in-en/people/esgrwk5wckeq57ef
+        YouTube : https://www.youtube.com/channel/UCjUaGdLeQBLtB_2zvakJ-6A
+        Pinterest : https://in.pinterest.com/skniyajali/
+        Thumblr : https://skniyajali2.tumblr.com/
+        Github : https://github.com/niyaj320/
+        Dribbble : https://dribbble.com/skniyajali/
+        Flickr : https://www.flickr.com/people/skniyajali/
+        Figma : https://www.figma.com/@skniyajali
+        LinkedIn : https://www.linkedin.com/in/sk-niyaj-ali-373a94131/
+        Society6 : https://society6.com/skniyajali
+        Website : https://skniyaj.blogspot.com/?m=1
+        Hackaday.io : https://hackaday.io/niyaj320
+
+        License: You must have a valid license only from Sk Niyaj Ali. in order to legally use the theme for your project.
+        -->
 
     <head>
         <meta charset="utf-8" />
-        <title><?php echo $data->dept_name ?> | EMS@DEPARTMENT</title>
+        <title><?php echo $data->fac_name ?> | EMS@Faculty</title>
         <!-- SEO Meta Tags-->
-        <meta name="description" content="EMS KIOT" />
-        <meta name="keywords" content="ems,kiot" />
-        <meta name="author" content="EMS Team" />
+        <link rel="canonical" href="http://niyaj.enhancedteaching.in" />
+        <meta name="keywords" content="SK NIYAJ ALI, Niyaj ali, Sk Niyaj, Sk Ali" />
+        <meta name="description" content="EMS Dashboard" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="SK NIYAJ ALI" />
         <!-- Viewport-->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Vendor Styles-->
@@ -44,9 +75,9 @@ if ($user->isLoggedIn()) {
                                 <a class="navbar-tool-icon-box" href="account-profile.html">
                                     <img class="navbar-tool-icon-box-img" src="data:image/png;base64,<?php echo base64_encode($data->fac_image) ?>" alt="<?php echo $data->fac_name ?>" />
                                 </a>
-                                <?php }else{ ?>
-                                    <img src="../img/blank.png" class="navbar-tool-icon-box-img" alt="<?php echo $row->fac_name ?>">
-                                <?php } ?>
+                            <?php } else { ?>
+                                <img src="../img/blank.png" class="navbar-tool-icon-box-img" alt="<?php echo $row->fac_name ?>">
+                            <?php } ?>
 
                             <a class="navbar-tool-label dropdown-toggle" href="account-profile.html"><small>Hello,</small><?php echo $data->fac_name ?></a>
                             <ul class="dropdown-menu dropdown-menu-right" style="width: 15rem">
@@ -81,41 +112,41 @@ if ($user->isLoggedIn()) {
                                 <li class="nav-item active">
                                     <a class="nav-link" href="index.php">Home</a>
                                 </li>
-                                <?php if($data->fac_role == 'HOD'){ ?>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                        <li class="dropdown-divider"></li>                                        
-                                        <li><a class="dropdown-item" href="fac_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Report</a></li>                                        
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="fas_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                        <li class="dropdown-divider"></li>                                        
-                                        <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Report</a></li>                                        
-                                    </ul>
-                                </li>
-                                <?php }else{ ?>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                        <li class="dropdown-divider"></li>                                        
-                                        <li><a class="dropdown-item" href="fac_event_create.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Participated</a></li>                                        
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="fas_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Overview</a></li>
-                                        <li class="dropdown-divider"></li>                                        
-                                        <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">Event Report</a></li>                                        
-                                    </ul>
-                                </li>
-                                <?php } ?>                                
+                                <?php if ($data->fac_role == 'HOD') { ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                            <li class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="fac_event_report.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Report</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="fas_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                            <li class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Report</a></li>
+                                        </ul>
+                                    </li>
+                                <?php } else { ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Faculty</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="fac_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                            <li class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="fac_event_create.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Participated</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Student</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="fas_overview.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Overview</a></li>
+                                            <li class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="fas_event_report.php?hash=<?php echo convert_string('decrypt', $data->fac_passkey) ?>">Event Report</a></li>
+                                        </ul>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
@@ -137,38 +168,60 @@ if ($user->isLoggedIn()) {
                     <div class="col-lg-4 mb-4 mb-lg-0">
                         <div class="bg-light rounded-lg box-shadow-lg">
                             <div class="px-4 py-4 mb-1 text-center">
-                                <?php if ($data->dept_image) { ?>
-                                    <img class="d-block rounded-circle mx-auto my-2" width="110" src="data:image/png;base64,<?php echo base64_encode($data->dept_image) ?>" alt="<?php echo $data->dept_name ?>" />
+                                <?php if($data->fac_image){ ?> 
+                                    <img class="d-block rounded-circle mx-auto my-2" width="110" src="data:image/png;base64,<?php echo base64_encode($data->fac_image) ?>" alt="<?php echo $data->fac_name ?>" />
                                 <?php } ?>
-
-                                <h6 class="mb-0 pt-1"><?php echo $data->dept_name ?></h6>
-                                <span class="text-muted font-size-sm"><?php echo $data->dept_sname ?></span>
+                                
+                                <h6 class="mb-0 pt-1"><?php echo $data->fac_name ?></h6>
+                                <span class=" font-size-sm badge badge-danger text-white"><?php echo $data->fac_role ?></span>
                             </div>
                             <div class="d-lg-none px-4 pb-4 text-center">
                                 <a class="btn btn-primary px-5 mb-2" href="#account-menu" data-toggle="collapse"><i class="fe-menu mr-2"></i>Account menu</a>
-                            </div>
+                            </div>                            
                             <div class="d-lg-block collapse pb-2" id="account-menu">
+                                <?php if($data->fac_role == 'HOD'){ ?>
+                                    <h3 class="d-block bg-secondary font-size-sm font-weight-semibold text-muted mb-0 px-4 py-3">
+                                        Faculty
+                                    </h3>
+                                    <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fac_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                        Overview
+                                    </a>
+                                    <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fac_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                        Event Report
+                                    </a>
+                                    <h3 class="d-block bg-secondary font-size-sm font-weight-semibold text-muted mb-0 px-4 py-3">
+                                        Student
+                                    </h3>
+                                    <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fas_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                        Overview
+                                    </a>
+                                    <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fas_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                        Event Report
+                                    </a>
+                                    <?php }else{ ?>
+                                        <h3 class="d-block bg-secondary font-size-sm font-weight-semibold text-muted mb-0 px-4 py-3">
+                                            Faculty
+                                        </h3>
+                                        <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fac_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                            Overview
+                                        </a>
+                                        <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fac_event_create.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                            Event Participated
+                                        </a>
+                                        <h3 class="d-block bg-secondary font-size-sm font-weight-semibold text-muted mb-0 px-4 py-3">
+                                            Student
+                                        </h3>
+                                        <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fas_overview.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                            Overview
+                                        </a>
+                                        <a class="d-flex align-items-center nav-link-style px-4 py-3" href="fas_event_report.php?hash=<?php echo convert_string('decrypt',$data->fac_passkey) ?>">
+                                            Student Event Report
+                                        </a>
+                                   <?php } ?>
+                                                                
                                 <h3 class="d-block bg-secondary font-size-sm font-weight-semibold text-muted mb-0 px-4 py-3">
-                                    Faculty
-                                </h3>
-                                <a class="d-flex align-items-center nav-link-style px-4 py-3" href="faculty_information.php">
-                                    Faculty Information
-                                </a>
-                                <a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="fac_event.php">
-                                    Faculty Event Report
-                                </a>
-                                <a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="event_create.php?hash=<?php echo convert_string('decrypt', $data->dept_passkey) ?>">
-                                    Faculty Event Organized
-                                </a>
-                                <h3 class="d-block bg-secondary font-size-sm font-weight-semibold text-muted mb-0 px-4 py-3">
-                                    Student
-                                </h3>
-                                <a class="d-flex align-items-center nav-link-style px-4 py-3" href="student_information.php">
-                                    Student Information
-                                </a>
-                                <h3 class="d-block bg-secondary font-size-sm font-weight-semibold text-muted mb-0 px-4 py-3">
-                                    Account settings
-                                </h3>
+                                    Dashboard
+                                </h3>                                
                                 <a class="d-flex align-items-center nav-link-style px-4 py-3" href="index.php">Profile info</a>
                                 <a class="d-flex align-items-center nav-link-style px-4 py-3 border-top active" href="change_password.php">Change Password</a>
                                 <a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="message.php">Message</a>
@@ -245,7 +298,7 @@ if ($user->isLoggedIn()) {
                                             <hr class="mt-2 mb-4" />
                                             <div class="d-flex flex-wrap justify-content-end align-items-center">
                                                 <input type="hidden" name="action" value="password_update">
-                                                <input type="hidden" name="ett_passkey" value="<?php echo convert_string('decrypt', $data->dept_passkey) ?>">
+                                                <input type="hidden" name="ett_passkey" value="<?php echo convert_string('decrypt', $data->fac_passkey) ?>">
                                                 <button class="btn btn-primary mt-3 mt-sm-0 float-right" type="submit">
                                                     <i class="fe-save font-size-lg mr-2"></i>Change Password
                                                 </button>
@@ -268,7 +321,7 @@ if ($user->isLoggedIn()) {
                     <li class="list-inline-item my-1"><a class="nav-link-style" href="#">Terms &amp; Conditions</a></li>
                 </ul>
                 <p class="font-size-sm mb-0 mr-3 order-md-1">
-                    <span class="text-muted mr-1">© All rights reserved. Made by</span><a class="nav-link-style font-weight-normal" href="" target="_blank" rel="noopener">EMS TEAM</a>
+                    <span class="text-muted mr-1">©2021 All rights reserved. Developed by</span><a class="nav-link-style font-weight-normal" href="http://niyaj.enhancedteaching.in/" target="_blank" rel="noopener">SK NIYAJ ALI</a>
                 </p>
             </div>
         </footer>

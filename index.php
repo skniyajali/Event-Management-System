@@ -131,9 +131,9 @@ License: You must have a valid license only from Sk Niyaj Ali. in order to legal
             <div class="container pt-2 pb-4 pb-md-2">
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-7 col-md-8 text-center">
-                        <h1 class="display-4 text-light mb-4">KNOWLEDGE INSTITUTE OF TECHNOLOGY</h1>
+                        <h1 class="display-4 text-light mb-4">EVENT MANAGEMENT SYSTEM</h1>
                         <div class="d-inline-flex align-items-center mx-1 px-3 mb-4"><i class="fe-phone h2 mb-0 mr-2 text-light"></i><span class="text-light">+91 98947 01234</span></div>
-                        <div class="d-inline-flex align-items-center mx-1 px-3 mb-4"><i class="fe-map-pin h2 mb-0 mr-2 text-light"></i><span class="text-light">KIOT Campus, SALEM - 637 504</span></div>                        
+                        <div class="d-inline-flex align-items-center mx-1 px-3 mb-4"><i class="fe-map-pin h2 mb-0 mr-2 text-light"></i><span class="text-light">XYZ Campus, PLACE - 637 504</span></div>                        
                     </div>
                 </div>
             </div>

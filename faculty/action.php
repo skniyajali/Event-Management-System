@@ -428,8 +428,13 @@ if (Input::exists()) {
                             ':_passkey' => convert_string('encrypt',Input::get('ett_passkey'))
                         ))){
                             $message = "Password Updated";
+                            $user->logout();
+                        }else {
+                            $error = "Somthing Went Wrong!";
                         }
-                        $user->logout();
+                        
+                    }else {
+                        $error = "New Password is same as old!";
                     }
                 }else{
                     $error = "New Password and Confirm Password not match";

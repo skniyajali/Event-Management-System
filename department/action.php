@@ -10,8 +10,8 @@ $data = $user->data();
 $message = '';
 $error = '';
 if (Input::exists()) {
-    
-    
+
+
     if (Input::get('action') == 'fac_event_search') {
         $query = '';
         $output = array();
@@ -30,7 +30,7 @@ if (Input::exists()) {
             $query .= 'AND fe_e_date LIKE "%' . $_POST["e_edate"] . '%" ';
         }
         if (Input::get('e_mentor')) {
-            $query .= 'AND fe_fac_hash =  "'.convert_string('encrypt',Input::get('e_mentor')).'" ';
+            $query .= 'AND fe_fac_hash =  "' . convert_string('encrypt', Input::get('e_mentor')) . '" ';
         }
 
         $statement = $connect->prepare($query);
@@ -65,14 +65,14 @@ if (Input::exists()) {
                             </div>
                         </div>';
             }
-            if($row["fe_file"]){
-                $cer_link = '<a href="'.$row["fe_file"].'" class="btn btn-sm btn-primary">View</a>';
-            }else{
+            if ($row["fe_file"]) {
+                $cer_link = '<a href="' . $row["fe_file"] . '" class="btn btn-sm btn-primary">View</a>';
+            } else {
                 $cer_link = '';
             }
-            if($row["fe_image"]){
-                $img_link = '<a href="upload/'.$row["fe_image"].'" class="btn btn-sm btn-danger">View</a>';
-            }else{
+            if ($row["fe_image"]) {
+                $img_link = '<a href="upload/' . $row["fe_image"] . '" class="btn btn-sm btn-danger">View</a>';
+            } else {
                 $img_link = '';
             }
             $sub_array = array();
@@ -93,16 +93,16 @@ if (Input::exists()) {
         }
         $datas = array(
             'message' => $data,
-            'msg' => 'export.php?f='.convert_string('encrypt',$query),
-            'ms' => 'export.php?p='.convert_string('encrypt',$query)
+            'msg' => 'export.php?f=' . convert_string('encrypt', $query),
+            'ms' => 'export.php?p=' . convert_string('encrypt', $query)
         );
         echo json_encode($datas);
     }
-    
-    
-    if(Input::get('action') == 'profile_update'){
+
+
+    if (Input::get('action') == 'profile_update') {
         $te_updated_at = date("h:i:sa");
-        if (!empty($_FILES['ett_image']['tmp_name'])&& file_exists($_FILES['ett_image']['tmp_name'])) {
+        if (!empty($_FILES['ett_image']['tmp_name']) && file_exists($_FILES['ett_image']['tmp_name'])) {
             $ett_image = file_get_contents($_FILES['ett_image']['tmp_name']);
         }
         if ($_FILES['ett_image']['error'] == 0) {
@@ -110,93 +110,90 @@ if (Input::exists()) {
             $statement = $connect->prepare($query);
             $statement->execute(array(
                 ':d_image' => $ett_image,
-                ':dept_pass' => convert_string('encrypt',Input::get('ett_passkey'))
+                ':dept_pass' => convert_string('encrypt', Input::get('ett_passkey'))
             ));
             $message .= "Image Updated<br>";
         }
 
-        if(Input::get('te_name') != $data->dept_name){
+        if (Input::get('te_name') != $data->dept_name) {
             $query = "SELECT dept_name FROM em_department WHERE dept_name = :_name";
             $statement = $connect->prepare($query);
             $statement->execute(array(
                 ':_name' => Input::get('te_name'),
             ));
-            if($statement->rowCount() > 0){
+            if ($statement->rowCount() > 0) {
                 $message .= "Department Name Exists<br>";
-            }else{
+            } else {
                 $query = "UPDATE em_department SET dept_name = :et_name, dept_updated_at = :ett_updated_at WHERE dept_passkey = :et_token";
                 $statements = $connect->prepare($query);
                 $statements->execute(
                     array(
                         ':et_name' => Input::get('te_name'),
-                        ':et_token' => convert_string('encrypt',Input::get('ett_passkey')),
+                        ':et_token' => convert_string('encrypt', Input::get('ett_passkey')),
                         ':ett_updated_at' => $te_updated_at,
                     )
-                ); 
+                );
                 $message .= "Department Name Updated<br>";
             }
-            
         }
 
-        if(Input::get('te_username') != $data->dept_username){
+        if (Input::get('te_username') != $data->dept_username) {
             $query = "SELECT dept_username FROM em_department WHERE dept_username = :_name";
             $statement = $connect->prepare($query);
             $statement->execute(array(
                 ':_name' => Input::get('te_username'),
             ));
-            if($statement->rowCount() > 0){
+            if ($statement->rowCount() > 0) {
                 $message .= "Department Name Exists<br>";
-            }else{
+            } else {
                 $query = "UPDATE em_department SET dept_username = :et_name, dept_updated_at = :ett_updated_at WHERE dept_passkey = :et_token";
                 $statements = $connect->prepare($query);
                 $statements->execute(
                     array(
                         ':et_name' => Input::get('te_username'),
-                        ':et_token' => convert_string('encrypt',Input::get('ett_passkey')),
+                        ':et_token' => convert_string('encrypt', Input::get('ett_passkey')),
                         ':ett_updated_at' => $te_updated_at,
                     )
-                ); 
+                );
                 $message .= "Department Username Updated<br>";
             }
-            
         }
-        
-        if(Input::get('te_sname') != $data->dept_sname){
+
+        if (Input::get('te_sname') != $data->dept_sname) {
             $query = "SELECT dept_sname FROM em_department WHERE dept_sname = :_name";
             $statement = $connect->prepare($query);
             $statement->execute(array(
                 ':_name' => Input::get('te_sname'),
             ));
-            if($statement->rowCount() > 0){
+            if ($statement->rowCount() > 0) {
                 $message .= "Department Name Exists<br>";
-            }else{
+            } else {
                 $query = "UPDATE em_department SET dept_sname = :et_name, dept_updated_at = :ett_updated_at WHERE dept_passkey = :et_token";
                 $statements = $connect->prepare($query);
                 $statements->execute(
                     array(
                         ':et_name' => Input::get('te_sname'),
-                        ':et_token' => convert_string('encrypt',Input::get('ett_passkey')),
+                        ':et_token' => convert_string('encrypt', Input::get('ett_passkey')),
                         ':ett_updated_at' => $te_updated_at,
                     )
-                ); 
+                );
                 $message .= "Department Short Name Updated<br>";
             }
-            
         }
 
         if (Input::get('te_website') != $data->dept_site) {
             $query = "UPDATE em_department SET dept_site = :et_name, dept_updated_at = :ett_updated_at WHERE dept_passkey = :et_token";
-                $statements = $connect->prepare($query);
-                $statements->execute(
-                    array(
-                        ':et_name' => Input::get('te_website'),
-                        ':et_token' => convert_string('encrypt',Input::get('ett_passkey')),
-                        ':ett_updated_at' => $te_updated_at,
-                    )
-                ); 
-                $message .= "Department Website Updated<br>";
+            $statements = $connect->prepare($query);
+            $statements->execute(
+                array(
+                    ':et_name' => Input::get('te_website'),
+                    ':et_token' => convert_string('encrypt', Input::get('ett_passkey')),
+                    ':ett_updated_at' => $te_updated_at,
+                )
+            );
+            $message .= "Department Website Updated<br>";
         }
-        
+
         if (Input::get('te_phone') == $data->dept_phone) {
         } else {
             $query = "SELECT dept_phone FROM em_department WHERE dept_phone = :ett_phone";
@@ -216,7 +213,7 @@ if (Input::exists()) {
                 $statement->execute(
                     array(
                         ':ett_phone' => Input::get('te_phone'),
-                        ':ett_token' => convert_string('encrypt',Input::get('ett_passkey'))
+                        ':ett_token' => convert_string('encrypt', Input::get('ett_passkey'))
                     )
                 );
                 $result = $statement->fetchAll();
@@ -268,7 +265,7 @@ if (Input::exists()) {
                 $statement->execute(
                     array(
                         ':ett_email' => Input::get('te_email'),
-                        ':ett_token' => convert_string('encrypt',Input::get('ett_passkey'))
+                        ':ett_token' => convert_string('encrypt', Input::get('ett_passkey'))
                     )
                 );
                 $result = $statement->fetchAll();
@@ -323,25 +320,29 @@ if (Input::exists()) {
         echo json_encode($data);
     }
 
-    if(Input::get('action') == 'password_update'){
-        if(Input::get('old_password')){
-            if(convert_string('encrypt',Input::get('old_password')) == $data->dept_password){
-                if(convert_string('encrypt',Input::get('new_password')) == convert_string('encrypt',Input::get('con_password'))){
-                    if(convert_string('encrypt',Input::get('new_password')) != $data->dept_password){
+    if (Input::get('action') == 'password_update') {
+        if (Input::get('old_password')) {
+            if (convert_string('encrypt', Input::get('old_password')) == $data->dept_password) {
+                if (convert_string('encrypt', Input::get('new_password')) == convert_string('encrypt', Input::get('con_password'))) {
+                    if (convert_string('encrypt', Input::get('new_password')) != $data->dept_password) {
                         $query = "UPDATE em_department SET dept_password = :_pass WHERE dept_passkey = :_passkey";
                         $statement = $connect->prepare($query);
-                        if($statement->execute(array(
-                            ':_pass' => convert_string('encrypt',Input::get('new_password')),
-                            ':_passkey' => convert_string('encrypt',Input::get('ett_passkey'))
-                        ))){
+                        if ($statement->execute(array(
+                            ':_pass' => convert_string('encrypt', Input::get('new_password')),
+                            ':_passkey' => convert_string('encrypt', Input::get('ett_passkey'))
+                        ))) {
                             $message = "Password Updated";
+                            $user->logout();
+                        } else {
+                            $error = "Somthing Went Wrong!";
                         }
-                        $user->logout();
+                    } else {
+                        $error = "New Password is same as old!";
                     }
-                }else{
+                } else {
                     $error = "New Password and Confirm Password not match";
                 }
-            }else{
+            } else {
                 $error = "Old Password not match";
             }
         }
@@ -352,5 +353,4 @@ if (Input::exists()) {
         );
         echo json_encode($data);
     }
-    
 }

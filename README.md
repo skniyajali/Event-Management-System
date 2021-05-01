@@ -29,7 +29,8 @@
     ```
     5. Import the SQL data into the database.
     6. Open the index.php file into your browser.
-    7. Click on the admin button and log in using credentials.
+    7. Click on the admin button and log in using credentials(Don't Change Admin email or password on the database).
+    
 
     ```bash
         Email: admin@admin.com
