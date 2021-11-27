@@ -1,4 +1,4 @@
-    <h1 align="center"> Event Management System(EMS) </h1>
+## Event Management System(EMS)
 
 ## About Event Management System(EMS)
 
