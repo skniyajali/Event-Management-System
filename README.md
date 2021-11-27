@@ -77,9 +77,11 @@
 ## Support
     If You get any error or vulnerability then please contact me. 
     
-## Contributing    
-    <a href="https://www.buymeacoffee.com/skniyajali" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+## Contributing
 
+Thank you for considering contributing to the Multi-Auth System Using Laravel Jetstream With Inertia and Vue.
+
+<a href="https://www.buymeacoffee.com/skniyajali" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 ## License
 
 The Application is Developed by **[SK NIYAJ ALI](http://niyaj.enhancedteaching.in/)** and it is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
