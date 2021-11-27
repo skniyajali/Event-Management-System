@@ -77,10 +77,7 @@
 ## Support
     If You get any error or vulnerability then please contact me. 
     
-## Contributing
-    Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-    Please make sure to update tests as appropriate.
+## Contributing    
     <a href="https://www.buymeacoffee.com/skniyajali" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## License
